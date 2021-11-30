@@ -29,7 +29,7 @@
    	</div>
 	<hr>
 	<footer>
-		<p class="footer-txt">팀원 :이종훈 | 곽서희 | 장재완 | 장현실 | 신재민 | 조정현</p>
+		<p class="footer-txt">팀원 :이종훈 | 곽서희 | 장재완 | 정현실 | 신재민 | 조정현</p>
 		<a href="#"></a>
 		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
 	</footer>
