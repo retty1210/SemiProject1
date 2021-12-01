@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url(welcomepage/welcome.css);
 @import url(lostboard/lostboard.css);
+@import url(sign/sign.css);
 
 .material-icons {
   font-family: 'Material Icons';

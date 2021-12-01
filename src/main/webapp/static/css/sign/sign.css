@@ -10,12 +10,13 @@ body {
     justify-content: center;
 
 }
-.main-box {
+.main-box{
     width: 800px;
     height: 800px;
     text-align: center;
     
 }
+
 
 /* 회원가입 헤드*/
 .main-box_header .material-icons-outlined{
@@ -42,8 +43,20 @@ body {
     color:rgba(0,0,0,0.5);
     
 }
-.sign-up_input input:focus {
+.id-input {
+    margin-left: 70px;
+}
 
+.sign-up_input button {
+    position: relative;
+    right: -10px;
+    height: 28px;
+    cursor: pointer;
+    border: none;
+}
+
+.sign-up_input button:hover {
+    background-color: dimgray;
 }
 
 .sign-up_input input::placeholder {color:rgba(0,0,0,0.5);}
