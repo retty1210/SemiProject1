@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <title>회원가입</title>
     <link rel="stylesheet" href="static/css/sign.css">
-    <link href="<%=request.getContextPath()%>/static/css/style.css" rel="stylesheet" type="text/css"/>
     <link
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
         rel="stylesheet">
@@ -22,7 +21,8 @@
                 </div>
                 <div class="main-box_body">
                     <div class="sign-up_input">
-                        <input type="text" name="user_id" placeholder="아이디">
+                        <input type="text" name="user_id" class="id-input" placeholder="아이디">
+                        <button type="button">중복확인</button>
                         <span id="must-id">
                             <!--필수 입력입니다.-->
                         </span>
@@ -46,6 +46,9 @@
                     </div>
                     <div class="sign-up_input">
                         <input type="text" name="user_phone" placeholder="연락처">
+                    </div>
+                    <div class="sign-up_input">
+                        <input type="email" name="user_email" placeholder="이메일">
                     </div>
                 </div>
                 <div class="main-box_footer">
