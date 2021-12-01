@@ -25,7 +25,7 @@ public class JoinService {
 				dao.close();
 				return true;
 			} else {
-				dao.rollbakc();
+				dao.rollback();
 				dao.close();
 				return false;
 			}
