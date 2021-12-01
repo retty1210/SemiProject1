@@ -13,6 +13,15 @@
 <body>
 	<header class="main-header">
 		<nav class="header-link_box">
+			<ul class="header-link_writer_ul">
+				<li class="header-link_writer_li">
+					<a href="#" class="header-link_writer">
+						<span class="material-icons">
+							create
+						</span>&nbsp;글쓰기
+					</a>		
+				</li>
+			</ul>
 			<ul class="header-link_ul">
 				<li class="header-link_li"><a href="#" class="header-link_a">
 					<span class="material-icons">
@@ -20,7 +29,7 @@
 					</span>
 				</a>
 				<ul class="header-link_menu">
-				<hr>
+					<hr>
 					<li class="header-link_menu_content"><a href="#">로그인</a></li>
 					<hr>
 					<li class="header-link_menu_content"><a href="#">회원가입</a></li>
@@ -43,15 +52,11 @@
 		<div class="contenet-1"></div>
 		<div class="contenet-1"></div>
 	</div>
-	<div class="content-box">
-		<div class="contenet-1"></div>
-		<div class="contenet-1"></div>
-		<div class="contenet-1"></div>
-	</div>
+
 	
 	<footer>
 		<hr>
-		<p class="footer-txt">팀원 :이종훈 | 곽서희 | 장재완 | 장현실 | 신재민 | 조정현</p>
+		<p class="footer-txt">팀원 :이종훈 | 곽서희 | 장재완 | 정현실 | 신재민 | 조정현</p>
 		<a href="#"></a>
 		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
 	</footer>

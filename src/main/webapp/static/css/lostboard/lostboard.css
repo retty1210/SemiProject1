@@ -17,16 +17,32 @@
 	display:flex;
 	width:100%;
 	align-items:center;
-	justify-content: flex-end;
+	justify-content: space-between;
 	border-bottom: 2px solid rgba(0,0,0,0.5);
 	padding:0 35px 0 0;
 	position:fixed;
 	height: 10px;
 	top:65px;
 }
+
 .header-link_a span{
 	display:block;
 	font-size:30px;
+}
+.header-link_writer_ul{
+	position:relative;
+	bottom:35px;
+	left:15px;
+	padding:0;
+	margin:0px;
+	list-style-type: none;
+	border-right: 1px solid rgba(0,0,0,0.5);
+}
+.header-link_writer{
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	padding: 10px 20px;
 }
 .header-link_ul,
 .header-link_menu{
@@ -40,6 +56,7 @@
 	border: 1px solid black;
 	background-color: rgba(80, 79, 79, 0.904);
 }
+
 .header-link_a{
 	display:block;
 }
