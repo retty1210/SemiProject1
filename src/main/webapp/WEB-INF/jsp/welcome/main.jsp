@@ -9,6 +9,7 @@
 <link href="<%=request.getContextPath()%>/static/css/style.css" rel="stylesheet" type="text/css"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <script type="text/javascript" src="<%=request.getContextPath()%>/static/js/mainJS.js"></script>
 </head>
 <body>
 	<header class="main-header">
@@ -50,11 +51,9 @@
 		<div class="contenet-1">
 			<%--이미지,제목,간단한내용--%>
 			<img src="" alt="분실 강아지 사진">
-			<h3>제목 입니다.</h3>
-			<p>글에 대한 내용 입니다.</p>
+			<h3></h3>
+			<p></p>
 		</div>
-		<div class="contenet-1"></div>
-		<div class="contenet-1"></div>
 	</div>
 
 	
@@ -65,5 +64,4 @@
 		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
 	</footer>
 </body>
-<script type="text/javascript" src="<%=request.getContextPath()%>/static/js/mainJS.js"></script>
 </html>
