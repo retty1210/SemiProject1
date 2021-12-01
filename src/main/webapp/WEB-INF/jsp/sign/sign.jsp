@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>회원가입</title>
     <link rel="stylesheet" href="static/css/sign.css">
+    <link href="<%=request.getContextPath()%>/static/css/style.css" rel="stylesheet" type="text/css"/>
     <link
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
         rel="stylesheet">

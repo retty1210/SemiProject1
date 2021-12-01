@@ -21,8 +21,9 @@
 					</span>
 				</a>
 				<ul class="header-link_menu">
-					<li class="header-link_menu_content"><a href="#">로그인</a></li>
-					<li class="header-link_menu_content"><a href="#">회원가입</a></li>
+					<li class="header-link_menu_content"><a href="./login">로그인</a></li>
+					<!-- 임시 경로입니다 파일 완성되면 수정해주세요! -->
+					<li class="header-link_menu_content"><a href="./sign">회원가입</a></li>
 				</ul></li>
 			</ul>
 		</nav>
@@ -33,7 +34,7 @@
 		</div>
 	</header>
 	<nav class="nav-menu">
-		<a href="#" class="nav-menu_link">분실 동물 게시판</a>
+		<a href="./main" class="nav-menu_link">분실 동물 게시판</a>
 	</nav>
 	<form action="./main" class="writer_class" id="writer_form" method="post">
 		<div class="writer_c">
