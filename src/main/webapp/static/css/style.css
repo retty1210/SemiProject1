@@ -2,6 +2,7 @@
 @import url(welcomepage/welcome.css);
 @import url(lostboard/lostboard.css);
 @import url(sign/sign.css);
+@import url(info/info.css);
 
 .material-icons {
   font-family: 'Material Icons';

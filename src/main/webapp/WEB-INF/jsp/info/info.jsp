@@ -9,7 +9,7 @@
 <link href="<%=request.getContextPath()%>/static/css/style.css" rel="stylesheet" type="text/css"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-      <script type="text/javascript" src="<%=request.getContextPath()%>/static/js/mainJS.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/js/mainJS.js"></script>
 </head>
 <body>
 	<header class="main-header">
@@ -30,7 +30,7 @@
 					</span>
 				</a>
 				<ul class="header-link_menu">
-					<%
+					<%--<%
 						boolean logined = (boolean) request.getAttribute("logined");
 						if(!logined){
 					%>
@@ -50,7 +50,7 @@
 						<!-- 내정보: 임시로 적은 경로입니다! 파일 완성되면 수정해주세요 -->
 					<%
 						}
-					%>
+					%>--%>
 				</ul></li>
 			</ul>
 		</nav>
@@ -61,30 +61,26 @@
 		</div>
 	</header>
 	<nav class="nav-menu">
-		<a href="#" class="nav-menu_link">분실 동물 게시판</a>
+		<a href="#" class="nav-menu_link">My Page</a>
 	</nav>
-	<div class="content-box">
-		<div class="contenet-1">
-			<!-- 
-			<img class="content-img" alt="이미지 설명" src="이미지 주소"> 
-			이미지 주소는 DB에서 가져오게 할 것. alt는 시각장애인용 script가 읽거나 이미지 로딩에 실패했을 때 뜨는 문구입니다.
-			 -->
-			<div class="content-body">
-				<a class="content-link" href="#">게시글 제목, 간략한 설명</a>
-				<div class="button-admin"><!-- hidden으로 해 놓고 admin 계정으로 로그인하면 hidden이 없어지게 -->
-					<button type="button" class="mini-btn">삭제</button>
-				</div>
-				<div class="button-writer"><!-- hidden으로 해 놓고 작성자 본인에게만 보이게 -->
-					<button type="button" class="mini-btn">수정</button>
-					<button type="button" class="mini-btn">삭제</button>
-				</div>
+	<div class="info-main_box">
+		<div class="info-input_box">
+			<h3 class="info-user_h3">0000 님의 개인정보 입니다.</h3>
+			<div class="info-input_username">
+				<input type="text" name="username" value="로그인정보 가져와서 넣기">
 			</div>
-			<%--버튼 위치, 이미지 사이즈나 위치 등은 하나도 안 건드렸어요 이건 css로 조정해야 함--%>
+			<div class="info-input_useremail">
+				<input type="text" name="useremail" value="로그인정보 가져와서 넣기">
+			</div>
+			<div class="info-input_usephone">
+				<input type="text" name="userphone" value="로그인정보 가져와서 넣기">
+			</div>
 		</div>
-		<div class="contenet-1"></div>
-		<!-- 위의 코드가 완전히 완성된 다음 복사붙여넣기 할것(안 그러면 코드가 꼬일수도?) -->
-		<div class="contenet-1"></div>
+		<div class="info-input_box">
+		
+		</div>
 	</div>
+	
 
 	
 	<footer>

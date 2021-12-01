@@ -48,6 +48,9 @@ public class SignDTO {
 		this.email = email;
 	}
 	
+	public boolean equalsPassword(SignDTO dto) {
+		return this.password.equals(dto.getPassword());
+	}
 	
 }
 
