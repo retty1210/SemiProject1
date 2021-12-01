@@ -10,7 +10,7 @@ body {
     justify-content: center;
 
 }
-.main-box{
+.main-area-box{
     width: 800px;
     height: 800px;
     text-align: center;
@@ -19,11 +19,11 @@ body {
 
 
 /* 회원가입 헤드*/
-.main-box_header .material-icons-outlined{
+.main-area-box_header .material-icons-outlined{
     font-size: 130px;
     display: block;
 }
-.main-box_header span:last-child {
+.main-area-box_header span:last-child {
     font-size: 40px;
     margin-top: 12px;
     display: block;
@@ -62,7 +62,7 @@ body {
 .sign-up_input input::placeholder {color:rgba(0,0,0,0.5);}
 
 /* 가입 버튼 부분 */
-.main-box_footer button{
+.main-area-box_footer button{
     width: 41%;
     height: 40px;
     margin-top : 30px;
@@ -71,7 +71,7 @@ body {
     color: rgba(0, 0, 0, 0.3);
 }
 
-.main-box_footer button:hover {
+.main-area-box_footer button:hover {
     background-color: bisque;
     color:black;
 }

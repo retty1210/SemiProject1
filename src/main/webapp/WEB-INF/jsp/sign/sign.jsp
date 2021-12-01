@@ -14,12 +14,12 @@
 <body>
     <div class="main-area">
         <form action="" onclick="checkJoin()">
-            <div class="main-box">
-                <div class="main-box_header">
+            <div class=".main-area-box">
+                <div class=".main-area-box_header">
                     <span class="material-icons-outlined">pets</span>
                     <span>회원가입</span>
                 </div>
-                <div class="main-box_body">
+                <div class=".main-area-box_body">
                     <div class="sign-up_input">
                         <input type="text" name="user_id" class="id-input" placeholder="아이디">
                         <button type="button">중복확인</button>
@@ -51,7 +51,7 @@
                         <input type="email" name="user_email" placeholder="이메일">
                     </div>
                 </div>
-                <div class="main-box_footer">
+                <div class=".main-area-box_footer">
                     <button type="submit">가입하기</button>
                 </div>
             </div>
