@@ -37,24 +37,25 @@
 		<a href="./main" class="nav-menu_link">분실 동물 게시판</a>
 	</nav>
 	<form action="./main" class="writer_class" id="writer_form" method="post">
+	<!-- required는 js로 할지 그냥 required로 할지 고민중이라 안 넣었어요 -->
 		<div class="writer_c">
 		<label for="title_id" class="writer_title">분실동물 이름</label>
-		<input type="text" id="title_id" name="title" class="writer_text" placeholder="분실동물 이름">
+		<input type="text" id="title_id" name="title" class="writer_text" placeholder="분실동물 이름" value="<%=request.getParameter("title") %>">
 		</div>
 		
 		<div class="writer_c">
 		<label for="contents_id" class="writer_title">분실동물의 특징</label>
-		<textarea id="contents_id" name="contents" class="writer_text" placeholder="분실동물의 특징: 품종, 나이, 털 색, 눈에 띄는 특징, 분실 당시 하고 있던 목줄 색 등"></textarea>
+		<textarea id="contents_id" name="contents" class="writer_text" placeholder="분실동물의 특징: 품종, 나이, 털 색, 눈에 띄는 특징, 분실 당시 하고 있던 목줄 색 등"><%=request.getParameter("contents") %></textarea>
 		</div>
 		
 		<div class="writer_c">
 		<label for="place_id" class="writer_title">분실장소</label>
-		<input type="text" id="place_id" name="place" class="writer_text" placeholder="분실장소: 최대한 자세히 적어주세요">
+		<input type="text" id="place_id" name="place" class="writer_text" placeholder="분실장소: 최대한 자세히 적어주세요" value="<%=request.getParameter("place") %>">
 		</div>
 		
 		<div class="writer_c">
 		<label for="phonenumber_id" class="writer_title">보호자 연락처</label>
-		<input type="text" id="phonenumber_id" name="phonenumber" class="writer_text" placeholder="보호자 연락처">
+		<input type="text" id="phonenumber_id" name="phonenumber" class="writer_text" placeholder="보호자 연락처" value="<%=request.getParameter("phonenumber") %>">
 		</div>
 		
 		<div class="writer_c">
