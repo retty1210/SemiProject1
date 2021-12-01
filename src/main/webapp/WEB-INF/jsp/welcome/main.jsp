@@ -58,10 +58,21 @@
 				<div class="button-admin"><!-- hidden으로 해 놓고 admin 계정으로 로그인하면 hidden이 없어지게 -->
 					<button type="button" class="mini-btn">삭제</button>
 				</div>
+				<%	
+					boolean s_logined = (boolean) request.getAttribute("s_logined");
+					if(s_logined) {
+				%>
 				<div class="button-writer"><!-- hidden으로 해 놓고 작성자 본인에게만 보이게 -->
 					<button type="button" class="mini-btn">수정</button>
 					<button type="button" class="mini-btn">삭제</button>
 				</div>
+				<% 
+					} else {
+				%>
+				
+				<%
+					}
+				%>
 			</div>
 			<%--버튼 위치, 이미지 사이즈나 위치 등은 하나도 안 건드렸어요 이건 css로 조정해야 함--%>
 		</div>
