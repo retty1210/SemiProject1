@@ -61,4 +61,5 @@
 		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
 	</footer>
 </body>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/js/mainJS.js"></script>
 </html>
