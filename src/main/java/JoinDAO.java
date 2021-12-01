@@ -14,7 +14,7 @@ public class JoinDAO {
 	public boolean insert(JoinDTO dto) {
 	String query = "INSERT INTO USER VALUES('"
 			+ dto.getUserID() + "', '"
-			+ dto.getPassword()  
+			+ dto.getPassword() + "', '"
 			+ dto.getUserName() + "', '"
 			+ dto.getPhonenum() + "', '" 
 			+ dto.getEmail() + "', '" 
