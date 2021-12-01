@@ -15,7 +15,7 @@
 		<nav class="header-link_box">
 			<ul class="header-link_writer_ul">
 				<li class="header-link_writer_li">
-					<a href="#" class="header-link_writer">
+					<a href="./writer" class="header-link_writer">
 						<span class="material-icons">
 							create
 						</span>&nbsp;글쓰기
@@ -30,9 +30,10 @@
 				</a>
 				<ul class="header-link_menu">
 					<hr>
-					<li class="header-link_menu_content"><a href="#">로그인</a></li>
+					<li class="header-link_menu_content"><a href="./login">로그인</a></li>
+					<!-- 로그인: 임시로 적은 경로입니다! 파일 완성되면 수정해주세요 -->
 					<hr>
-					<li class="header-link_menu_content"><a href="#">회원가입</a></li>
+					<li class="header-link_menu_content"><a href="./sign">회원가입</a></li>
 				</ul></li>
 			</ul>
 		</nav>
