@@ -53,6 +53,7 @@ button:hover {
 
 .writer_text {
 	display: inline-block;
+	vertical-align: center;
 }
 
 button .writer_but_c {
