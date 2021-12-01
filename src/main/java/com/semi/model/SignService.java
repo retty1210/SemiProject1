@@ -35,6 +35,7 @@ public class SignService {
 				return false;
 			}
 		} else {
+			// res의 리턴값이 true가 아닌 false 일 경우 
 			return false;
 		}
 	}
