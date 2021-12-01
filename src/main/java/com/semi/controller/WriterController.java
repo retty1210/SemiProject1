@@ -26,7 +26,17 @@ public class WriterController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		doGet(request, response);
+		String title = request.getParameter("title");
+		String contents = request.getParameter("contents");
+		String place = request.getParameter("place");
+		String phonenumber = request.getParameter("phonenumber"); //이거 String으로 할지 int로 할지 고민중
+		
+		//import semi.writer? 여튼 model import해줄것
+//		WriterDTO dto = new WriterDTO();
+//		dto.setTitle(title);
+//		dto.setContents(contents);
+		
+//		WriterService service = new WriterService();
 	}
 
 }

@@ -49,11 +49,25 @@
 	</nav>
 	<div class="content-box">
 		<div class="contenet-1">
-			<%--이미지,제목,간단한내용--%>
-			<img src="" alt="분실 강아지 사진">
-			<h3></h3>
-			<p></p>
+			<!-- 
+			<img class="content-img" alt="이미지 설명" src="이미지 주소"> 
+			이미지 주소는 DB에서 가져오게 할 것. alt는 시각장애인용 script가 읽거나 이미지 로딩에 실패했을 때 뜨는 문구입니다.
+			 -->
+			<div class="content-body">
+				<a class="content-link" href="#">게시글 제목, 간략한 설명</a>
+				<div class="button-admin"><!-- hidden으로 해 놓고 admin 계정으로 로그인하면 hidden이 없어지게 -->
+					<button type="button" class="mini-btn">삭제</button>
+				</div>
+				<div class="button-writer"><!-- hidden으로 해 놓고 작성자 본인에게만 보이게 -->
+					<button type="button" class="mini-btn">수정</button>
+					<button type="button" class="mini-btn">삭제</button>
+				</div>
+			</div>
+			<%--버튼 위치, 이미지 사이즈나 위치 등은 하나도 안 건드렸어요 이건 css로 조정해야 함--%>
 		</div>
+		<div class="contenet-1"></div>
+		<!-- 위의 코드가 완전히 완성된 다음 복사붙여넣기 할것(안 그러면 코드가 꼬일수도?) -->
+		<div class="contenet-1"></div>
 	</div>
 
 	
