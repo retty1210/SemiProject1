@@ -48,6 +48,9 @@
 	<div class="content-box">
 		<div class="contenet-1">
 			<%--이미지,제목,간단한내용--%>
+			<img src="" alt="분실 강아지 사진">
+			<h3>제목 입니다.</h3>
+			<p>글에 대한 내용 입니다.</p>
 		</div>
 		<div class="contenet-1"></div>
 		<div class="contenet-1"></div>
