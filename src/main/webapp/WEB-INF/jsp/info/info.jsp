@@ -30,9 +30,9 @@
 					</span>
 				</a>
 				<ul class="header-link_menu">
-					<%--<%
-						boolean logined = (boolean) request.getAttribute("logined");
-						if(!logined){
+					<%
+						//boolean logined = (boolean) request.getAttribute("logined");
+						//if(!logined){
 					%>
 						<hr>
 						<li class="header-link_menu_content"><a href="./login">로그인</a></li>
@@ -40,7 +40,7 @@
 						<hr>
 						<li class="header-link_menu_content"><a href="./sign">회원가입</a></li>
 					<% 
-						} else {					
+						//} else {					
 					%>	
 						<hr>	
 						<li class="header-link_menu_content"><a href="./loginout">로그아웃</a></li>
@@ -49,8 +49,8 @@
 						<li class="header-link_menu_content"><a href="./info">내정보</a></li>
 						<!-- 내정보: 임시로 적은 경로입니다! 파일 완성되면 수정해주세요 -->
 					<%
-						}
-					%>--%>
+					//	}
+					%>
 				</ul></li>
 			</ul>
 		</nav>

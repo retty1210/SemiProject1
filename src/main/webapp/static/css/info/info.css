@@ -16,7 +16,11 @@
 .info-input_box div{
 	width:550px;
 	height:50px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
 }
+
 .info-input_box input{
 	width:550px;
 	height:50px;
