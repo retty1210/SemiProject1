@@ -9,6 +9,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/info")
 public class InfoController extends HttpServlet {
@@ -17,13 +18,13 @@ public class InfoController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//쿠키 말고 세션으로 받게 수정해주세요~
 		String login_user = "";
-		Cookie[] cookies = request.getCookies();
+		HttpSession session = request.getSession();
+		session.getAttribute("login_user");
 		
-		for(Cookie c: cookies) {
-			if(c.getName().equals("login_user")) {
-				login_user = c.getValue();		
-			}
+		if(session.getAttribute(login_user) != null) {
+			login_user = (String) session.getAttribute(login_user);		
 		}
+		
 		if(login_user.equals("")) {
 			request.setAttribute("logined",false);
 		}else {

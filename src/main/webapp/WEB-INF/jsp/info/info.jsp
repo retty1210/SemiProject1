@@ -31,6 +31,8 @@
 				</a>
 				<ul class="header-link_menu">
 					<%
+						HttpSession sessions = request.getSession();
+						
 						boolean logined = (boolean) request.getAttribute("logined");
 						if(!logined){
 					%>
@@ -62,7 +64,7 @@
 	</nav>
 	<div class="info-main_box">
 		<div class="info-input_box">
-			<h3 class="info-user_h3">0000 님의 개인정보 입니다.</h3> <!-- 여기 0000에 유저 이름이나 아이디 받아와서 넣어야 할거같아요 -->
+			<h3 class="info-user_h3"><%=sessions.getAttribute("login_user") %> 님의 개인정보 입니다.</h3>
 			<div class="info-input_username">
 				<input type="text" name="username" value="로그인정보 가져와서 넣기">
 			</div>
@@ -73,7 +75,7 @@
 				<input type="text" name="userphone" value="로그인정보 가져와서 넣기">
 			</div>
 		</div>
-		<div class="info-input_box">
+		<div class="info-writer_box">
 		
 		</div>
 	</div>
