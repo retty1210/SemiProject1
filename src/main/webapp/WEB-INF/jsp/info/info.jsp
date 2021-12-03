@@ -76,7 +76,7 @@
 				<input type="text" name="userphone" value="로그인정보 가져와서 넣기">
 			</div>
 		</div>
-		<div class="info-input_box">
+		<div class="info-writer_box">
 		
 		</div>
 	</div>

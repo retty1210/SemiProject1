@@ -4,7 +4,7 @@
 	width:100%;
 	display:flex;
 }
-
+.info-writer_box,
 .info-input_box{
 	height:400px;
 	width:600px;
@@ -16,12 +16,12 @@
 .info-input_box div{
 	width:550px;
 	height:50px;
-	display:flex;
-	justify-content:center;
-	align-items:center;
 }
 
 .info-input_box input{
 	width:550px;
 	height:50px;
+}
+.info-input_username{
+	margin: 30px;
 }
