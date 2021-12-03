@@ -36,11 +36,11 @@ public class LoginController extends HttpServlet {
 		
 		if(service.login(dto)) {
 			HttpSession session = request.getSession();
-			session.setAttribute("s_login_user", dto.getId());
+			session.setAttribute("login_user", dto.getId());
 			
-			Cookie cookie = new Cookie("login_user", dto.getId());
-			cookie.setMaxAge(60*30);
-			response.addCookie(cookie);
+//			Cookie cookie = new Cookie("login_user", dto.getId());
+//			cookie.setMaxAge(60*30);
+//			response.addCookie(cookie);
 			response.sendRedirect("/");
 		} else {
 			System.out.println("로그인 실패");

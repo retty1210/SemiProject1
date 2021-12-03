@@ -8,7 +8,7 @@ public class SignService {
 		// 회원가입 시 모든 내용이 작성 해야 한다
 		// 다른 유효성 검사 로직에 대해 생각해서 추가하기
 		if(isEmpty(dto.getUserid()) && isEmpty(dto.getPassword()) && isEmpty(dto.getUsername())
-				&& isEmpty(dto.getPhoneNumber() && isEmpty(dto.getEmail()))) {
+				&& isEmpty(dto.getPhoneNumber()) && isEmpty(dto.getEmail())) {
 			return true;
 		}
 		return false;
@@ -19,18 +19,18 @@ public class SignService {
 		return str.isEmpty();
 	}
 	
-	public boolean userAdd(SginDTO dto) {
-		SginDAO dao = new SginDAO();
+	public boolean userAdd(SignDTO dto) {
+		SignDAO dao = new SignDAO();
 		int count = dao.select(dto.getUserid()).size(); // 동일한 아이디가 몇 개 저장 되어 있는지 확인
 		if(count == 0) {
-			boolean res = dao.inser(); // 동일한 아이디가 없으면 데이터 추가
+			boolean res = dao.insert(dto); // 동일한 아이디가 없으면 데이터 추가
 			if(res) {
 				dao.commit();
 				dao.close();
 				return true;
 			} else {
 				// 아이디 중복 확인 시 문제가 발생 
-				dao.rollbakc();
+				dao.rollback();
 				dao.close();
 				return false;
 			}
@@ -42,14 +42,14 @@ public class SignService {
 	
 	public boolean login(SignDTO dto) {
 		SignDAO dao = new SignDAO();
-		List<SignDAO> data = dao.slect(dto.getUserid());
+		List<SignDTO> data = dao.select(dto.getUserid());
 		if(data.size() == 1) {
 			SignDTO userData = data.get(0);
 			if(dto.equalsPassword(userData)) {
 				dto.setUserid(userData.getUserid());
 				dto.setUsername(userData.getUsername());
 				dto.setPhoneNumber(userData.getPhoneNumber());
-				dto.setEmail(userData.getEmail);
+				dto.setEmail(userData.getEmail());
 				return true;
 			} else {
 				return false;

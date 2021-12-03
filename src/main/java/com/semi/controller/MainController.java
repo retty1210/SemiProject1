@@ -17,31 +17,28 @@ public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< HEAD
+
 		
-		String login_user = "";
-		Cookie[] cookies = request.getCookies();
-		
-		for(Cookie c: cookies) {
-			if(c.getName().equals("login_user")) {
-				login_user = c.getValue();		
-			}
-		}
-		if(login_user.equals("")) {
-			request.setAttribute("logined",false);
-		}else {
-			request.setAttribute("logined", true);					
-		}
+//		String login_user = "";
+//		Cookie[] cookies = request.getCookies();
+//		
+//		for(Cookie c: cookies) {
+//			if(c.getName().equals("login_user")) {
+//				login_user = c.getValue();		
+//			}
+//		}
+//		if(login_user.equals("")) {
+//			request.setAttribute("logined",false);
+//		}else {
+//			request.setAttribute("logined", true);					
+//		}
 			
-=======
-	
+
+		//s_login_user에서 login_user로 Attribute명 변경했습니다 참고하세요
+		HttpSession session = request.getSession();
 		String login_user = "";
-		
-		Cookie[] cookies = request.getCookies();
-		for(Cookie c: cookies) {
-			if(c.getName().equals("login_user")) { 
-				login_user = c.getValue(); 
-			}
+		if(session.getAttribute("login_user") != null) {
+			login_user = (String) session.getAttribute("login_user");
 		}
 		
 		if(login_user.equals("")) {
@@ -52,21 +49,6 @@ public class MainController extends HttpServlet {
 			request.setAttribute("logined", true);
 		}
 		
-		HttpSession session = request.getSession();
-		String s_login_user = "";
-		if(session.getAttribute("s_login_user") != null) {
-			s_login_user = (String) session.getAttribute("s_login_user");
-		}
-		
-		if(login_user.equals("")) {
-			// 로그인 안한 상태
-			request.setAttribute("s_logined", false);
-		} else {
-			// 로그인 한 상태
-			request.setAttribute("s_logined", true);
-		}
-		
->>>>>>> refs/remotes/origin/조정현
 		String view = "/WEB-INF/jsp/welcome/main.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);

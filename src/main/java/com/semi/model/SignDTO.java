@@ -11,6 +11,14 @@ public class SignDTO {
 	
 	public SignDTO() {}
 	
+	public SignDTO(String userid, String password, String username, String userphone, String useremail) {
+		this.userid = userid;
+		this.password = password;
+		this.username = username;
+		this.phoneNumber = userphone;
+		this.email = useremail;
+	}
+
 	public int getPkid() {
 		return pkid;
 	}
