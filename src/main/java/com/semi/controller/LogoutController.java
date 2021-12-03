@@ -16,13 +16,15 @@ public class LogoutController extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		Cookie[] cookies = request.getCookies();
-		for(Cookie c: cookies) {
-			if(c.getName().equals("login_user")) {
-				c.setMaxAge(0);   
-				response.addCookie(c); 
-			}
-		}
+		//쿠키
+//		Cookie[] cookies = request.getCookies();
+//		for(Cookie c: cookies) {
+//			if(c.getName().equals("login_user")) {
+//				c.setMaxAge(0);   
+//				response.addCookie(c); 
+//			}
+//		}
+	
 		
 		//세션만료
 		HttpSession session = request.getSession();
