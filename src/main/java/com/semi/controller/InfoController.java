@@ -15,7 +15,7 @@ public class InfoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		//쿠키 말고 세션으로 받게 수정해주세요~
 		String login_user = "";
 		Cookie[] cookies = request.getCookies();
 		
