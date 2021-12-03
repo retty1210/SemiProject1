@@ -22,13 +22,15 @@ public class MainController extends HttpServlet {
 		
 		for(Cookie c: cookies) {
 			if(c.getName().equals("login_user")) {
-				request.setAttribute("logined",false);
-			}else {
-				request.setAttribute("logined", true);
+				login_user = c.getValue();		
 			}
 		}
-		
-		
+		if(login_user.equals("")) {
+			request.setAttribute("logined",false);
+		}else {
+			request.setAttribute("logined", true);					
+		}
+			
 		String view = "/WEB-INF/jsp/welcome/main.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
