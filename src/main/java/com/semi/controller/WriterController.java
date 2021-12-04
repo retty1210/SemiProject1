@@ -31,6 +31,8 @@ public class WriterController extends HttpServlet {
 		String place = request.getParameter("place");
 		String phonenumber = request.getParameter("phonenumber"); //이거 String으로 할지 int로 할지 고민중
 		
+		//request.setAttribute("datas",datas); 내정보에 글목록 불러오는데 사용합니다.글쓴거 리스트컬렉션으로 받는 셀렉문 로직에 넣어주세요.
+		
 		//import semi.writer? 여튼 model import해줄것
 //		WriterDTO dto = new WriterDTO();
 //		dto.setTitle(title);

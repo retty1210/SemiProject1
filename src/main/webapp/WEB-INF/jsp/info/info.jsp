@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.semi.model.*" %>
+<%@ page import="com.semi.writer.model.*" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,6 +35,7 @@
 				<ul class="header-link_menu">
 					<%
 						HttpSession sessions = request.getSession();
+						SignDTO initData = new SignDTO();
 						
 						boolean logined = (boolean) request.getAttribute("logined");
 						if(!logined){
@@ -65,17 +69,22 @@
 	<div class="info-main_box">
 		<div class="info-input_box">
 			<h3 class="info-user_h3"><%=sessions.getAttribute("login_user") %> 님의 개인정보 입니다.</h3>
+			<%
+				if(request.getAttribute("init") != null){ 
+					initData = (SignDTO) request.getAttribute("init");
+				}
+			%>
 			<div class="info-input_username">
-				<input type="text" name="username" value="로그인정보 가져와서 넣기">
+				<input type="text" name="username" value="<%=initData.getUsername() %>">
 			</div>
 			<div class="info-input_useremail">
-				<input type="text" name="useremail" value="로그인정보 가져와서 넣기">
+				<input type="text" name="useremail" value="<%=initData.getEmail() %>">
 			</div>
 			<div class="info-input_usephone">
-				<input type="text" name="userphone" value="로그인정보 가져와서 넣기">
+				<input type="text" name="userphone" value="<%=initData.getPhoneNumber() %>">
 			</div>
 			<div class="info-input_signdate">
-				<input type="text" name="signdate" value="날짜데이터 가져와서 넣">
+				<input type="text" name="signdate" value="<%=initData.getSignDate() %>">
 			</div>
 		</div>
 		<div class="info-writer_box">
@@ -86,16 +95,24 @@
 					<th>날짜</th>
 					<th>조회수</th>
 				</tr>
-				<tr></tr>
-				<tr></tr>
-				<tr></tr>
-				<tr></tr>
-				<tr></tr>
-				<tr></tr>
-				<tr></tr>
-				<tr></tr>
-				<tr></tr>
-				<tr></tr>
+				<%
+					List<WriterDTO> datas = null;
+					
+					if(request.getAttribute("datas") != null){
+						datas = (List<WriterDTO>) request.getAttribute("datas");
+					
+						for(WriterDTO data: datas){
+				%>
+				<tr>
+					<td><%=data.getId() %></td>
+					<td><a href="#"><%=data.getTitle() %></a></td>
+					<td><%=data.getWriterDate() %></td>
+					<td>1</td>
+				</tr>
+				<%
+						}
+					}
+				%>
 			</table>
 		</div>
 	</div>

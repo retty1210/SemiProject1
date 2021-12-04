@@ -46,8 +46,19 @@
 table{
 	width:100%;
 	border-collapse:collapse;
-	border: 1px solid black;
+	border:1px solid rgba(0,0,0,0.5);
 }
 th,td{
 	padding:16px 24px;
+	text-align:center;
+	border-bottom: 1px dashed rgba(0,0,0,0.5);
+}
+table tr td{
+	max-width:250px;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+.info-writer_head{
+	border-bottom: 1px solid black;
 }
