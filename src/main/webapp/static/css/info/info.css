@@ -11,17 +11,43 @@
 	border:1px solid rgba(0,0,0,0.5);
 	border-radius:10px;
 	margin: 20px 30px 20px 30px;
-	padding: 24px 36px;
+	padding: 24px;
+
+}
+.info-input_box h3{
+	display:block;
+	margin-bottom:60px;
 }
 .info-input_box div{
 	width:550px;
 	height:50px;
+	margin-bottom:20px;
+	border:none;
+	border-bottom:1px solid rgba(0,0,0,0.5);
+	
 }
 
 .info-input_box input{
 	width:550px;
 	height:50px;
+	background-color: rgba(80, 79, 79, 0.904);
+	border:none;
+	border-bottom:1px solid rgba(0,0,0,0.5);
+	padding-left: 30px;
+	color:yellow;
+	font-size:13px;
 }
-.info-input_username{
-	margin: 30px;
+.info-input_box input:hover{
+	border-bottom:2px solid yellow;
+}
+.info-input_box input:focus{
+	outline:none;
+}
+table{
+	width:100%;
+	border-collapse:collapse;
+	border: 1px solid black;
+}
+th,td{
+	padding:16px 24px;
 }

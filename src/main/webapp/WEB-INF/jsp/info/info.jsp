@@ -77,9 +77,29 @@
 			<div class="info-input_usephone">
 				<input type="text" name="userphone" value="로그인정보 가져와서 넣기">
 			</div>
+			<div class="info-input_signdate">
+				<input type="text" name="signdate" value="날짜데이터 가져와서 넣">
+			</div>
 		</div>
 		<div class="info-writer_box">
-		
+			<table class="info-writer_tb">
+				<tr class="info-writer_head">
+					<th>번호</th>
+					<th>제목</th>
+					<th>날짜</th>
+					<th>조회수</th>
+				</tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+			</table>
 		</div>
 	</div>
 	
