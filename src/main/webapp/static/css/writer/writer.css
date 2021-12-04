@@ -31,12 +31,14 @@ textarea {
 
 button {
 	display: block;
-	width: 300px;
+	width: 850px;
 	height: 52px;
-	background-color: rgb(223, 223, 223);
-	color: black;
+	background-color: black;
+	color: yellow;
 	margin: auto;
 	font-weight: bold;
+	border: 2px solid rgba(0,0,0,0.5);
+	border-radius: 2px;
 }
 
 button:hover {
@@ -56,9 +58,11 @@ button:hover {
 	vertical-align: center;
 }
 
-button .writer_but_c {
-	width: 582px;
-	height: 52px;
-	border: 2px solid rgba(0,0,0,0.5);
-	border-radius: 2px;
+.mini_txt {
+	color: rgb(200, 200, 200);
+	font-size: small;
+	padding-left: 180px;
+	padding-bottom: 20px;
+	padding-top: 0px;
+	margin-top: 0px;
 }
