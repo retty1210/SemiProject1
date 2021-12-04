@@ -38,18 +38,15 @@
 					%>
 						<hr>
 						<li class="header-link_menu_content"><a href="./login">로그인</a></li>
-						<!-- 로그인: 임시로 적은 경로입니다! 파일 완성되면 수정해주세요 -->
 						<hr>
 						<li class="header-link_menu_content"><a href="./sign">회원가입</a></li>
 					<% 
 						} else {					
 					%>	
 						<hr>	
-						<li class="header-link_menu_content"><a href="./loginout">로그아웃</a></li>
-						<!-- 로그아웃: 임시로 적은 경로입니다! 파일 완성되면 수정해주세요 -->
+						<li class="header-link_menu_content"><a href="./logout">로그아웃</a></li>
 						<hr>
 						<li class="header-link_menu_content"><a href="./info">내정보</a></li>
-						<!-- 내정보: 임시로 적은 경로입니다! 파일 완성되면 수정해주세요 -->
 					<%
 						}
 					%>
