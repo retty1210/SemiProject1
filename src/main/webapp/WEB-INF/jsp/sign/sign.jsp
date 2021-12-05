@@ -14,48 +14,56 @@
 
 <body>
     <div class="main-area">
-    	<form action="/sign" onclick="checkJoin()" method="post">	
-            <div class=".main-area-box">
-                <div class=".main-area-box_header">
-                    <span class="material-icons-outlined">pets</span>
+        <form name="sign_form" action="/sign" method="post">
+            <div class="main-area-box">
+                <div class="main-area-box_header">
+                    <span class="material-icons-outlined"><a href="메인주소">pets</a></span>
                     <span>회원가입</span>
                 </div>
-                <div class=".main-area-box_body">
+                <div class="main-area-box_body">
                     <div class="sign-up_input">
                         <input type="text" name="user_id" class="id-input" placeholder="아이디">
-                        <span id="must-id">
+                        <span id="must-id"  class="hid_span_area">
                             <!--필수 입력입니다.-->
                         </span>
                     </div>
                     <div class="sign-up_input">
                         <input type="password" name="user_pw" placeholder="비밀번호">
-                        <span id="must-pw">
+                        <span id="must-pw" class="hid_span_area">
                             <!-- 필수 입력입니다.-->
                             <!-- 특수문자 포함 관련 내용-->
                         </span>
                     </div>
                     <div class="sign-up_input">
                         <input type="password" name="password_check" placeholder="비밀번호 확인">
-                        <span id="must-pw-ck">
+                        <span id="must-pw-ck" class="hid_span_area">
                             <!-- 필수 입력입니다.-->
                             <!-- 비밀번호가 일치하지 않습니다.-->
                         </span>
                     </div>
                     <div class="sign-up_input">
                         <input type="text" name="user_name" placeholder="이름">
+                        <span id="must-name" class="hid_span_area">
+
+                        </span>
                     </div>
                     <div class="sign-up_input">
                         <input type="text" name="user_phone" placeholder="연락처">
+                        <span id="must-phone" class="hid_span_area">
+                        </span>
                     </div>
                     <div class="sign-up_input">
                         <input type="email" name="user_email" placeholder="이메일">
+                        <span id="must-email" class="hid_span_area">
+                            
+                        </span>
                     </div>
                 </div>
-                <div class=".main-area-box_footer">
-                    <button type="submit">가입하기</button>
+                <div class="main-area-box_footer">
+                    <button type="submit" id="sign-btn">가입하기</button>
                 </div>
             </div>
-    	</form>
+        </form>
     </div>
     <footer>
         <hr>
