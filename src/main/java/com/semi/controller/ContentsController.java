@@ -23,19 +23,15 @@ public class ContentsController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		String view = "/WEB-INF/jsp/contents/contents.jsp";
+		String id = request.getParameter("id");
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		WriterDTO wdto = new WriterDTO();
-		WriterService wService= new WriterService();
-		List<WriterDTO> datas = wService.onePickSelect();
-		request.setAttribute("datas", datas);
 		
 		
-		request.getAttribute("datas");
 		doGet(request, response);
 	}
 

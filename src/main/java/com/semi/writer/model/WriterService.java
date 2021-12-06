@@ -9,5 +9,12 @@ public class WriterService {
 		
 		return wdao.onePickSelect(id);
 	}
+	public List<WriterDTO> selectAll(){
+		WriterDAO wdao = new WriterDAO();
+	
+			return wdao.selectAll();
+		
+	}
+	
 
 }

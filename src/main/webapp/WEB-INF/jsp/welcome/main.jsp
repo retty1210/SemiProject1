@@ -88,11 +88,11 @@
 		for(WriterDTO data: datas){
 	%>	
 		<div class="contenet-1">
-			<input type="text" name="contentNum" value="<%=wdto.getId() %>">
-			<img class="content-img" alt="<%=wdto.getUserId() %> 님의 강아지사진" src="<%=wdto.getPhotopath() %>"> 
+			
+			<img class="content-img" alt="<%=data.getUserId() %> 님의 강아지사진" src="<%=data.getPhotopath() %>"> 
 			
 			<div class="content-body">
-				<a class="content-link" href="/contents" name= ><%=wdto.getTitle() %> <%=wdto.getContents() %></a>
+				<a class="content-link" href="/contents?id=<%=data.getId() %>"><%=data.getTitle() %> <%=data.getContents() %></a>
 				<!-- 특정 게시글로 들어가게 하는거 어떻게해요..? -->
 			</div>
 		</div>
