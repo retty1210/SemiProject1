@@ -49,7 +49,7 @@ public class OracleConnect {
 		OracleDataSource ods;
 		try {
 			ods = new OracleDataSource();
-			ods.setURL(this.info.getProperty("cloud-url"));
+			ods.setURL(this.info.getProperty("semi-url"));
 			ods.setConnectionProperties(this.info);
 			this.conn = ods.getConnection();
 			this.conn.setAutoCommit(false);

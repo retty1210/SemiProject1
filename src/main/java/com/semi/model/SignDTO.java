@@ -1,5 +1,7 @@
 package com.semi.model;
 
+import java.sql.Date;
+
 public class SignDTO {
 	
 	private int pkid;
@@ -8,6 +10,7 @@ public class SignDTO {
 	private String username;
 	private String phoneNumber;
 	private String email;
+	private Date signDate;
 	
 	public SignDTO() {}
 	
@@ -17,6 +20,16 @@ public class SignDTO {
 		this.username = username;
 		this.phoneNumber = userphone;
 		this.email = useremail;
+	}
+	
+	
+
+	public Date getSignDate() {
+		return signDate;
+	}
+
+	public void setSignDate(Date signDate) {
+		this.signDate = signDate;
 	}
 
 	public int getPkid() {

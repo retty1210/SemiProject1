@@ -1,15 +1,38 @@
 package com.semi.writer.model;
 
+import java.sql.*;
+import java.sql.Date;
+import java.util.*;
+
 public class WriterDTO {
 	private int id;
 	private int pkid;
+	private String userId;
 	private String title;
 	private String contents;
 	private String place;
 	private String phonenumber;
 	private String photopath;
+	private Date writerDate;
 	
 	
+	
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public Date getWriterDate() {
+		return writerDate;
+	}
+
+	public void setWriterDate(Date writerDate) {
+		this.writerDate = writerDate;
+	}
+
 	public int getId() {
 		return id;
 	}

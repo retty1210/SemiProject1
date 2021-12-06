@@ -33,10 +33,12 @@ public class LoginController extends HttpServlet {
 		
 		JoinDTO dto = new JoinDTO(id, password);
 		JoinService service = new JoinService();
+		//request.setAttribute("init", dto); 로그인 했을때 사용자의 정보 가져오는 로직 회원가입시 입력한 정보들 셀렉하는 로직 안에다 넣어주세요
 		
 		if(service.login(dto)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("login_user", dto.getId());
+			
 			
 //			Cookie cookie = new Cookie("login_user", dto.getId());
 //			cookie.setMaxAge(60*30);
