@@ -36,6 +36,9 @@
 		<div class="button_area">
 			<button class="button-main" type="submit">로그인</button>
 		</div>
+		<div id="errMsg" class="error_area">
+			<%=errMsg %>
+		</div>
 		<div class="sub_txt">
 			<a class="sub_txt_sign" href="./sign">회원가입</a>
 		</div>

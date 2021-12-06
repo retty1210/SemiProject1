@@ -13,12 +13,6 @@ div {
 	vertical-align: middle;
 }
 
-footer {
-	width: 100%;
-	position: absolute;
-	bottom: 25px;
-}
-
 input {
 	display: inline-block;
 	width: 400px;
@@ -106,4 +100,12 @@ h1 {
 .sub_txt_sign:hover {
 	cursor: pointer;
 	text-decoration: underline;
+}
+
+.error_area {
+	color: red;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }

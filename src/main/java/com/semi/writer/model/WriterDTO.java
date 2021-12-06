@@ -1,8 +1,8 @@
 package com.semi.writer.model;
 
 public class WriterDTO {
-	private int id;
-	private int pkid;
+	private int id; //PK-게시글 번호
+	private int pkid; //FK-SIGNUP table의 PKID(NUMBER)회원번호
 	private String title;
 	private String contents;
 	private String place;

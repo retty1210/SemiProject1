@@ -51,28 +51,28 @@
 	<nav class="nav-menu">
 		<a href="./main" class="nav-menu_link">분실 동물 게시판</a>
 	</nav>
-	<form action="./main" class="writer_class" id="writer_form" method="post">
+	<form action="./main" class="writer_class" id="writer_form" method="post" enctype="multipart/form-data">
 		<div class="writer_c">
 			<label for="title_id" class="writer_title">분실동물 이름</label>
-			<input type="text" id="title_id" name="title" class="writer_text" placeholder="분실동물 이름" value="<%=request.getParameter("title") %>" required>
+			<input type="text" id="title_id" name="title" class="writer_text" placeholder="분실동물 이름" required>
 			<p class="mini_txt">동물의 이름을 입력하세요.</p>
 		</div>
 		
 		<div class="writer_c">
 			<label for="contents_id" class="writer_title">분실동물의 특징</label>
-			<textarea id="contents_id" name="contents" class="writer_text" placeholder="분실동물의 특징: 품종, 나이, 털 색, 눈에 띄는 특징, 분실 당시 하고 있던 목줄 색 등" required><%=request.getParameter("contents") %></textarea>
+			<textarea id="contents_id" name="contents" class="writer_text" placeholder="분실동물의 특징: 품종, 나이, 털 색, 눈에 띄는 특징, 분실 당시 하고 있던 목줄 색 등" required></textarea>
 			<p class="mini_txt">품종, 나이, 털 색, 눈에 띄는 특징, 분실 당시 하고 있던 목줄 색 등</p>
 		</div>
 		
 		<div class="writer_c">
 			<label for="place_id" class="writer_title">분실장소</label>
-			<input type="text" id="place_id" name="place" class="writer_text" placeholder="분실장소: 최대한 자세히 적어주세요" value="<%=request.getParameter("place") %>" required>
+			<input type="text" id="place_id" name="place" class="writer_text" placeholder="분실장소: 최대한 자세히 적어주세요" required>
 			<p class="mini_txt">최대한 자세히 적어주세요(예: 서울시 강남구 한티역 5번출구 근처 신한은행 앞)</p>
 		</div>
 		
 		<div class="writer_c">
 			<label for="phonenumber_id" class="writer_title">보호자 연락처</label>
-			<input type="text" id="phonenumber_id" name="phonenumber" class="writer_text" placeholder="보호자 연락처" value="<%=request.getParameter("phonenumber") %>" required>
+			<input type="text" id="phonenumber_id" name="phonenumber" class="writer_text" placeholder="보호자 연락처" required>
 			<p class="mini_txt">바로 연락받을 수 있는 핸드폰 번호를 입력하세요</p>
 		</div>
 		
@@ -80,6 +80,11 @@
 			<label for="photoPath_id" class="writer_title">사진</label>
 			<input type="file" id="photoPath_id" name="photoPath" class="writer_text">
 			<p class="mini_txt">동물의 특징이 잘 보이는 사진을 올려주세요</p>
+		</div>
+		
+		<div class="hidden_area">
+			<input type="hidden" id="id_id" name="id_name" value="<%= %>">
+			<input type="hidden" id="pkid_id" name="pkid" value="">
 		</div>
 		
 		<div class="writer_c">
