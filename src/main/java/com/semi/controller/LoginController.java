@@ -11,8 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.semi.model.JoinDTO;
-import com.semi.model.JoinService;
+import com.semi.model.*;
 
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
@@ -31,13 +30,15 @@ public class LoginController extends HttpServlet {
 		String id = request.getParameter("userId"); // 이건 임시입니다.
 		String password = request.getParameter("userPw"); // 로그인 화면을 못 봐서 해당 name 알면 붙여넣을게요.
 		
-		JoinDTO dto = new JoinDTO(id, password);
-		JoinService service = new JoinService();
+		SignDTO dto = new SignDTO();
+		dto.setUserid(id);
+		dto.setPassword(password);
+		SignService service = new SignService();
 		//request.setAttribute("init", dto); 로그인 했을때 사용자의 정보 가져오는 로직 회원가입시 입력한 정보들 셀렉하는 로직 안에다 넣어주세요
 		
 		if(service.login(dto)) {
 			HttpSession session = request.getSession();
-			session.setAttribute("login_user", dto.getId());
+			session.setAttribute("login_user", dto.getUserid());
 			
 			
 //			Cookie cookie = new Cookie("login_user", dto.getId());

@@ -37,6 +37,8 @@ body{
 body a{
 	text-decoration: none;
 }
+
+
 hr{
 	border-color:rgba(0,0,0,0.5);
 	width:100%;
@@ -51,9 +53,6 @@ html,body {
 	flex-direction: column;
 }
 
-main {
-	flex: 1;
-}
 
 footer {
 	width: 100%;

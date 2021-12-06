@@ -47,6 +47,7 @@ public class SignDAO {
 				dto.setUsername(rs.getString("USERNAME"));
 				dto.setPhoneNumber(rs.getString("PHONENUMBER"));
 				dto.setEmail(rs.getString("EMAIL"));
+				dto.setSignDate(rs.getDate("SIGNDATE"));
 				datas.add(dto);
 			}
 		} catch (SQLException e) {

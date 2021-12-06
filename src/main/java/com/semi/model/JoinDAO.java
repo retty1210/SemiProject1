@@ -30,7 +30,7 @@ public class JoinDAO {
 
 	
 	public List<JoinDTO> select(String username) {
-		String query = "SELECT * FROM ACCOUNTS WHERE USERNAME = '" + username + "'";
+		String query = "SELECT * FROM WRITER WHERE USERNAME = '" + username + "'";
 		ResultSet res = oc.select(query);
 
 		List<JoinDTO> datas = new ArrayList<JoinDTO>();
@@ -43,6 +43,7 @@ public class JoinDAO {
 				dto.setName(res.getString("USERNAME"));
 				dto.setPhonenumber(res.getString("PHONENUMBER"));
 				dto.setEmail(res.getString("EMAIL"));
+				dto.setSignDate(res.getDate("SIGNUP"));
 				datas.add(dto);
 			}
 		} catch (SQLException e) {

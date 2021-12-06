@@ -51,3 +51,8 @@ select * from USER_TAB_COLUMNS; where table_name ='signup';
 
 SELECT * FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'WRITER';
 select * from signup;
+
+INSERT INTO SIGNUP VALUES(SIGNUP_SEQ.NEXTVAL,'ADMIN','ADMIN1234','관리자','010-1234-1234','admin@naver.com',sysdate);
+select * from signup;
+Insert into writer values(writer_seq.nextval,5,'test','testtest','test','testtesttes013','testtest',SYSTIMESTAMP);
+select * from writer;

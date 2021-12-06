@@ -54,20 +54,22 @@ public class WriterController extends HttpServlet {
 //		System.out.println(multi.getFilesystemName("photoPath"));//둘 중에 하나 편한거 쓰면 됨
 		
 		WriterDTO dto = new WriterDTO();
-		int id_name = Integer.parseInt(multi.getParameter("id_name"));
-		int pkid = Integer.parseInt(multi.getParameter("pkid"));
-		dto.setId(id_name); //Id: 게시글 번호 pkId: 회원번호
-		dto.setPkid(pkid);
+		//int pkid = Integer.parseInt(multi.getParameter("pkid"));
+				//dto.setPkid(pkid);
 		dto.setTitle(title);
 		dto.setContents(contents);
 		dto.setPlace(place);
 		dto.setPhonenumber(phonenumber);
 		dto.setPhotopath(photoPath);
 		
-		//import semi.writer? 여튼 model import해줄것
-//		WriterDTO dto = new WriterDTO();
-//		dto.setTitle(title);
-//		dto.setContents(contents);
+		WriterService service = new WriterService();
+		String view = "/WEB-INF/jsp/writer/writer.jsp";
+		
+		if(service.insert(dto) ) {
+			response.sendRedirect("/");
+		} else {
+			System.out.println("저장 실패");
+		}
 		
 //		WriterService service = new WriterService();
 	}

@@ -27,7 +27,7 @@
 					<a href="./login" class="header-link_writer">
 						<span class="material-icons">
 							create
-						</span>&nbsp;글쓰기
+						</span>&nbsp;로그인
 					</a>
 				<%
 					}else{
@@ -79,12 +79,10 @@
 	<nav class="nav-menu">
 		<a href="/main" class="nav-menu_link">분실 동물 게시판</a>
 	</nav>
+	<div class="content-box">
 	<%
 		List<WriterDTO> datas = (List<WriterDTO>) request.getAttribute("datas");
 		
-	%>
-	<div class="content-box">
-	<% 
 		for(WriterDTO data: datas){
 	%>	
 		<div class="contenet-1">
@@ -96,10 +94,11 @@
 				<!-- 특정 게시글로 들어가게 하는거 어떻게해요..? -->
 			</div>
 		</div>
-	</div>
 	<%
 		}
 	%>
+		</div>
+	
 
 	
 	<footer>

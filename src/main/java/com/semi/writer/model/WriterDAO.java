@@ -21,7 +21,7 @@ public class WriterDAO {
 				+ "'" + dto.getContents() + "', "
 				+ "'" + dto.getPlace() + "', "
 				+ "'" + dto.getPhonenumber() + "', "
-				+ "'" + dto.getPhotopath() + "'" +") ";
+				+ "'" + dto.getPhotopath() + "'" +") "
 				+ "'" + dto.getPhotopath() + "'"
 				+ "'" + dto.getWriterDate() + "'";
 		

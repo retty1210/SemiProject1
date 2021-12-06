@@ -82,11 +82,6 @@
 			<p class="mini_txt">동물의 특징이 잘 보이는 사진을 올려주세요</p>
 		</div>
 		
-		<div class="hidden_area">
-			<input type="hidden" id="id_id" name="id_name" value="<%= %>">
-			<input type="hidden" id="pkid_id" name="pkid" value="">
-		</div>
-		
 		<div class="writer_c">
 			<button type="submit" class="writer_but_c">등록</button>
 		</div>
