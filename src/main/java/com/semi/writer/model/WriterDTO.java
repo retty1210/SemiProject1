@@ -7,6 +7,7 @@ import java.util.*;
 public class WriterDTO {
 	private int id;
 	private int pkid;
+	private String userId;
 	private String title;
 	private String contents;
 	private String place;
@@ -15,6 +16,15 @@ public class WriterDTO {
 	private Date writerDate;
 	
 	
+	
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
 	public Date getWriterDate() {
 		return writerDate;
 	}

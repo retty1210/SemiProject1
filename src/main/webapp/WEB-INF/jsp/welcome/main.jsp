@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.semi.writer.model.*" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,11 +19,28 @@
 		<nav class="header-link_box">
 			<ul class="header-link_writer_ul">
 				<li class="header-link_writer_li">
+				<%
+					WriterDTO wdto = new WriterDTO();
+					boolean logined = (boolean) request.getAttribute("logined");
+					if(!logined){ 
+				%>
+					<a href="./login" class="header-link_writer">
+						<span class="material-icons">
+							create
+						</span>&nbsp;글쓰기
+					</a>
+				<%
+					}else{
+						
+				%>
 					<a href="./writer" class="header-link_writer">
 						<span class="material-icons">
 							create
 						</span>&nbsp;글쓰기
-					</a>		
+					</a>
+				<%
+					}
+				%>				
 				</li>
 			</ul>
 			<ul class="header-link_ul">
@@ -31,7 +51,6 @@
 				</a>
 				<ul class="header-link_menu">
 					<%
-						boolean logined = (boolean) request.getAttribute("logined");
 						if(!logined){
 					%>
 						<hr>
@@ -58,23 +77,29 @@
 		</div>
 	</header>
 	<nav class="nav-menu">
-		<a href="#" class="nav-menu_link">분실 동물 게시판</a>
+		<a href="/main" class="nav-menu_link">분실 동물 게시판</a>
 	</nav>
+	<%
+		List<WriterDTO> datas = (List<WriterDTO>) request.getAttribute("datas");
+		
+	%>
 	<div class="content-box">
+	<% 
+		for(WriterDTO data: datas){
+	%>	
 		<div class="contenet-1">
-			<!-- 
-			<img class="content-img" alt="이미지 설명" src="이미지 주소"> 
-			이미지 주소는 DB에서 가져오게 할 것. alt는 시각장애인용 script가 읽거나 이미지 로딩에 실패했을 때 뜨는 문구입니다.
-			 -->
+			<input type="text" name="contentNum" value="<%=wdto.getId() %>">
+			<img class="content-img" alt="<%=wdto.getUserId() %> 님의 강아지사진" src="<%=wdto.getPhotopath() %>"> 
+			
 			<div class="content-body">
-				<a class="content-link" href="/contents">게시글 제목, 간략한 설명</a>
+				<a class="content-link" href="/contents" name= ><%=wdto.getTitle() %> <%=wdto.getContents() %></a>
 				<!-- 특정 게시글로 들어가게 하는거 어떻게해요..? -->
 			</div>
 		</div>
-		<div class="contenet-1"></div>
-		<!-- 위의 코드가 완전히 완성된 다음 복사붙여넣기 할것(안 그러면 코드가 꼬일수도?) -->
-		<div class="contenet-1"></div>
 	</div>
+	<%
+		}
+	%>
 
 	
 	<footer>
