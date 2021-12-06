@@ -2,26 +2,21 @@
 
 body {
     margin:0;
-    background-color: #504f4fe7;
 }
 
-.main-area {
-    display: flex;
-    justify-content: center;
-
-}
 .main-area-box{
-    width: 800px;
-    height: 800px;
     text-align: center;
-    
 }
-
 
 /* 회원가입 헤드*/
 .main-area-box_header .material-icons-outlined{
     font-size: 130px;
     display: block;
+}
+
+.material-icons-outlined a{
+    color: black;
+    text-decoration:none;
 }
 .main-area-box_header span:last-child {
     font-size: 40px;
@@ -32,19 +27,25 @@ body {
 /* 회원가입 input-box */
 .sign-up_input {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .sign-up_input input{
-    width: 40%;
+    width: 316px;
     height: 40px;
+    padding-left: 15px;
     border:none;
-    border-bottom: 1px solid black;
-    background-color: #9e9e9ee7;
-    color:rgba(0,0,0,0.5);
+    border-bottom: 2px solid rgba(0,0,0,0.5);
+    border-radius: 4px;
+    background-color: rgba(80, 79, 79, 0.904);
+    color: yellow;
     
 }
-.id-input {
-    margin-left: 70px;
+.sign-up_input input:hover {
+    border-bottom : 2px solid yellow;
 }
 
 .sign-up_input button {
@@ -61,19 +62,24 @@ body {
 
 .sign-up_input input::placeholder {color:rgba(0,0,0,0.5);}
 
-/* 가입 버튼 부분 */
-.main-area-box_footer button{
-    width: 41%;
-    height: 40px;
-    margin-top : 30px;
-    cursor: pointer;
-    border: none;
-    color: rgba(0, 0, 0, 0.3);
+.hid_span_area {
+    margin-top : 4px;
+    display: block;
+    color: red;
+    font-size: 10px;
+    position : relative;
+    right : 110px;
 }
 
-.main-area-box_footer button:hover {
-    background-color: bisque;
-    color:black;
+/* 가입 버튼 부분 */
+.main-area-box_footer button{
+    width: 318px;
+    height: 40px;
+    margin-top : 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.3);
 }
 
 /* footer 영역 */
