@@ -43,8 +43,10 @@ public class LoginController extends HttpServlet {
 //			response.addCookie(cookie);
 			response.sendRedirect("/");
 		} else {
-			System.out.println("로그인 실패");
+			
 			//여기 따로 실패 페이지나 아니면 getAttribute? 맞나 여튼 그걸로 실패했다고 유저한테 창 띄우게 만들것
+			request.setAttribute("errMsg", "로그인 정보가 올바르지 않습니다.");
+			response.sendRedirect("/login");
 		}
 	}
 }

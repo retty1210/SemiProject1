@@ -9,14 +9,14 @@ public class WriterDAO {
 	}
 	
 	public boolean insert(WriterDTO dto) {
-		String query = "INSERT INTO WRITER VALUES("
+		String query = "INSERT INTO WRITER VALUES('"
 				+ "WRITER_SEQ.NEXTVAL, "
 				+ "'" + dto.getPkid() + "', "
 				+ "'" + dto.getTitle() + "', "
 				+ "'" + dto.getContents() + "', "
 				+ "'" + dto.getPlace() + "', "
 				+ "'" + dto.getPhonenumber() + "', "
-				+ "'" + dto.getPhotopath() + "'";
+				+ "'" + dto.getPhotopath() + "'" +") ";
 		
 	int res = oc.insert(query);
 	
