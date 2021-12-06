@@ -14,7 +14,7 @@
 
 <body>
     <div class="main-area">
-        <form name="sign_form" action="/sign" method="post">
+        <form name="sign_form" action="<%=request.getContextPath()%>/sign" method="post">
             <div class="main-area-box">
                 <div class="main-area-box_header">
                     <span class="material-icons-outlined"><a href="메인주소">pets</a></span>
@@ -22,38 +22,39 @@
                 </div>
                 <div class="main-area-box_body">
                     <div class="sign-up_input">
-                        <input type="text" name="user_id" class="id-input" placeholder="아이디">
+                        <input type="text" name="user_id" class="id-input" placeholder="아이디" required>
                         <span id="must-id"  class="hid_span_area">
                             <!--필수 입력입니다.-->
                         </span>
                     </div>
                     <div class="sign-up_input">
-                        <input type="password" name="user_pw" placeholder="비밀번호">
+                        <input type="password" name="user_pw" 
+                                placeholder="비밀번호" required>
                         <span id="must-pw" class="hid_span_area">
                             <!-- 필수 입력입니다.-->
                             <!-- 특수문자 포함 관련 내용-->
                         </span>
                     </div>
                     <div class="sign-up_input">
-                        <input type="password" name="password_check" placeholder="비밀번호 확인">
+                        <input type="password" name="password_check" placeholder="비밀번호 확인" required>
                         <span id="must-pw-ck" class="hid_span_area">
                             <!-- 필수 입력입니다.-->
                             <!-- 비밀번호가 일치하지 않습니다.-->
                         </span>
                     </div>
                     <div class="sign-up_input">
-                        <input type="text" name="user_name" placeholder="이름">
+                        <input type="text" name="user_name" placeholder="이름" required>
                         <span id="must-name" class="hid_span_area">
 
                         </span>
                     </div>
                     <div class="sign-up_input">
-                        <input type="text" name="user_phone" placeholder="연락처">
+                        <input type="text" name="user_phone" placeholder="연락처" required>
                         <span id="must-phone" class="hid_span_area">
                         </span>
                     </div>
                     <div class="sign-up_input">
-                        <input type="email" name="user_email" placeholder="이메일">
+                        <input type="email" name="user_email" placeholder="이메일" required>
                         <span id="must-email" class="hid_span_area">
                             
                         </span>

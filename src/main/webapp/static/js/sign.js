@@ -12,10 +12,9 @@
    // 비밀번호 유효성 검사
    $('input[name=user_pw]').focusout(function() {
       var userPw = $('input[name=user_pw]').val();
-      var ckpw = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,32}$/;
+      var ckpw = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
       if(!ckpw.test(userPw)) {
             $('#must-pw').text("필수 입력 항목 입니다.");
-           
         } else if(ckpw.test(userPw)){
             $('#must-pw').text("");
         }
@@ -71,17 +70,14 @@
    });
 
 // input 비어있으면 가입하기 버튼을 누를 수 없음
-$('#sign-btn').click(function() {
+$('#sign-btn').hover(function() {
    var a = document.getElementsByTagName("input");
 
    for(var i=0; i < 6; i++){
-      if(a[i].value == ""){
-         $('#sign-btn').attr('disabled', true);
-         a[i].focus();
-      } else if(a[i].value != ""){
-         $('#sign-btn').attr('disabled', false);
-         
-      }
+       if(a[i].value != ""){
+         $('#sign-btn').css({"background-color": "yellow", "color": "black"});
+       } else if(a[i].value == "") {
+         $('#sign-btn').css({"background-color": "white", "color": "gray"});
+       }
    }
 });
-
