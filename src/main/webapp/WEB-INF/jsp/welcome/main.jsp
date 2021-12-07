@@ -86,7 +86,6 @@
 			
 			for(WriterDTO data: datas){
 		
-		
 	%>	
 		<div class="contenet-1">
 			
@@ -98,8 +97,8 @@
 			</div>
 		</div>
 	<%
+				}
 			}
-		}
 	%>
 		</div>
 	

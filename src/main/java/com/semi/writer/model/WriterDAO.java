@@ -34,10 +34,10 @@ public class WriterDAO {
 		
 		List<WriterDTO> datas = new ArrayList<WriterDTO>();
 		ResultSet res = oc.select(query);
-		WriterDTO wdto = new WriterDTO();
 		
 		try {
-			if(res.next()) {
+			while(res.next()) {
+				WriterDTO wdto = new WriterDTO();
 				wdto.setId(res.getInt("ID"));
 				wdto.setPkid(res.getInt("PKID"));
 				wdto.setTitle(res.getString("TITLE"));

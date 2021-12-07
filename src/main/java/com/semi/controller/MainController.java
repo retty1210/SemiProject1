@@ -57,7 +57,7 @@ public class MainController extends HttpServlet {
 		List<WriterDTO> datas = wService.selectAll();
 		
 		request.setAttribute("datas", datas);
-
+	
 		
 		String view = "/WEB-INF/jsp/welcome/main.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(view);

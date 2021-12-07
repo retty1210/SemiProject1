@@ -21,6 +21,7 @@ public class WriterService {
 		WriterDAO wdao = new WriterDAO();
 	
 		List<WriterDTO> datas = wdao.selectAll();
+		
 		if(datas.size() != 0) {
 			return datas;
 		}else {
