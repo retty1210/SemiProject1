@@ -33,6 +33,7 @@ public class LoginController extends HttpServlet {
 		
 		JoinDTO dto = new JoinDTO(id, password);
 		JoinService service = new JoinService();
+		String view = "/WEB-INF/jsp/login/login.jsp";
 		
 		if(service.login(dto)) {
 			HttpSession session = request.getSession();
@@ -44,9 +45,10 @@ public class LoginController extends HttpServlet {
 			response.sendRedirect("/");
 		} else {
 			
-			//여기 따로 실패 페이지나 아니면 getAttribute? 맞나 여튼 그걸로 실패했다고 유저한테 창 띄우게 만들것
+			//로그인 실패 알림
 			request.setAttribute("errMsg", "로그인 정보가 올바르지 않습니다.");
-			response.sendRedirect("/login");
+			RequestDispatcher rp = request.getRequestDispatcher(view);
+			rp.forward(request,  response);
 		}
 	}
 }
