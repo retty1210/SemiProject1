@@ -55,8 +55,7 @@ public class WriterDAO {
 		return datas;
 	}
 	public List<WriterDTO> selectAll(){
-		query = "SELECT ID,SIGNUP.USERID ,TITLE, CONTENTS, PLACE, PHONENUMBER, PHOTOPATH, TO_DATE(SYSTIMESTAMP,'YYYY-MM-DD HH:MI:SS)"
-				+ " FROM WRITER JOIN SIGNUP ON WRITER.PKID = SIGNUP.PKID";
+		query = "SELECT * FROM WRITER";
 		
 		List<WriterDTO> datas = new ArrayList<WriterDTO>();
 		ResultSet res = oc.select(query);

@@ -52,6 +52,10 @@ public class MainController extends HttpServlet {
 			// 로그인 한 상태
 			request.setAttribute("logined", true);
 		}
+		WriterService service = new WriterService();
+		List<WriterDTO> datas = service.selectAll();
+		
+		request.setAttribute("datas", datas);
 		
 		String view = "/WEB-INF/jsp/welcome/main.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(view);

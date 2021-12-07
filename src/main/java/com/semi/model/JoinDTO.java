@@ -1,5 +1,7 @@
 package com.semi.model;
 
+import java.sql.Date;
+
 public class JoinDTO { // 일단 db는 안 만들었다는 가정하에 카톡으로 다이어그램 만든 것 참조해서 정했습니다.
 	private int pkId;		 	// Column Name : PKID
 	private String id;		 	// Column Name : USERID
@@ -7,8 +9,17 @@ public class JoinDTO { // 일단 db는 안 만들었다는 가정하에 카톡�
 	private String name;		// Column Name : USERNAME
 	private String phonenumber;	// Column Name : PHONENUMBER
 	private String email;		// Column Name : EMAIL
+	private Date SignDate;
 	
 	
+	public Date getSignDate() {
+		return SignDate;
+	}
+
+	public void setSignDate(Date signDate) {
+		SignDate = signDate;
+	}
+
 	public JoinDTO() {
 		
 	}
