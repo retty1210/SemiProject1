@@ -50,7 +50,5 @@
 		<a href="#"></a>
 		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
 	</footer>
-<script type="text/javascript" src="static/js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="static/js/sign.js"></script>
 </body>
 </html>
