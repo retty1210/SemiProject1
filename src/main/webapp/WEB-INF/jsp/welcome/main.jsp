@@ -78,18 +78,20 @@
 	<nav class="nav-menu">
 		<a href="/main" class="nav-menu_link">분실 동물 게시판</a>
 	</nav>
-	<div class="content-box">
 	<%
 		List<WriterDTO> datas;
 		if(request.getAttribute("datas") != null){
-			datas = (List<WriterDTO>) request.getAttribute("datas");			
+			datas = (List<WriterDTO>) request.getAttribute("datas");
+	%>	
+	<div class="content-box">
+	<%
 			
 			for(WriterDTO data: datas){
-		
+			
 	%>	
 		<div class="contenet-1">
 			
-			<img class="content-img" alt="<%=data.getUserId() %> 님의 강아지사진" src="<%=data.getPhotopath() %>"> 
+			<img class="content-img" alt="강아지사진" src="<%=data.getPhotopath() %>"> 
 			
 			<div class="content-body">
 				<a class="content-link" href="/contents?id=<%=data.getId() %>"><%=data.getTitle() %> <%=data.getContents() %></a>
@@ -100,7 +102,7 @@
 				}
 			}
 	%>
-		</div>
+	</div>
 	
 
 	

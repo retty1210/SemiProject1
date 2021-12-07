@@ -16,44 +16,6 @@
 </head>
 <body>
 	<header class="contents-header">
-		<nav class="header-link_box">
-			<ul class="header-link_writer_ul">
-				<li class="header-link_writer_li">
-					<a href="./writer" class="header-link_writer">
-						<span class="material-icons">
-							create
-						</span>&nbsp;글쓰기
-					</a>		
-				</li>
-			</ul>
-			<ul class="header-link_ul">
-				<li class="header-link_li"><a href="#" class="header-link_a">
-					<span class="material-icons">
-						menu
-					</span>
-				</a>
-				<ul class="header-link_menu">
-					<%
-						boolean logined = (boolean) request.getAttribute("logined");
-						if(!logined){
-					%>
-						<hr>
-						<li class="header-link_menu_content"><a href="./login">로그인</a></li>
-						<hr>
-						<li class="header-link_menu_content"><a href="./sign">회원가입</a></li>
-					<% 
-						} else {					
-					%>	
-						<hr>	
-						<li class="header-link_menu_content"><a href="./logout">로그아웃</a></li>
-						<hr>
-						<li class="header-link_menu_content"><a href="./info">내정보</a></li>
-					<%
-						}
-					%>
-				</ul></li>
-			</ul>
-		</nav>
 		<div class="header-logo-box">
 		<a class="header-logo-link" href="/">
 			<img name ="header-logo"class="header-logo" src="/static/icons/pets_black_24dp.svg">
@@ -61,12 +23,12 @@
 		</div>
 	</header>
 	<nav class="nav-menu">
-		<a href="./main" class="nav-menu_link">분실 동물 게시판</a>
+		<a href="./main" class="nav-menu_link">수정 중 이다잉!</a>
 	</nav>
 			<%
 				WriterDTO datas;
 				if(request.getAttribute("datas") != null){
-						datas = (WriterDTO) request.getAttribute("datas");
+					datas = (WriterDTO) request.getAttribute("datas");
 				
 			%>
 	
@@ -79,42 +41,31 @@
 			<table class="contents-table">
 				<tr class="table-row">
 					<td class="table-titletxt">분실동물 이름</td>
-					<td class="table-contxt"><%=datas.getTitle() %></td>
+					<td class="table-contxt"><input class="input-contxt" value="<%=datas.getTitle() %>"></td>
 				</tr>
 				<tr class="table-row" rowspan="5" align="center">
 					<td class="table-titletxt">분실동물의 특징</td>
-					<td class="table-contxt"><%=datas.getContents() %></td>
+					<td class="table-contxt"><input class="input-contxt" value="<%=datas.getContents() %>"></td>
 				</tr>
 				<tr class="table-row">
 					<td class="table-titletxt">분실장소</td>
-					<td class="table-contxt"><%=datas.getPlace() %></td>
+					<td class="table-contxt"><input class="input-contxt" value="<%=datas.getPlace() %>"></td>
 				</tr>
 				<tr class="table-row">
 					<td class="table-titletxt">보호자 연락처</td>
-					<td class="table-contxt"><%=datas.getPhonenumber() %></td>
+					<td class="table-contxt"><input class="input-contxt" value="<%=datas.getPhonenumber() %>"></td>
 				</tr>
 			</table>
 		</div>
 	</div>
-			
-			<%	
+	<%
 				}
-				if(logined) {
-			%>
-			
-				<div class="buttonarea">
-					<div class="button-admin">
-						<button type="button" class="mini-btn">삭제</button>
-					</div>
-					<div class="button-writer"><!-- hidden으로 해 놓고 작성자 본인에게만 보이게 -->
-						<a href="/update?id=<%=request.getParameter("id") %>"><button type="submit" class="mini-btn">수정</button></a>
-						<button type="button" class="mini-btn">삭제</button>
-					</div>
-		<% 
-				}
-		%>
-				</div>	
-		
+	%>
+			<form>
+				<div class="update-button_box"><!-- hidden으로 해 놓고 작성자 본인에게만 보이게 -->
+					<button type="button" class="mini-btn">수정</button>
+				</div>
+			</form>
 
 	<footer>
 		<hr>

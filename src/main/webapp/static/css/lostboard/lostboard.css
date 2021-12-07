@@ -94,10 +94,11 @@
 .content-box{
 	display:flex;
 	justify-content:space-evenly;
-	margin-bottom:10px;
+	flex-wrap: wrap;
 }
 .contenet-1{
-	width:370px;
 	height:550px;
 	border:1px solid yellow;
+	margin:30px 20px;
+	flex-basis: calc(100% / 3.5);
 }
