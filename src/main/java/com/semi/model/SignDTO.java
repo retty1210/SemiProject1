@@ -22,8 +22,6 @@ public class SignDTO {
 		this.email = useremail;
 	}
 	
-	
-
 	public Date getSignDate() {
 		return signDate;
 	}

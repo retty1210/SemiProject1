@@ -19,7 +19,6 @@ public class SignDAO {
 
 		query = "INSERT INTO SIGNUP VALUES("
 				+ "SIGNUP_SEQ.NEXTVAL, " 
-				+ "'" + dto.getPkid() + "',"
 				+ "'" + dto.getUserid() + "', " 
 				+ "'" + dto.getPassword() + "', " 
 				+ "'" + dto.getUsername() + "', "

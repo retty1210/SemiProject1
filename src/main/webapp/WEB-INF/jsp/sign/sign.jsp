@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" 
+		 import="com.semi.model.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,19 +19,20 @@
         <form name="sign_form" action="<%=request.getContextPath()%>/sign" method="post">
             <div class="main-area-box">
                 <div class="main-area-box_header">
-<<<<<<< HEAD
-                    <a href="메인주소"><span class="material-icons">pets</span></a>
-                    <span>회원가입</span>
-=======
+                    
                     <a href="메인주소" class="header-a"><span class="material-icons-outlined">pets</span></a>
                     <span class="main-area-box-header-second-span">회원가입</span>
->>>>>>> refs/remotes/origin/장재완
                 </div>
                 <div class="main-area-box_body">
                     <div class="sign-up_input">
                         <input type="text" name="user_id" class="id-input" placeholder="아이디" required>
                         <span id="must-id"  class="hid_span_area">
                             <!--필수 입력입니다.-->
+                        </span>
+                        <span class="sign-id-check">
+                        	<%= 
+                            	(String) request.getAttribute("error")
+                            %>
                         </span>
                     </div>
                     <div class="sign-up_input">
