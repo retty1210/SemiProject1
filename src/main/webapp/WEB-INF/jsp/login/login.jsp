@@ -12,14 +12,7 @@
       rel="stylesheet">
 </head>
 <body>
-	<header class="main-header">
-		<nav class="header-link_box">
-			<ul class="header-link_ul">
-				
-			</ul>
-		</nav>
-	</header>
-	<main class="login-main">
+
 	<form action="/login" method="post">
 			<div class="main-logo-box">
 				<a class="main-logo-link" href="/main">
@@ -44,7 +37,6 @@
 				<a class="sub_txt_sign" href="./sign">회원가입</a>
 			</div>
 		</form>
-	</main>
 	<footer>
 		<hr>
 		<p class="footer-txt">팀원 :이종훈 | 곽서희 | 장재완 | 정현실 | 신재민 | 조정현</p>

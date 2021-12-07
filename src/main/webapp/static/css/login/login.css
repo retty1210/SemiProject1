@@ -66,9 +66,10 @@ h1 {
 	height: 200px;
 	width: 200px;
 }
-
 .form-login {
-	padding-left: 5%;
+	padding-left:15%;
+	display:flex;
+	justify-content:center;
 }
 
 .login-input {
@@ -87,6 +88,7 @@ h1 {
 
 .sub_txt {
 	padding-top: 10px;
+	text-align:center;
 }
 
 .sub_txt_sign {
@@ -105,4 +107,5 @@ h1 {
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	display:none;
 }
