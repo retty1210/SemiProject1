@@ -15,6 +15,7 @@ import com.semi.writer.model.*;
 @WebServlet("/contents")
 public class ContentsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	String view = "";
        
     public ContentsController() {
         super();
@@ -22,10 +23,14 @@ public class ContentsController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		String view = "/WEB-INF/jsp/contents/contents.jsp";
+		view = "/WEB-INF/jsp/contents/contents.jsp";
 		String id = request.getParameter("id");
-		RequestDispatcher rd = request.getRequestDispatcher(view);
-		rd.forward(request, response);
+		RequestDispatcher rd1 = request.getRequestDispatcher(view);
+		rd1.forward(request, response);
+		
+		view="/WEB_INF/jsp/welcome/main.jsp";
+		RequestDispatcher rd2 = request.getRequestDispatcher(view);
+		rd2.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
