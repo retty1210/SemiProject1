@@ -16,15 +16,7 @@ public class SignDAO {
 	String query;
 	
 	public boolean insert(SignDTO dto) {
-<<<<<<< HEAD
-		query = "INSERT INTO SIGNUP VALUES(SIGNUP_SEQ.NEXTVAL," 
-				+ " '" + dto.getUserid() + "', '" 
-				+ dto.getPassword() + "', '" 
-				+ dto.getUsername() + "', '"
-				+ dto.getPhoneNumber() + "', '"
-				+ dto.getEmail() + "', '"
-				+ dto.getSignDate() + "') ";
-=======
+
 		query = "INSERT INTO SIGNUP VALUES("
 				+ "SIGNUP_SEQ.NEXTVAL, " 
 				+ "'" + dto.getPkid() + "',"
@@ -34,7 +26,7 @@ public class SignDAO {
 				+ "'" + dto.getPhoneNumber() + "', "
 				+ "'" + dto.getEmail() + "', " 
 				+ "SYSDATE)";
->>>>>>> refs/remotes/origin/장재완
+
 		
 		int res = oc.insert(query);
 		if(res == 1) {

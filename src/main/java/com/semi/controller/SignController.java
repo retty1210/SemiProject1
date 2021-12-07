@@ -39,13 +39,11 @@ public class SignController extends HttpServlet {
 			// 유효성 검사에 이상이 없는 경우
 			if(service.userAdd(dto)) {
 				// 가입 완료
-<<<<<<< HEAD
-		
-=======
+
 				String view = "/WEB-INF/jsp/login/login.jsp";
 				RequestDispatcher rd = request.getRequestDispatcher(view);
 				rd.forward(request, response);
->>>>>>> refs/remotes/origin/장재완
+
 			} else {
 				// 가입 중 문제가 발생 
 				System.out.println("오류");
