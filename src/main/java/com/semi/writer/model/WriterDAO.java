@@ -28,6 +28,30 @@ public class WriterDAO {
 	
 	return res == 1 ? true : false;
 	}
+	public List<WriterDTO> select(String id){
+		query = "SELECT * FROM WRITER WHERE ID = '" +id +"'";
+		
+		List<WriterDTO> datas = new ArrayList<WriterDTO>();
+		ResultSet res = oc.select(query);
+		
+		try {
+			while(res.next()) {
+				WriterDTO wdto = new WriterDTO();
+				wdto.setId(res.getInt("ID"));
+				wdto.setPkid(res.getInt("PKID"));
+				wdto.setTitle(res.getString("TITLE"));
+				wdto.setContents(res.getString("CONTENTS"));
+				wdto.setPlace(res.getString("PLACE"));
+				wdto.setPhonenumber(res.getString("PHONENUMBER"));
+				wdto.setPhotopath(res.getString("PHOTOPATH"));
+				wdto.setWriterDate(res.getString("WRITERDATE"));
+				datas.add(wdto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return datas;
+	}
 	
 	public List<WriterDTO> selectAll(){
 		query = "SELECT * FROM WRITER";
@@ -52,6 +76,17 @@ public class WriterDAO {
 			e.printStackTrace();
 		}
 		return datas;
+	}
+	public boolean update(WriterDTO dto) {
+		query = "UPDATE WRITER SET TITLE = '" + dto.getTitle() + "', CONTENTS ='" + dto.getContents() + "', PLACE = '" + dto.getPlace() +"',"
+				+"PHONENUMBER = '" + dto.getPhonenumber() + "' WHERE ID ='" + dto.getId() +"'";
+		
+		int res = oc.update(query);
+		if(res == 1) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 	

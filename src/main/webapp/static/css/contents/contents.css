@@ -9,21 +9,23 @@ table {
 button:hover {
 	cursor: pointer;
 }
-
 .contents-main {
-	width: 850px;
-	display: flex;
+	width: 100%;
+	display:flex;
+	justify-content:center;
+	padding:20px;
 }
 
 .contents-inner {
 	margin: auto;
-	display: block;
+	display: flex;
 	width: 100%;
 }
 
 .contents-imgarea {
 	width: 800px;
-	margin-top: 20px;
+	height:500px;
+	margin: 0 100px 0 150px;
 	display: block;
 	border: 1px solid rgb(20, 20, 20);
 }
@@ -33,6 +35,7 @@ button:hover {
 	padding-right: 20px;
 	padding-left: 20px;
 	display: block;
+	color: yellow;
 }
 
 .table-row {
@@ -62,17 +65,38 @@ button:hover {
 }
 
 .button-writer {
-	display: block;
+	display: flex;
 	align-self: flex-end;
 	visibility: visible;
 }
+.buttonarea{
+	display:flex;
+	justify-content:flex-end;
+	padding:20px;
+	position:relative;
+	right:140px;
+	bottom:60px;
+}
 
 .mini-btn {
-	width: 50px;
-	height: 20px;
+	width: 70px;
+	height: 30px;
 	display: inline-block;
 	background-color: rgb(230, 230, 230);
 	color: black;
 	border: 1px solid rgb(230, 230, 230);
 	border-radius: 3px;
+	margin-right: 5px;
+}
+.form-update{
+	display:flex;
+}
+.input-contxt{
+	text-align: left;
+	padding-right: 20px;
+	min-width: 300px;
+	height:20px;
+	background-color: rgba(0, 0, 0, 0);
+	border:none;
+	outline:none;
 }

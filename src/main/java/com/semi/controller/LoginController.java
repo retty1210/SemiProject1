@@ -48,7 +48,7 @@ public class LoginController extends HttpServlet {
 //			Cookie cookie = new Cookie("login_user", dto.getId());
 //			cookie.setMaxAge(60*30);
 //			response.addCookie(cookie);
-			response.sendRedirect("/info");
+			response.sendRedirect("/main");
 		} else {
 			
 			//로그인 실패 알림

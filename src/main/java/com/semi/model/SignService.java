@@ -45,7 +45,7 @@ public class SignService {
 		if(datas.size() == 1) {
 			return datas;			
 		}else {
-			return null;
+			return dao.select(userid);
 		}
 	}
 	

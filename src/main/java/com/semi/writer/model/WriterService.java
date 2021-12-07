@@ -15,7 +15,18 @@ public class WriterService {
 		dao.close();
 		return res;
 	}
+	public List<WriterDTO> select(String id){
+		WriterDAO wdao = new WriterDAO();
 	
+		List<WriterDTO> datas = wdao.select(id);
+		
+		if(datas.size() != 0) {
+			return datas;
+		}else {
+			return null;
+		}
+		
+	}
 	
 	public List<WriterDTO> selectAll(){
 		WriterDAO wdao = new WriterDAO();
@@ -25,9 +36,23 @@ public class WriterService {
 		if(datas.size() != 0) {
 			return datas;
 		}else {
-			return null;
+			return wdao.selectAll();
 		}
 		
+	}
+	public boolean updateContent(WriterDTO dto) {
+		WriterDAO dao = new WriterDAO();
+		boolean res = dao.update(dto);
+		
+		if(res) {
+			dao.commit();
+			dao.close();
+			return true;
+		}else {
+			dao.rollback();
+			dao.close();
+			return false;
+		}
 	}
 	
 
