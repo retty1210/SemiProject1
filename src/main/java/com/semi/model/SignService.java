@@ -5,13 +5,11 @@ import java.util.*;
 public class SignService {
 
 	public boolean isValid(SignDTO dto) {
-		// 회원가입 시 모든 내용이 작성 해야 한다
-		// 다른 유효성 검사 로직에 대해 생각해서 추가하기
 		if(isEmpty(dto.getUserid()) && isEmpty(dto.getPassword()) && isEmpty(dto.getUsername())
 				&& isEmpty(dto.getPhoneNumber()) && isEmpty(dto.getEmail())) {
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 	
 	private boolean isEmpty(String str) {

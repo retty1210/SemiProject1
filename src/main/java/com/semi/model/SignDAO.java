@@ -23,7 +23,8 @@ public class SignDAO {
 				+ "'" + dto.getPassword() + "', " 
 				+ "'" + dto.getUsername() + "', "
 				+ "'" + dto.getPhoneNumber() + "', "
-				+ "'" + dto.getEmail() + "')";
+				+ "'" + dto.getEmail() + "'," 
+				+ "SYSDATE)";
 		
 		int res = oc.insert(query);
 		if(res == 1) {
