@@ -11,10 +11,6 @@ import com.semi.model.*;
 @WebServlet("/sign")
 public class SignController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public SignController() {
-        super();
-    }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
@@ -25,7 +21,9 @@ public class SignController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		//doGet(request, response);
+		
+		request.setCharacterEncoding("UTF-8");
+		
 		String userid = request.getParameter("user_id");
 		String password = request.getParameter("user_pw");
 		String password_check = request.getParameter("password_check");
@@ -40,11 +38,16 @@ public class SignController extends HttpServlet {
 			// 유효성 검사에 이상이 없는 경우
 			if(service.userAdd(dto)) {
 				// 가입 완료
+				String view = "/WEB-INF/jsp/sign/success.jsp";
+				RequestDispatcher rd = request.getRequestDispatcher(view);
+				rd.forward(request, response);
 			} else {
 				// 가입 중 문제가 발생 
+				System.out.println("오류");
 			}
 		} else {
 			// 유효성 검사에 이상이 있는 경우
+			System.out.println("오오류");
 		}
 	}
 }
