@@ -30,9 +30,16 @@
 			<div class="button_area">
 				<button class="button-main" type="submit">로그인</button>
 			</div>
-			<div id="errMsg" class="error_area">
+			<%
+				if(request.getAttribute("errMsg") != null){
+					
+			%>
+			<div id="errMsg" class="error_area" style="display:block;">
 				<%= (String) request.getAttribute("errMsg") %>
 			</div>
+			<% 
+				}
+			%>
 			<div class="sub_txt">
 				<a class="sub_txt_sign" href="./sign">회원가입</a>
 			</div>
@@ -43,5 +50,7 @@
 		<a href="#"></a>
 		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
 	</footer>
+<script type="text/javascript" src="static/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="static/js/sign.js"></script>
 </body>
 </html>

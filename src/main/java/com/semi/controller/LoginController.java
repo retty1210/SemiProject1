@@ -49,12 +49,14 @@ public class LoginController extends HttpServlet {
 //			cookie.setMaxAge(60*30);
 //			response.addCookie(cookie);
 			response.sendRedirect("/info");
-		} else {
+		} else{
 			
 			//로그인 실패 알림
 			request.setAttribute("errMsg", "로그인 정보가 올바르지 않습니다.");
 			RequestDispatcher rp = request.getRequestDispatcher(view);
 			rp.forward(request,  response);
+			
+
 		}
 	}
 }
