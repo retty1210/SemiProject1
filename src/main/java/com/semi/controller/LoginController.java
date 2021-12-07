@@ -30,11 +30,17 @@ public class LoginController extends HttpServlet {
 		String id = request.getParameter("userId"); // 이건 임시입니다.
 		String password = request.getParameter("userPw"); // 로그인 화면을 못 봐서 해당 name 알면 붙여넣을게요
 		
+<<<<<<< HEAD
 		SignDTO dto = new SignDTO();
 		dto.setUserid(id);
 		dto.setPassword(password);
 		SignService service = new SignService();
 		//request.setAttribute("init", dto); 로그인 했을때 사용자의 정보 가져오는 로직 회원가입시 입력한 정보들 셀렉하는 로직 안에다 넣어주세요
+=======
+		JoinDTO dto = new JoinDTO(id, password);
+		JoinService service = new JoinService();
+		String view = "/WEB-INF/jsp/login/login.jsp";
+>>>>>>> refs/remotes/origin/곽서희
 		
 		if(service.login(dto)) {
 			HttpSession session = request.getSession();
@@ -47,9 +53,10 @@ public class LoginController extends HttpServlet {
 			response.sendRedirect("/info");
 		} else {
 			
-			//여기 따로 실패 페이지나 아니면 getAttribute? 맞나 여튼 그걸로 실패했다고 유저한테 창 띄우게 만들것
+			//로그인 실패 알림
 			request.setAttribute("errMsg", "로그인 정보가 올바르지 않습니다.");
-			response.sendRedirect("/login");
+			RequestDispatcher rp = request.getRequestDispatcher(view);
+			rp.forward(request,  response);
 		}
 	}
 }
