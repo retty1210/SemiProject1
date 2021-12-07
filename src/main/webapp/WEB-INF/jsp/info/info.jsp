@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.semi.model.*" %>
 <%@ page import="com.semi.writer.model.*" %>
+<%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
@@ -74,6 +75,7 @@
 					if(request.getAttribute("init") != null){ 
 						initData = (SignDTO) request.getAttribute("init");
 					}
+
 				%>
 				<div class="info-input_input">
 					<input type="text" name="username" value="<%=initData.getUsername() %>">
@@ -97,11 +99,9 @@
 						<th>조회수</th>
 					</tr>
 					<%
-						List<WriterDTO> datas = null;
-						
-						if(request.getAttribute("datas") != null){
-							datas = (List<WriterDTO>) request.getAttribute("datas");
-						
+						List<WriterDTO> datas;
+						if(request.getAttribute("wdatas") != null){
+							datas = (List<WriterDTO>) request.getAttribute("wdatas");
 							for(WriterDTO data: datas){
 					%>
 					<tr>

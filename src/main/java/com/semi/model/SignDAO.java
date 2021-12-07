@@ -38,7 +38,6 @@ public class SignDAO {
 	}
 	public List<SignDTO> select(String userid) {
 		query = "SELECT * FROM SIGNUP WHERE USERID = '" + userid + "'";
-		
 		ResultSet rs = oc.select(query);
 		
 		List<SignDTO> datas = new ArrayList<SignDTO>();

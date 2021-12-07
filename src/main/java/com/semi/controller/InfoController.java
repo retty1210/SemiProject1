@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.semi.model.*;
+import com.semi.writer.model.*;
 
 @WebServlet("/info")
 public class InfoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//쿠키 말고 세션으로 받게 수정해주세요~
 		String login_user = "";
 		
 		HttpSession session = request.getSession();
@@ -41,6 +41,12 @@ public class InfoController extends HttpServlet {
 		for(SignDTO sdto: datas) {
 			request.setAttribute("init", sdto);			
 		}
+		WriterService wService = new WriterService();
+		List<WriterDTO> wDatas = wService.select(login_user);
+		
+		
+		request.setAttribute("wdatas", wDatas);
+		
 		String view = "/WEB-INF/jsp/info/info.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
