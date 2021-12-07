@@ -15,7 +15,7 @@ public class OracleConnect {
 		// 1. 데이터베이스 연결 구성 정보가 있는 파일 불러오기
 		String userHome = System.getProperty("user.home");
 		try {
-			this.info.load(new FileReader(userHome + "/oracle_connection.prop"));
+			this.info.load(new FileReader(userHome + "/semiproject.prop"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -49,7 +49,7 @@ public class OracleConnect {
 		OracleDataSource ods;
 		try {
 			ods = new OracleDataSource();
-			ods.setURL(this.info.getProperty("cloud-url"));
+			ods.setURL(this.info.getProperty("semi-url"));
 			ods.setConnectionProperties(this.info);
 			this.conn = ods.getConnection();
 			this.conn.setAutoCommit(false);

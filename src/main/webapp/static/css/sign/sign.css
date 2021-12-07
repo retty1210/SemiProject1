@@ -9,16 +9,16 @@ body {
 }
 
 /* 회원가입 헤드*/
-.main-area-box_header .material-icons-outlined{
+.header-a .material-icons-outlined{
     font-size: 130px;
     display: block;
 }
 
-.material-icons-outlined a{
+.main-area-box_header a{
     color: black;
     text-decoration:none;
 }
-.main-area-box_header span:last-child {
+.main-area-box-header-second-span {
     font-size: 40px;
     margin-top: 12px;
     display: block;

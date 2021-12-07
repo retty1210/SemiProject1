@@ -17,8 +17,8 @@
         <form name="sign_form" action="<%=request.getContextPath()%>/sign" method="post">
             <div class="main-area-box">
                 <div class="main-area-box_header">
-                    <a href="메인주소"><span class="material-icons-outlined">pets</span></a>
-                    <span>회원가입</span>
+                    <a href="메인주소" class="header-a"><span class="material-icons-outlined">pets</span></a>
+                    <span class="main-area-box-header-second-span">회원가입</span>
                 </div>
                 <div class="main-area-box_body">
                     <div class="sign-up_input">
