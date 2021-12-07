@@ -18,10 +18,10 @@
             <div class="main-area-box">
                 <div class="main-area-box_header">
 <<<<<<< HEAD
-                    <a href="메인주소"><span class="material-icons">pets</span></a>
+                    <a href="/main"><span class="material-icons">pets</span></a>
                     <span>회원가입</span>
 =======
-                    <a href="메인주소" class="header-a"><span class="material-icons-outlined">pets</span></a>
+                    <a href="/main" class="header-a"><span class="material-icons-outlined">pets</span></a>
                     <span class="main-area-box-header-second-span">회원가입</span>
 >>>>>>> refs/remotes/origin/장재완
                 </div>
