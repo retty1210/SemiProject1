@@ -20,7 +20,6 @@
 			<ul class="header-link_writer_ul">
 				<li class="header-link_writer_li">
 				<%
-					WriterDTO wdto = new WriterDTO();
 					boolean logined = (boolean) request.getAttribute("logined");
 					if(!logined){ 
 				%>
