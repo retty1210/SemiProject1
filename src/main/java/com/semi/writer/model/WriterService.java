@@ -16,6 +16,18 @@ public class WriterService {
 		return res;
 	}
 	
+	public boolean delete(WriterDTO dto) {
+		WriterDAO dao = new WriterDAO();
+		boolean res = dao.delete(dto);
+		if(res) {
+			dao.commit();
+		} else {
+			dao.rollback();
+		}
+		dao.close();
+		return res;
+	}
+	
 	
 	public List<WriterDTO> selectAll(){
 		WriterDAO wdao = new WriterDAO();

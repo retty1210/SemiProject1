@@ -14,7 +14,7 @@ public class WriterDAO {
 	}
 	
 	public boolean insert(WriterDTO dto) {
-		String query = "INSERT INTO WRITER VALUES("
+				query = "INSERT INTO WRITER VALUES("
 				+ "WRITER_SEQ.NEXTVAL, "
 				+ "'" + dto.getPkid() + "', "
 				+ "'" + dto.getTitle() + "', "
@@ -27,6 +27,15 @@ public class WriterDAO {
 	int res = oc.insert(query);
 	
 	return res == 1 ? true : false;
+	}
+	
+	public boolean delete(WriterDTO dto) {
+		query = "DELETE FROM WRITER"
+				+ "WHERE ID = '" + dto.getId() + "'";
+		
+		int res = oc.insert(query);
+		
+		return res == 1 ? true : false;
 	}
 	
 	public List<WriterDTO> selectAll(){
