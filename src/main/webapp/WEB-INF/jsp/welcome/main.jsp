@@ -81,9 +81,13 @@
 	</nav>
 	<div class="content-box">
 	<%
-		List<WriterDTO> datas = (List<WriterDTO>) request.getAttribute("datas");
+		List<WriterDTO> datas;
+		if(request.getAttribute("datas") != null){
+			datas = (List<WriterDTO>) request.getAttribute("datas");			
+			
+			for(WriterDTO data: datas){
 		
-		for(WriterDTO data: datas){
+		
 	%>	
 		<div class="contenet-1">
 			
@@ -95,6 +99,7 @@
 			</div>
 		</div>
 	<%
+			}
 		}
 	%>
 		</div>

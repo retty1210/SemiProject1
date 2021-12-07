@@ -1,5 +1,6 @@
 package com.semi.model;
 
+import java.sql.*;
 import java.util.*;
 
 public class SignService {
@@ -39,6 +40,16 @@ public class SignService {
 			return false;
 		}
 	}
+	public List<SignDTO> select(String userid){
+		SignDAO dao = new SignDAO();
+		List<SignDTO> datas = dao.select(userid);
+		
+		if(datas.size() == 1) {
+			return datas;			
+		}else {
+			return null;
+		}
+	}
 	
 	public boolean login(SignDTO dto) {
 		SignDAO dao = new SignDAO();
@@ -47,9 +58,11 @@ public class SignService {
 			SignDTO userData = data.get(0);
 			if(dto.equalsPassword(userData)) {
 				dto.setUserid(userData.getUserid());
+				dto.setPassword("");
 				dto.setUsername(userData.getUsername());
 				dto.setPhoneNumber(userData.getPhoneNumber());
 				dto.setEmail(userData.getEmail());
+				dto.setSignDate(userData.getSignDate());
 				return true;
 			} else {
 				return false;

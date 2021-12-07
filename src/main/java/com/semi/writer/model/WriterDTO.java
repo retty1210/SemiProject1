@@ -13,7 +13,7 @@ public class WriterDTO {
 	private String place;
 	private String phonenumber;
 	private String photopath;
-	private Date writerDate;
+	private String writerDate;
 	
 	
 	
@@ -25,11 +25,11 @@ public class WriterDTO {
 		this.userId = userId;
 	}
 
-	public Date getWriterDate() {
+	public String getWriterDate() {
 		return writerDate;
 	}
 
-	public void setWriterDate(Date writerDate) {
+	public void setWriterDate(String writerDate) {
 		this.writerDate = writerDate;
 	}
 

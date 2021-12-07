@@ -14,49 +14,23 @@ public class WriterDAO {
 	}
 	
 	public boolean insert(WriterDTO dto) {
-		String query = "INSERT INTO WRITER VALUES('"
+		String query = "INSERT INTO WRITER VALUES("
 				+ "WRITER_SEQ.NEXTVAL, "
 				+ "'" + dto.getPkid() + "', "
 				+ "'" + dto.getTitle() + "', "
 				+ "'" + dto.getContents() + "', "
 				+ "'" + dto.getPlace() + "', "
 				+ "'" + dto.getPhonenumber() + "', "
-				+ "'" + dto.getPhotopath() + "'" +") "
-				+ "'" + dto.getPhotopath() + "'"
-				+ "'" + dto.getWriterDate() + "'";
+				+ "'" + dto.getPhotopath() + "', "
+				+ "'" + dto.getWriterDate() + "')";
 		
 	int res = oc.insert(query);
 	
 	return res == 1 ? true : false;
 	}
 	
-	public List<WriterDTO> myselect(int pkid){
-		query = "SELECT ID,SIGNUP.USERID ,TITLE, CONTENTS, PLACE, PHONENUMBER, PHOTOPATH, TO_DATE(SYSTIMESTAMP,'YYYY-MM-DD HH:MI:SS)"
-				+ " FROM WRITER JOIN SIGNUP ON WRITER.PKID = JOIN.PKID WHERE PKID = '" + pkid +" ' ";
-		
-		List<WriterDTO> datas = new ArrayList<WriterDTO>();
-		ResultSet res = oc.select(query);
-		WriterDTO wdto = new WriterDTO();
-		
-		try {
-			if(res.next()) {
-				wdto.setId(res.getInt("ID"));
-				wdto.setUserId(res.getString("SIGNUP.USERID"));
-				wdto.setContents(res.getString("CONTENTS"));
-				wdto.setPlace(res.getString("PLACE"));
-				wdto.setPhonenumber(res.getString("PHONENUMBER"));
-				wdto.setPhotopath(res.getString("PHOTOPATH"));
-				wdto.setWriterDate(res.getDate("WRITERDATE"));
-				datas.add(wdto);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return datas;
-	}
 	public List<WriterDTO> selectAll(){
-		query = "SELECT ID,SIGNUP.USERID ,TITLE, CONTENTS, PLACE, PHONENUMBER, PHOTOPATH, TO_DATE(SYSTIMESTAMP,'YYYY-MM-DD HH:MI:SS)"
-				+ " FROM WRITER JOIN SIGNUP ON WRITER.PKID = SIGNUP.PKID";
+		query = "SELECT * FROM WRITER";
 		
 		List<WriterDTO> datas = new ArrayList<WriterDTO>();
 		ResultSet res = oc.select(query);
@@ -65,12 +39,13 @@ public class WriterDAO {
 		try {
 			if(res.next()) {
 				wdto.setId(res.getInt("ID"));
-				wdto.setUserId(res.getString("SIGNUP.USERID"));
+				wdto.setPkid(res.getInt("PKID"));
+				wdto.setTitle(res.getString("TITLE"));
 				wdto.setContents(res.getString("CONTENTS"));
 				wdto.setPlace(res.getString("PLACE"));
 				wdto.setPhonenumber(res.getString("PHONENUMBER"));
 				wdto.setPhotopath(res.getString("PHOTOPATH"));
-				wdto.setWriterDate(res.getDate("WRITERDATE"));
+				wdto.setWriterDate(res.getString("WRITERDATE"));
 				datas.add(wdto);
 			}
 		} catch (SQLException e) {
@@ -78,32 +53,6 @@ public class WriterDAO {
 		}
 		return datas;
 	}
-	public List<WriterDTO> onePickSelect(int id){
-		query = "SELECT ID,SIGNUP.USERID ,TITLE, CONTENTS, PLACE, PHONENUMBER, PHOTOPATH, TO_DATE(SYSTIMESTAMP,'YYYY-MM-DD HH:MI:SS)"
-				+ " FROM WRITER JOIN SIGNUP ON WRITER.PKID = SIGNUP.PKID WHERE ID= '" + id + "'";
-		
-		List<WriterDTO> datas = new ArrayList<WriterDTO>();
-		ResultSet res = oc.select(query);
-		WriterDTO wdto = new WriterDTO();
-		
-		try {
-			if(res.next()) {
-				wdto.setId(res.getInt("ID"));
-				wdto.setUserId(res.getString("SIGNUP.USERID"));
-				wdto.setContents(res.getString("CONTENTS"));
-				wdto.setPlace(res.getString("PLACE"));
-				wdto.setPhonenumber(res.getString("PHONENUMBER"));
-				wdto.setPhotopath(res.getString("PHOTOPATH"));
-				wdto.setWriterDate(res.getDate("WRITERDATE"));
-				datas.add(wdto);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return datas;
-	}
-	
-	
 	
 	
 	public void commit() {

@@ -53,6 +53,12 @@ public class MainController extends HttpServlet {
 			request.setAttribute("logined", true);
 		}
 		
+		WriterService wService= new WriterService();
+		List<WriterDTO> datas = wService.selectAll();
+		
+		request.setAttribute("datas", datas);
+
+		
 		String view = "/WEB-INF/jsp/welcome/main.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
@@ -62,17 +68,7 @@ public class MainController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		WriterDTO wdto = new WriterDTO();
-		WriterService wService= new WriterService();
-		List<WriterDTO> datas = wService.selectAll();
-		if(datas != null) {
-			request.setAttribute("datas", datas);
-			String view = "/WEB-INF/jsp/welcome/main.jsp";
-			RequestDispatcher rd = request.getRequestDispatcher(view);
-			rd.forward(request, response);
-		}else {
-			System.out.println(datas);
-		}
+	
 		
 	}
 

@@ -10,18 +10,19 @@ public class SignDAO {
 	OracleConnect oc = null;
 	
 	public SignDAO() {
-		oc = new OracleConnect(true);
+		this.oc = new OracleConnect(true);
 	}
 	
 	String query;
 	
 	public boolean insert(SignDTO dto) {
-		query = "INSERT INTO SIGNUP VALUES(SIGNUP_SEQ,'" + dto.getPkid() + "' ,"
+		query = "INSERT INTO SIGNUP VALUES(SIGNUP_SEQ.NEXTVAL," 
 				+ " '" + dto.getUserid() + "', '" 
 				+ dto.getPassword() + "', '" 
 				+ dto.getUsername() + "', '"
 				+ dto.getPhoneNumber() + "', '"
-				+ dto.getEmail() + "'" +") ";
+				+ dto.getEmail() + "', '"
+				+ dto.getSignDate() + "') ";
 		
 		int res = oc.insert(query);
 		if(res == 1) {
@@ -34,7 +35,7 @@ public class SignDAO {
 	public List<SignDTO> select(String userid) {
 		query = "SELECT * FROM SIGNUP WHERE USERID = '" + userid + "'";
 		
-		ResultSet rs = oc.select(userid);
+		ResultSet rs = oc.select(query);
 		
 		List<SignDTO> datas = new ArrayList<SignDTO>();
 		

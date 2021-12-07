@@ -36,10 +36,12 @@ public class SignController extends HttpServlet {
 		SignDTO dto = new SignDTO(userid, password, username, userphone, useremail);
 		SignService service = new SignService();
 		
+		
 		if(service.isValid(dto)) {
 			// 유효성 검사에 이상이 없는 경우
 			if(service.userAdd(dto)) {
 				// 가입 완료
+		
 			} else {
 				// 가입 중 문제가 발생 
 			}

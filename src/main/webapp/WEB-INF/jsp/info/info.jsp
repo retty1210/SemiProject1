@@ -38,19 +38,19 @@
 						SignDTO initData = new SignDTO();
 						
 						boolean logined = (boolean) request.getAttribute("logined");
-						if(!logined){
+						if(logined){
 					%>
-						<hr>
-						<li class="header-link_menu_content"><a href="./login">로그인</a></li>
-						<hr>
-						<li class="header-link_menu_content"><a href="./sign">회원가입</a></li>
-					<% 
-						} else {					
-					%>	
 						<hr>	
 						<li class="header-link_menu_content"><a href="./logout">로그아웃</a></li>
 						<hr>
 						<li class="header-link_menu_content"><a href="./info">내정보</a></li>
+					<% 
+						} else {					
+					%>	
+						<hr>
+						<li class="header-link_menu_content"><a href="./login">로그인</a></li>
+						<hr>
+						<li class="header-link_menu_content"><a href="./sign">회원가입</a></li>
 					<%
 						}
 					%>

@@ -16,16 +16,16 @@ public class WriterService {
 		return res;
 	}
 	
-	public List<WriterDTO> onePickSelect(int id){
-		WriterDAO wdao = new WriterDAO();
-		
-		return wdao.onePickSelect(id);
-	}
 	
 	public List<WriterDTO> selectAll(){
 		WriterDAO wdao = new WriterDAO();
 	
-			return wdao.selectAll();
+		List<WriterDTO> datas = wdao.selectAll();
+		if(datas.size() != 0) {
+			return datas;
+		}else {
+			return null;
+		}
 		
 	}
 	

@@ -14,8 +14,9 @@ public class OracleConnect {
 	{
 		// 1. 데이터베이스 연결 구성 정보가 있는 파일 불러오기
 		String userHome = System.getProperty("user.home");
+		
 		try {
-			this.info.load(new FileReader(userHome + "/oracle_connection.prop"));
+			this.info.load(new FileReader(userHome + "/semiproject.prop"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -64,7 +65,7 @@ public class OracleConnect {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			this.conn = DriverManager.getConnection(
-					this.info.getProperty("local-url"),
+					this.info.getProperty("semi_url"),
 					this.info.getProperty("user"),
 					this.info.getProperty("password"));
 			this.conn.setAutoCommit(false);

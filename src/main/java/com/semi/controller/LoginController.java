@@ -1,6 +1,6 @@
 package com.semi.controller;
 
-import java.io.IOException;
+import java.io.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,7 +28,7 @@ public class LoginController extends HttpServlet {
 			throws ServletException, IOException {
 		
 		String id = request.getParameter("userId"); // 이건 임시입니다.
-		String password = request.getParameter("userPw"); // 로그인 화면을 못 봐서 해당 name 알면 붙여넣을게요.
+		String password = request.getParameter("userPw"); // 로그인 화면을 못 봐서 해당 name 알면 붙여넣을게요
 		
 		SignDTO dto = new SignDTO();
 		dto.setUserid(id);
@@ -44,7 +44,7 @@ public class LoginController extends HttpServlet {
 //			Cookie cookie = new Cookie("login_user", dto.getId());
 //			cookie.setMaxAge(60*30);
 //			response.addCookie(cookie);
-			response.sendRedirect("/");
+			response.sendRedirect("/info");
 		} else {
 			
 			//여기 따로 실패 페이지나 아니면 getAttribute? 맞나 여튼 그걸로 실패했다고 유저한테 창 띄우게 만들것
