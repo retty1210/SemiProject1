@@ -49,6 +49,9 @@ public class LoginController extends HttpServlet {
 //			cookie.setMaxAge(60*30);
 //			response.addCookie(cookie);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> branch 'main' of git@SemiProject1.github.com:retty1210/SemiProject1.git
 			response.sendRedirect("/main");
 		} else {
 =======

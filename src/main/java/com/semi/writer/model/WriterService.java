@@ -23,6 +23,7 @@ public class WriterService {
 		if(datas.size() != 0) {
 			return datas;
 		}else {
+<<<<<<< HEAD
 			return wdao.select(id);
 		}
 		
@@ -38,6 +39,11 @@ public class WriterService {
 		}
 		dao.close();
 		return res;
+=======
+			return null;
+		}
+		
+>>>>>>> branch 'main' of git@SemiProject1.github.com:retty1210/SemiProject1.git
 	}
 	
 	public List<WriterDTO> selectAll(){
@@ -66,6 +72,7 @@ public class WriterService {
 			return false;
 		}
 	}
+<<<<<<< HEAD
 	
 	public List<WriterDTO> select_userid(String userid) {
 		WriterDAO wdao = new WriterDAO();
@@ -77,6 +84,8 @@ public class WriterService {
 			return wdao.select_userid(userid);
 		}
 	}
+=======
+>>>>>>> branch 'main' of git@SemiProject1.github.com:retty1210/SemiProject1.git
 	
 
 }
