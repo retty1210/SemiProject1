@@ -55,5 +55,16 @@ public class WriterService {
 		}
 	}
 	
+	public List<WriterDTO> select(String userid) {
+		WriterDAO wdao = new WriterDAO();
+		List<WriterDTO> datas = wdao.select(userid);
+		
+		if(datas.size() != 0) {
+			return datas;
+		}else {
+			return wdao.select(userid);
+		}
+	}
+	
 
 }

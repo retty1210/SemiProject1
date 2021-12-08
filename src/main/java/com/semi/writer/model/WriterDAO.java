@@ -3,7 +3,7 @@ import java.sql.*;
 import java.util.*;
 
 import com.db.conn.OracleConnect;
-import com.semi.model.SignDTO;
+import com.semi.model.*;
 
 public class WriterDAO {
 	OracleConnect oc = null;
@@ -55,7 +55,6 @@ public class WriterDAO {
 	
 	public List<WriterDTO> selectAll(){
 		query = "SELECT * FROM WRITER";
-		
 		List<WriterDTO> datas = new ArrayList<WriterDTO>();
 		ResultSet res = oc.select(query);
 		
@@ -87,6 +86,41 @@ public class WriterDAO {
 		}else {
 			return false;
 		}
+	}
+	
+	public List<WriterDTO> select(String userid){
+		SignDAO sdao = new SignDAO();
+		List<SignDTO> sdto = sdao.select(userid);
+		int pk = 0;
+		if(sdto.size() == 1) {
+			for(SignDTO sdata: sdto) {
+				pk = sdata.getPkid();
+			}
+		} 
+		
+		query = "SELECT * FROM WRITER WHERE PKID = '" + pk + "'";
+		
+		ResultSet res = oc.select(query);
+		
+		List<WriterDTO> datas = new ArrayList<WriterDTO>();
+		
+		try {
+			while(res.next()) {
+				WriterDTO wdto = new WriterDTO();
+				wdto.setId(res.getInt("ID"));
+				wdto.setPkid(res.getInt("PKID"));
+				wdto.setTitle(res.getString("TITLE"));
+				wdto.setContents(res.getString("CONTENTS"));
+				wdto.setPlace(res.getString("PLACE"));
+				wdto.setPhonenumber(res.getString("PHONENUMBER"));
+				wdto.setPhotopath(res.getString("PHOTOPATH"));
+				wdto.setWriterDate(res.getString("WRITERDATE"));
+				datas.add(wdto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return datas;
 	}
 	
 	
