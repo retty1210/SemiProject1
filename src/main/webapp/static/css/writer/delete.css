@@ -24,7 +24,7 @@ input {
 	border-radius: 9px;
 }
 
-button:hover {
+input:hover {
 	cursor: pointer;
 }
 
