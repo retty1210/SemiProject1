@@ -12,7 +12,7 @@
       rel="stylesheet">
 </head>
 <body>	
-	<form action="/delete" method="post">
+	<form method="post">
 		<div class="header-logo-box">
 			<a class="header-logo-link" href="/">
 			<img name ="header-logo"class="header-logo" src="/static/icons/pets_black_24dp.svg">
