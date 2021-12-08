@@ -42,7 +42,7 @@ public class InfoController extends HttpServlet {
 			request.setAttribute("init", sdto);			
 		}
 		WriterService wService = new WriterService();
-		List<WriterDTO> wDatas = wService.select(login_user);
+		List<WriterDTO> wDatas = wService.select_userid(login_user);
 		
 		
 		request.setAttribute("wdatas", wDatas);

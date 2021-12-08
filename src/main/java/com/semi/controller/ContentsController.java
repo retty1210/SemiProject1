@@ -46,7 +46,7 @@ public class ContentsController extends HttpServlet {
 		for(WriterDTO data: datas){
 			request.setAttribute("datas", data);
 		}
-		System.out.println(id);
+
 		request.setAttribute("id_Num", id);
 
 		
@@ -58,10 +58,6 @@ public class ContentsController extends HttpServlet {
 		//String view2 = "/WEB_INF/jsp/welcome/main.jsp";
 		//RequestDispatcher rd2 = request.getRequestDispatcher(view2);
 		//rd2.forward(request, response);
-
-		String view = "/WEB-INF/jsp/contents/contents.jsp";
-		RequestDispatcher rd = request.getRequestDispatcher(view);
-		rd.forward(request, response);
 		
 	}
 

@@ -28,14 +28,16 @@ public class WriterDAO {
 	
 	return res == 1 ? true : false;
 	}
+	
 	public List<WriterDTO> select(String id){
-		query = "SELECT * FROM WRITER WHERE ID = '" +id +"'";
+//		query = "SELECT * FROM WRITER WHERE PKID = (SELECT PKID FROM SIGNUP WHERE USERID = '" + id +"')";
+		query = "SELECT * FROM WRITER WHERE ID = '" + id +"'";
 		
 		List<WriterDTO> datas = new ArrayList<WriterDTO>();
 		ResultSet res = oc.select(query);
 		
 		try {
-			while(res.next()) {
+		while(res.next()) {
 				WriterDTO wdto = new WriterDTO();
 				wdto.setId(res.getInt("ID"));
 				wdto.setPkid(res.getInt("PKID"));
@@ -108,7 +110,7 @@ public class WriterDAO {
 			for(SignDTO sdata: sdto) {
 				pk = sdata.getPkid();
 			}
-		} 
+		}
 		
 		query = "SELECT * FROM WRITER WHERE PKID = '" + pk + "'";
 		
