@@ -14,7 +14,7 @@ public class SignService {
 	}
 	
 	private boolean isEmpty(String str) {
-		// 비워있는지 확인
+		// 빈칸인 경우
 		return str.isEmpty();
 	}
 	
