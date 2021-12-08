@@ -48,10 +48,9 @@ public class ContentsController extends HttpServlet {
 		}
 		System.out.println(id);
 		request.setAttribute("id_Num", id);
-<<<<<<< HEAD
+
 		
 		view = "/WEB-INF/jsp/contents/contents.jsp";
-		String id = request.getParameter("id");
 		RequestDispatcher rd1 = request.getRequestDispatcher(view);
 		rd1.forward(request, response);
 		
@@ -59,11 +58,10 @@ public class ContentsController extends HttpServlet {
 		//String view2 = "/WEB_INF/jsp/welcome/main.jsp";
 		//RequestDispatcher rd2 = request.getRequestDispatcher(view2);
 		//rd2.forward(request, response);
-=======
+
 		String view = "/WEB-INF/jsp/contents/contents.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
->>>>>>> branch 'main' of git@SemiProject1.github.com:retty1210/SemiProject1.git
 		
 	}
 
