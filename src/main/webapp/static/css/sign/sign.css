@@ -88,3 +88,14 @@ body {
 	font-size: 13px;
 	color:rgba(0,0,0,0.9);
 }
+
+/* 아이디 중복 */
+.sign-id-check {
+	color: red;
+    font-size: 13px;
+    position : relative;
+    right : 130px;
+    display:none;
+}
+
+

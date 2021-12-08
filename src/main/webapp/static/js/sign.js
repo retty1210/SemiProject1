@@ -81,3 +81,13 @@ $('#sign-btn').hover(function() {
        }
    }
 });
+
+// 로그인 실패
+$('input[name=user_id').focusin(function(){
+   var a = $('input[name=user_id').val();
+
+   if(a != ""){
+      $('.sign-id-check').css('display', 'hidden');
+   }
+});
+

@@ -48,13 +48,20 @@ public class LoginController extends HttpServlet {
 //			Cookie cookie = new Cookie("login_user", dto.getId());
 //			cookie.setMaxAge(60*30);
 //			response.addCookie(cookie);
+<<<<<<< HEAD
 			response.sendRedirect("/main");
 		} else {
+=======
+			response.sendRedirect("/info");
+		} else{
+>>>>>>> refs/remotes/origin/장재완
 			
 			//로그인 실패 알림
 			request.setAttribute("errMsg", "로그인 정보가 올바르지 않습니다.");
 			RequestDispatcher rp = request.getRequestDispatcher(view);
 			rp.forward(request,  response);
+			
+
 		}
 	}
 }

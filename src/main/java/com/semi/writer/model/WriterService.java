@@ -23,9 +23,21 @@ public class WriterService {
 		if(datas.size() != 0) {
 			return datas;
 		}else {
-			return null;
+			return wdao.select(id);
 		}
 		
+	}
+	
+	public boolean delete(WriterDTO dto) {
+		WriterDAO dao = new WriterDAO();
+		boolean res = dao.delete(dto);
+		if(res) {
+			dao.commit();
+		} else {
+			dao.rollback();
+		}
+		dao.close();
+		return res;
 	}
 	
 	public List<WriterDTO> selectAll(){
@@ -55,14 +67,14 @@ public class WriterService {
 		}
 	}
 	
-	public List<WriterDTO> select(String userid) {
+	public List<WriterDTO> select_userid(String userid) {
 		WriterDAO wdao = new WriterDAO();
-		List<WriterDTO> datas = wdao.select(userid);
+		List<WriterDTO> datas = wdao.select_userid(userid);
 		
 		if(datas.size() != 0) {
 			return datas;
 		}else {
-			return wdao.select(userid);
+			return wdao.select_userid(userid);
 		}
 	}
 	

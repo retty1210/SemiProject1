@@ -6,8 +6,8 @@ import java.util.*;
 public class SignService {
 
 	public boolean isValid(SignDTO dto) {
-		if(isEmpty(dto.getUserid()) && isEmpty(dto.getPassword()) && isEmpty(dto.getUsername())
-				&& isEmpty(dto.getPhoneNumber()) && isEmpty(dto.getEmail())) {
+		if(isEmpty(dto.getUserid()) || isEmpty(dto.getPassword()) || isEmpty(dto.getUsername())
+				|| isEmpty(dto.getPhoneNumber()) || isEmpty(dto.getEmail())) {
 			return false;
 		}
 		return true;
@@ -56,7 +56,7 @@ public class SignService {
 			SignDTO userData = data.get(0);
 			if(dto.equalsPassword(userData)) {
 				dto.setUserid(userData.getUserid());
-				dto.setPassword("");
+				dto.setPassword(""); // 확인하기
 				dto.setUsername(userData.getUsername());
 				dto.setPhoneNumber(userData.getPhoneNumber());
 				dto.setEmail(userData.getEmail());

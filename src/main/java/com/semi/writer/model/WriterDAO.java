@@ -14,7 +14,7 @@ public class WriterDAO {
 	}
 	
 	public boolean insert(WriterDTO dto) {
-		String query = "INSERT INTO WRITER VALUES("
+				query = "INSERT INTO WRITER VALUES("
 				+ "WRITER_SEQ.NEXTVAL, "
 				+ "'" + dto.getPkid() + "', "
 				+ "'" + dto.getTitle() + "', "
@@ -28,6 +28,16 @@ public class WriterDAO {
 	
 	return res == 1 ? true : false;
 	}
+	
+	public boolean delete(WriterDTO dto) {
+		query = "DELETE FROM WRITER"
+				+ "WHERE ID = '" + dto.getId() + "'";
+		
+		int res = oc.insert(query);
+		
+		return res == 1 ? true : false;
+	}
+	
 	public List<WriterDTO> select(String id){
 		query = "SELECT * FROM WRITER WHERE ID = '" +id +"'";
 		
@@ -88,7 +98,8 @@ public class WriterDAO {
 		}
 	}
 	
-	public List<WriterDTO> select(String userid){
+	//내 정보->본인이 쓴 게시글 확인하는 로직에 있는 select 메서드 다 select_userid로 바꿔주세요
+	public List<WriterDTO> select_userid(String userid){
 		SignDAO sdao = new SignDAO();
 		List<SignDTO> sdto = sdao.select(userid);
 		int pk = 0;

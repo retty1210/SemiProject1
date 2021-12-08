@@ -16,6 +16,7 @@ import com.semi.writer.model.*;
 @WebServlet("/contents")
 public class ContentsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	String view = "";
        
     public ContentsController() {
         super();
@@ -47,9 +48,16 @@ public class ContentsController extends HttpServlet {
 		}
 		System.out.println(id);
 		request.setAttribute("id_Num", id);
-		String view = "/WEB-INF/jsp/contents/contents.jsp";
-		RequestDispatcher rd = request.getRequestDispatcher(view);
-		rd.forward(request, response);
+		
+		view = "/WEB-INF/jsp/contents/contents.jsp";
+		String id = request.getParameter("id");
+		RequestDispatcher rd1 = request.getRequestDispatcher(view);
+		rd1.forward(request, response);
+		
+		//삭제 기능 만든 다음에 써야 할 것(if문 등 조건문으로 묶어주세요)
+		//String view2 = "/WEB_INF/jsp/welcome/main.jsp";
+		//RequestDispatcher rd2 = request.getRequestDispatcher(view2);
+		//rd2.forward(request, response);
 		
 	}
 
