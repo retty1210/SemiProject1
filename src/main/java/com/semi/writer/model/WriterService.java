@@ -15,6 +15,7 @@ public class WriterService {
 		dao.close();
 		return res;
 	}
+	
 	public List<WriterDTO> select(String id){
 		WriterDAO wdao = new WriterDAO();
 	
@@ -23,10 +24,8 @@ public class WriterService {
 		if(datas.size() != 0) {
 			return datas;
 		}else {
-
 			return wdao.select(id);
 		}
-		
 	}
 	
 	public boolean delete(WriterDTO dto) {
@@ -78,6 +77,5 @@ public class WriterService {
 			return wdao.select_userid(userid);
 		}
 	}
-
-
+	
 }

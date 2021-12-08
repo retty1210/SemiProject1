@@ -13,7 +13,7 @@ public class WriterDAO {
 		this.oc = new OracleConnect(true);
 	}
 	
-	public boolean insert(WriterDTO dto) {
+	public boolean insert(WriterDTO dto) { 
 				query = "INSERT INTO WRITER VALUES("
 				+ "WRITER_SEQ.NEXTVAL, "
 				+ "'" + dto.getPkid() + "', "
@@ -22,13 +22,14 @@ public class WriterDAO {
 				+ "'" + dto.getPlace() + "', "
 				+ "'" + dto.getPhonenumber() + "', "
 				+ "'" + dto.getPhotopath() + "', "
-				+ "'" + dto.getWriterDate() + "')";
+				+ "SYSDATE)";
 		
-	int res = oc.insert(query);
+			int res = oc.insert(query);
 	
-	return res == 1 ? true : false;
+			return res == 1 ? true : false;
 	}
-	public List<WriterDTO> select(String id){
+	
+	public List<WriterDTO> select(String id){ 
 		query = "SELECT * FROM WRITER WHERE ID = '" +id +"'";
 		
 		List<WriterDTO> datas = new ArrayList<WriterDTO>();
@@ -81,6 +82,7 @@ public class WriterDAO {
 				wdto.setWriterDate(res.getString("WRITERDATE"));
 				datas.add(wdto);
 			}
+			res.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
