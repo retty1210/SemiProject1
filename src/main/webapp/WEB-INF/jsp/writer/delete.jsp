@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+	<h1>삭제 완료</h1>
 </body>
 </html>
