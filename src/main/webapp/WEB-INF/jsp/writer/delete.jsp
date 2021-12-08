@@ -4,13 +4,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="/static/icons/pets_black_24dp.svg">
+<title>우리 멍냥 찾아주사이트</title>
+<link href="<%=request.getContextPath()%>/static/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="<%=request.getContextPath()%>/static/css/writer/delete.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
-<body>
-	<!-- 
-		유효성 게시글이 삭제되면 삭제됐습니다. 
-		유효성 게시글이 삭제가 안되면 상세게시글로 돌아가기
-		메인으로 돌아가기 버튼 만들어주고
-	 -->
+<body>	
+	<form action="/delete" method="post">
+		<div class="header-logo-box">
+			<a class="header-logo-link" href="/">
+			<img name ="header-logo"class="header-logo" src="/static/icons/pets_black_24dp.svg">
+	   		</a>
+	   	</div>
+	<nav class="success">
+		<a class="delete_success">삭제가 완료되었습니다.</a>
+	</nav>
+		<div class="button_area">
+		<input class="return_main" type="button" value="게시판으로 돌아가기" onclick="location.href='/main'"/>
+		</div>
+	</form>
+	 <footer>
+		<hr>
+		<p class="footer-txt">팀원 :이종훈 | 곽서희 | 장재완 | 정현실 | 신재민 | 조정현</p>
+		<a href="#"></a>
+		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
+	</footer>
 </body>
 </html>

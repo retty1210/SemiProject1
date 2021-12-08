@@ -1,6 +1,8 @@
 package com.semi.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +15,9 @@ public class DeleteController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		String view = "/WEB-INF/jsp/writer/delete.jsp";
+		RequestDispatcher rd = request.getRequestDispatcher(view);
+		rd.forward(request, response);
 	}
 
 

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+form {
+	display: block;
+	margin: auto;
+}
+
+div {
+	width: 100%;
+	display: inline-block;
+	margin: auto;
+	align-items:center;
+	vertical-align: middle;
+}
+
+input {
+	display: block;
+	width: 300px;
+	height: 52px;
+	background-color: black;
+	color: rgb(223, 223, 223);
+	margin: auto;
+	font-weight: bold;
+	border-radius: 9px;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+.success .delete_success{
+	color: yellow;
+	margin: 20px;
+	text-align: center;
+	display: block;
+}
