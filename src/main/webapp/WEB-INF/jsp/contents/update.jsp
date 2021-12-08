@@ -31,39 +31,42 @@
 					datas = (WriterDTO) request.getAttribute("datas");
 				
 			%>
-	
-	<div class="contents-main">
-		<div class="contents-imgarea">
-			<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>">
+	<form action="/update" method="post">
+		<div class="contents-main">
+			<div class="contents-imgarea">
+				<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>">
+			</div>
+			
+			<div class="contents-inner">
+				<table class="contents-table">
+					<tr class="table-row">
+						<td class="table-titletxt">글 번호</td>
+						<td class="table-contxt"><input type="text" name="num" class="input-contxt" value="<%=datas.getId() %>" readonly></td>
+					</tr>						
+					<tr class="table-row">
+						<td class="table-titletxt">분실동물 이름</td>
+						<td class="table-contxt"><input type="text" name="title" class="input-contxt" value="<%=datas.getTitle() %>"></td>
+					</tr>
+					<tr class="table-row" rowspan="5" align="center">
+						<td class="table-titletxt">분실동물의 특징</td>
+						<td class="table-contxt"><textarea name="contents" class="input-contxt"><%=datas.getContents() %></textarea></td>
+					</tr>
+					<tr class="table-row">
+						<td class="table-titletxt">분실장소</td>
+						<td class="table-contxt"><input type="text" name="place" class="input-contxt" value="<%=datas.getPlace() %>"></td>
+					</tr>
+					<tr class="table-row">
+						<td class="table-titletxt">보호자 연락처</td>
+						<td class="table-contxt"><input type="text"name="phoneNumber" class="input-contxt" value="<%=datas.getPhonenumber() %>"></td>
+					</tr>
+				</table>
+			</div>
 		</div>
-		
-		<div class="contents-inner">
-			<table class="contents-table">
-				<tr class="table-row">
-					<td class="table-titletxt">분실동물 이름</td>
-					<td class="table-contxt"><input class="input-contxt" value="<%=datas.getTitle() %>"></td>
-				</tr>
-				<tr class="table-row" rowspan="5" align="center">
-					<td class="table-titletxt">분실동물의 특징</td>
-					<td class="table-contxt"><input class="input-contxt" value="<%=datas.getContents() %>"></td>
-				</tr>
-				<tr class="table-row">
-					<td class="table-titletxt">분실장소</td>
-					<td class="table-contxt"><input class="input-contxt" value="<%=datas.getPlace() %>"></td>
-				</tr>
-				<tr class="table-row">
-					<td class="table-titletxt">보호자 연락처</td>
-					<td class="table-contxt"><input class="input-contxt" value="<%=datas.getPhonenumber() %>"></td>
-				</tr>
-			</table>
-		</div>
-	</div>
 	<%
 				}
 	%>
-			<form>
 				<div class="update-button_box"><!-- hidden으로 해 놓고 작성자 본인에게만 보이게 -->
-					<button type="button" class="mini-btn">수정</button>
+					<button type="submit" class="mini-btn">수정</button>
 				</div>
 			</form>
 

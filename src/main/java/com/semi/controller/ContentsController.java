@@ -18,9 +18,6 @@ public class ContentsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	String view = "";
        
-    public ContentsController() {
-        super();
-    }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
@@ -46,9 +43,6 @@ public class ContentsController extends HttpServlet {
 		for(WriterDTO data: datas){
 			request.setAttribute("datas", data);
 		}
-		System.out.println(id);
-		request.setAttribute("id_Num", id);
-
 		
 		view = "/WEB-INF/jsp/contents/contents.jsp";
 		RequestDispatcher rd1 = request.getRequestDispatcher(view);

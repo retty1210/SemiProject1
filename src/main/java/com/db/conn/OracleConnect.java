@@ -81,7 +81,9 @@ public class OracleConnect {
 	public ResultSet select(String query) {
 		ResultSet rs = null;
 		try {
+			System.out.println("1111 : " + this.stat);
 			rs = this.stat.executeQuery(query);
+			System.out.println("oc select 1:" + rs);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

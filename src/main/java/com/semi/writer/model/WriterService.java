@@ -19,11 +19,13 @@ public class WriterService {
 		WriterDAO wdao = new WriterDAO();
 	
 		List<WriterDTO> datas = wdao.select(id);
+		System.out.println("writerservice select datas:" + datas);
 		
 		if(datas.size() != 0) {
+			wdao.close();
 			return datas;
 		}else {
-
+			wdao.close();
 			return wdao.select(id);
 		}
 		
@@ -45,27 +47,30 @@ public class WriterService {
 		WriterDAO wdao = new WriterDAO();
 	
 		List<WriterDTO> datas = wdao.selectAll();
+		System.out.println("writerservice selectAll datas:" + datas);
 		
 		if(datas.size() != 0) {
+			wdao.close();
 			return datas;
 		}else {
+			wdao.close();
 			return wdao.selectAll();
 		}
 		
 	}
 	public boolean updateContent(WriterDTO dto) {
 		WriterDAO dao = new WriterDAO();
+		
 		boolean res = dao.update(dto);
 		
 		if(res) {
 			dao.commit();
 			dao.close();
-			return true;
 		}else {
 			dao.rollback();
 			dao.close();
-			return false;
 		}
+		return res;
 	}
 	
 	public List<WriterDTO> select_userid(String userid) {
@@ -73,8 +78,10 @@ public class WriterService {
 		List<WriterDTO> datas = wdao.select_userid(userid);
 		
 		if(datas.size() != 0) {
+			wdao.close();
 			return datas;
 		}else {
+			wdao.close();
 			return wdao.select_userid(userid);
 		}
 	}

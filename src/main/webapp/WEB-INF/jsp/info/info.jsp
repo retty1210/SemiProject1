@@ -114,6 +114,9 @@
 							}
 						}
 					%>
+					<tr>
+						<th><a href="/info?page=1">1</a></th>
+					</tr>
 				</table>
 			</div>
 		</div>

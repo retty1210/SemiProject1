@@ -7,14 +7,16 @@ import com.semi.model.*;
 
 public class WriterDAO {
 	OracleConnect oc = null;
-	String query;
+	String query = "";
+	ResultSet res = null;
+	int rs = 0;
 	
 	public WriterDAO() {
 		this.oc = new OracleConnect(true);
 	}
 	
 	public boolean insert(WriterDTO dto) {
-				query = "INSERT INTO WRITER VALUES("
+			this.query = "INSERT INTO WRITER VALUES("
 				+ "WRITER_SEQ.NEXTVAL, "
 				+ "'" + dto.getPkid() + "', "
 				+ "'" + dto.getTitle() + "', "
@@ -24,15 +26,17 @@ public class WriterDAO {
 				+ "'" + dto.getPhotopath() + "', "
 				+ "'" + dto.getWriterDate() + "')";
 		
-	int res = oc.insert(query);
+	this.rs = oc.insert(query);
 	
-	return res == 1 ? true : false;
+	return this.rs == 1 ? true : false;
 	}
 	public List<WriterDTO> select(String id){
-		query = "SELECT * FROM WRITER WHERE ID = '" +id +"'";
+		this.query = "SELECT * FROM WRITER WHERE ID = '" +id +"'";
+		System.out.println("writerdao select:" + query);
 		
 		List<WriterDTO> datas = new ArrayList<WriterDTO>();
-		ResultSet res = oc.select(query);
+		this.res = oc.select(query);
+		System.out.println("writerdao res:" +res);
 		
 		try {
 			while(res.next()) {
@@ -54,19 +58,20 @@ public class WriterDAO {
 	}
 	
 	public boolean delete(WriterDTO dto) {
-		query = "DELETE FROM WRITER"
+		this.query = "DELETE FROM WRITER"
 				+ "WHERE ID = '" + dto.getId() + "'";
 		
-		int res = oc.insert(query);
+		this.rs = oc.insert(query);
 		
-		return res == 1 ? true : false;
+		return this.rs == 1 ? true : false;
 	}
 
 	
 	public List<WriterDTO> selectAll(){
-		query = "SELECT * FROM WRITER";
+		this.query = "SELECT * FROM WRITER";
 		List<WriterDTO> datas = new ArrayList<WriterDTO>();
-		ResultSet res = oc.select(query);
+		this.res = oc.select(query);
+		System.out.println("writerdao select all res:" + res);
 		
 		try {
 			while(res.next()) {
@@ -88,11 +93,11 @@ public class WriterDAO {
 	}
 	
 	public boolean update(WriterDTO dto) {
-		query = "UPDATE WRITER SET TITLE = '" + dto.getTitle() + "', CONTENTS ='" + dto.getContents() + "', PLACE = '" + dto.getPlace() +"',"
+		this.query = "UPDATE WRITER SET TITLE = '" + dto.getTitle() + "', CONTENTS ='" + dto.getContents() + "', PLACE = '" + dto.getPlace() +"',"
 				+"PHONENUMBER = '" + dto.getPhonenumber() + "' WHERE ID ='" + dto.getId() +"'";
 		
-		int res = oc.update(query);
-		if(res == 1) {
+		this.rs = oc.update(query);
+		if(rs == 1) {
 			return true;
 		}else {
 			return false;
@@ -110,14 +115,14 @@ public class WriterDAO {
 			}
 		} 
 		
-		query = "SELECT * FROM WRITER WHERE PKID = '" + pk + "'";
+		this.query = "SELECT * FROM WRITER WHERE PKID = '" + pk + "'";
 		
-		ResultSet res = oc.select(query);
+		this.res = oc.select(query);
 		
 		List<WriterDTO> datas = new ArrayList<WriterDTO>();
 		
 		try {
-			while(res.next()) {
+			while(this.res.next()) {
 				WriterDTO wdto = new WriterDTO();
 				wdto.setId(res.getInt("ID"));
 				wdto.setPkid(res.getInt("PKID"));
