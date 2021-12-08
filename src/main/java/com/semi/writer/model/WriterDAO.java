@@ -57,7 +57,7 @@ public class WriterDAO {
 		query = "DELETE FROM WRITER"
 				+ "WHERE ID = '" + dto.getId() + "'";
 		
-		int res = oc.insert(query);
+		int res = oc.delete(query);
 		
 		return res == 1 ? true : false;
 	}
