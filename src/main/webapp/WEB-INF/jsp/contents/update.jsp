@@ -13,6 +13,7 @@
 <link href="<%=request.getContextPath()%>/static/css/contents/contents.css" rel="stylesheet" type="text/css"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/js/contents.js"></script>
 </head>
 <body>
 	<header class="contents-header">
@@ -34,7 +35,7 @@
 	<form action="/update" method="post">
 		<div class="contents-main">
 			<div class="contents-imgarea">
-				<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>">
+				<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>" name="img">
 			</div>
 			
 			<div class="contents-inner">
@@ -62,14 +63,15 @@
 				</table>
 			</div>
 		</div>
+		<script>imgSize("img");</script>
 	<%
 				}
 	%>
-				<div class="update-button_box"><!-- hidden으로 해 놓고 작성자 본인에게만 보이게 -->
-					<button type="submit" class="mini-btn">수정</button>
-				</div>
-			</form>
-
+		<div class="update-button_box"><!-- hidden으로 해 놓고 작성자 본인에게만 보이게 -->
+			<button type="submit" class="main-btn">수정</button>
+		</div>
+	</form>
+	
 	<footer>
 		<hr>
 		<p class="footer-txt">팀원 :이종훈 | 곽서희 | 장재완 | 정현실 | 신재민 | 조정현</p>
@@ -78,4 +80,6 @@
 	</footer>
 	
 </body>
+
+	
 </html>

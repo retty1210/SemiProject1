@@ -97,7 +97,7 @@
 			</table>
 		</div>
 	</div>
-	<script>imgSize("img");</script>
+	
 			
 			<%	
 				}
@@ -127,5 +127,5 @@
 <script type="text/javascript" src="static/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="static/js/delete.js"></script>
 </body>
-	
+	<script>imgSize("img");</script>
 </html>

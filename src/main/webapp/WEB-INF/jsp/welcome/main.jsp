@@ -99,7 +99,7 @@
 				</tr>
 				<tr class="content-body">
 					<td>
-						<a class="content-link" href="/contents?id=<%=data.getId() %>"><%=data.getTitle() %> <%=data.getContents() %></a>
+						<a class="content-link" href="/contents?id=<%=data.getId() %>"><%=data.getTitle() %></a>
 					</td>
 				</tr>
 			</table>
