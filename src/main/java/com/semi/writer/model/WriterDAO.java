@@ -59,8 +59,8 @@ public class WriterDAO {
 	
 	public boolean delete(WriterDTO dto) {
 		this.query = "DELETE FROM WRITER"
-				+ "WHERE ID = '" + dto.getId() + "'";
-		
+				+ " WHERE ID = '" + dto.getId() + "'";
+		System.out.println(query);
 		this.rs = oc.delete(query);
 		
 		return this.rs == 1 ? true : false;
