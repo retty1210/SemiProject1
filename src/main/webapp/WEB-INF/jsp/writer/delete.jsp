@@ -11,7 +11,6 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
-<<<<<<< HEAD
 <body>	
 	<form method="post">
 		<div class="header-logo-box">
@@ -20,7 +19,22 @@
 	   		</a>
 	   	</div>
 	<nav class="success">
-		<a class="delete_success">삭제가 완료되었습니다.</a>
+		<%
+			if(request.getAttribute("success") != null) {
+		%>
+		<span class="delete_success">
+		<%= request.getAttribute("success") %>
+		</span>
+		<%
+			}else {
+		%>
+		
+		<span class="delete_success">
+		<%=
+			request.getAttribute("fail")
+		%>
+		</span>
+		<% } %>
 	</nav>
 		<div class="button_area">
 		<input class="return_main" type="button" value="게시판으로 돌아가기" onclick="location.href='/main'"/>
@@ -32,9 +46,5 @@
 		<a href="#"></a>
 		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
 	</footer>
-=======
-<body>
-	<h1>삭제 완료</h1>
->>>>>>> refs/remotes/origin/장재완
 </body>
 </html>
