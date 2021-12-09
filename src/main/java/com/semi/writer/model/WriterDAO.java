@@ -115,7 +115,7 @@ public class WriterDAO {
 			}
 		} 
 		
-		this.query = "SELECT * FROM WRITER WHERE PKID = '" + pk + "'";
+		this.query = "SELECT * FROM(SELECT * FROM WRITER WHERE PKID = '"+userid+"' ORDER BY ID) WHERE ROWNUM <= 6";
 		
 		this.res = oc.select(query);
 		
