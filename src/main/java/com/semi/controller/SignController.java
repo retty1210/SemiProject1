@@ -46,7 +46,7 @@ public class SignController extends HttpServlet {
 			} else {
 				// 가입 중 문제가 발생 
 				//request.setAttribute("init", dto);
-				request.setAttribute("error", "아이디 중복");
+				request.setAttribute("error", "아이디가 중복되었습니다.");
 				String view = "/WEB-INF/jsp/sign/sign.jsp";
 				RequestDispatcher rd = request.getRequestDispatcher(view);
 				rd.forward(request, response);
