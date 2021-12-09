@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="com.semi.model.*" %>
+<%@ page import="com.semi.writer.model.*" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -22,6 +26,8 @@
 				</a>
 				<ul class="header-link_menu">
 					<%
+					//HttpSession sessions = request.getSession();
+					//SignDTO initData = (SignDTO) request.getAttribute("init");
 						//boolean logined = (boolean) request.getAttribute("logined");
 						//if(!logined){
 					%>
@@ -51,7 +57,7 @@
 	<nav class="nav-menu">
 		<a href="./main" class="nav-menu_link">분실 동물 게시판</a>
 	</nav>
-	<form action="./main" class="writer_class" id="writer_form" method="post" enctype="multipart/form-data">
+	<form action="<%=request.getContextPath()%>/writer" class="writer_class" id="writer_form" method="post" enctype="multipart/form-data">
 		<div class="writer_c">
 			<label for="title_id" class="writer_title">분실동물 이름</label>
 			<input type="text" id="title_id" name="title" class="writer_text" placeholder="분실동물 이름" required>
@@ -81,6 +87,8 @@
 			<input type="file" id="photoPath_id" name="photoPath" class="writer_text">
 			<p class="mini_txt">동물의 특징이 잘 보이는 사진을 올려주세요</p>
 		</div>
+		
+		
 		
 		<div class="writer_c">
 			<button type="submit" class="writer_but_c">등록</button>
