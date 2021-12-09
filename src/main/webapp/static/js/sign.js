@@ -15,7 +15,6 @@
       var ckpw = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
       if(userPw == "") {
             $('#must-pw').text("필수 입력 항목 입니다.");
-            $('#must-pw_two').css({"position": "relative", "right": "110px"});
         } else if(ckpw.test(userPw)){
             $('#must-pw').text("");
             $('#must-pw_two').text("");
