@@ -14,14 +14,9 @@ public class WriterDAO {
 	public WriterDAO() {
 		this.oc = new OracleConnect(true);
 	}
-	
-<<<<<<< HEAD
+
 	public boolean insert(WriterDTO dto) {
 			this.query = "INSERT INTO WRITER VALUES("
-=======
-	public boolean insert(WriterDTO dto) { 
-				query = "INSERT INTO WRITER VALUES("
->>>>>>> refs/remotes/origin/조정현
 				+ "WRITER_SEQ.NEXTVAL, "
 				+ "'" + dto.getPkid() + "', "
 				+ "'" + dto.getTitle() + "', "
@@ -30,28 +25,14 @@ public class WriterDAO {
 				+ "'" + dto.getPhonenumber() + "', "
 				+ "'" + dto.getPhotopath() + "', "
 				+ "SYSDATE)";
-		
-<<<<<<< HEAD
+
 	this.rs = oc.insert(query);
-=======
-			int res = oc.insert(query);
->>>>>>> refs/remotes/origin/조정현
-	
-<<<<<<< HEAD
 	return this.rs == 1 ? true : false;
-=======
-			return res == 1 ? true : false;
->>>>>>> refs/remotes/origin/조정현
 	}
-	
-<<<<<<< HEAD
+
 	public List<WriterDTO> select(String id){
 		this.query = "SELECT * FROM WRITER WHERE ID = '" + id + "'";
 		System.out.println("writerdao select:" + query); //테스트용 println : 나중에 제출할때 지우기
-=======
-	public List<WriterDTO> select(String id){ 
-		query = "SELECT * FROM WRITER WHERE ID = '" +id +"'";
->>>>>>> refs/remotes/origin/조정현
 		
 		List<WriterDTO> datas = new ArrayList<WriterDTO>();
 		this.res = oc.select(query);
@@ -169,6 +150,5 @@ public class WriterDAO {
 	
 	public void close() {
 		oc.close();
-		
 	}
 }
