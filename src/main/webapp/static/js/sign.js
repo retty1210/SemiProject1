@@ -13,11 +13,15 @@
    $('input[name=user_pw]').focusout(function() {
       var userPw = $('input[name=user_pw]').val();
       var ckpw = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
-      if(!ckpw.test(userPw)) {
+      if(userPw == "") {
             $('#must-pw').text("필수 입력 항목 입니다.");
         } else if(ckpw.test(userPw)){
             $('#must-pw').text("");
-        }
+            $('.divii').css("display","none");
+        } else if(!ckpw.test(userPw)) {
+            	$('#must-pw').text("8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.");
+            	$('#must-pw').css({"position": "relative", "right": "43px"});
+            }
    });
 
    // 비밀번호 일치 확인
@@ -83,11 +87,12 @@ $('#sign-btn').hover(function() {
 });
 
 // 로그인 실패
-$('input[name=user_id').focusin(function(){
+$('input[name=user_id').focusout(function(){
    var a = $('input[name=user_id').val();
 
    if(a != ""){
-      $('.sign-id-check').css('display', 'hidden');
+      $('.sign-id-check').remove();
    }
 });
+
 
