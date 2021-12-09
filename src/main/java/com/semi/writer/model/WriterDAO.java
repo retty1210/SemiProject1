@@ -55,7 +55,7 @@ public class WriterDAO {
 	
 	public boolean delete(WriterDTO dto) {
 		query = "DELETE * FROM WRITER"
-				+ "WHERE ID = '" + dto.getId() + "'";
+			  + "WHERE ID = '" + dto.getId() + "'";
 		
 		int res = oc.delete(query);
 		
