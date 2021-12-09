@@ -41,10 +41,13 @@ public class SignService {
 	public List<SignDTO> select(String userid){
 		SignDAO dao = new SignDAO();
 		List<SignDTO> datas = dao.select(userid);
+		System.out.println("signservice select datas:" + datas);
 		
 		if(datas.size() == 1) {
+			dao.close();
 			return datas;			
 		}else {
+			dao.close();
 			return dao.select(userid);
 		}
 	}
@@ -56,16 +59,18 @@ public class SignService {
 			SignDTO userData = data.get(0);
 			if(dto.equalsPassword(userData)) {
 				dto.setUserid(userData.getUserid());
-				dto.setPassword(""); // 확인하기
 				dto.setUsername(userData.getUsername());
 				dto.setPhoneNumber(userData.getPhoneNumber());
 				dto.setEmail(userData.getEmail());
 				dto.setSignDate(userData.getSignDate());
+				dao.close();
 				return true;
 			} else {
+				dao.close();
 				return false;
 			}
 		} else {
+			dao.close();
 			return false;
 		}
 	}

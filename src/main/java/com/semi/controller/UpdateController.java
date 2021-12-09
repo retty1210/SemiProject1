@@ -29,15 +29,37 @@ public class UpdateController extends HttpServlet {
 			request.setAttribute("datas", data);
 		}
 		
+		//if(service.updateContent(null))
+		
 		String view = "/WEB-INF/jsp/contents/update.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
-		
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
+		request.setCharacterEncoding("UTF-8");
+		String num = request.getParameter("num");
+		String title = request.getParameter("title");
+		String contents =request.getParameter("contents");
+		String place =request.getParameter("place");
+		String phoneNumber =request.getParameter("phoneNumber");
+		
+		
+		WriterDTO dto = new WriterDTO();
+		WriterService service = new WriterService();
+		
+		dto.setId(Integer.parseInt(num));
+		dto.setTitle(title);
+		dto.setContents(contents);
+		dto.setPlace(place);
+		dto.setPhonenumber(phoneNumber);
+		
+		if(service.updateContent(dto)) {
+			response.sendRedirect("/contents?id="+num);
+		}else {
+			response.sendRedirect("/update?id="+num);
+		}
 	}
 
 }

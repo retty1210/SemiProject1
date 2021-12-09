@@ -55,6 +55,7 @@ public class MainController extends HttpServlet {
 		
 		WriterService wService= new WriterService();
 		List<WriterDTO> datas = wService.selectAll();
+		System.out.println("maincon datas:" + datas);
 		
 		request.setAttribute("datas", datas);
 	
@@ -62,6 +63,7 @@ public class MainController extends HttpServlet {
 		String view = "/WEB-INF/jsp/welcome/main.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
+		// response.sendRedirect("/main");
 		
 	}
 

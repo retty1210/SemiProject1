@@ -1,6 +1,7 @@
 package com.semi.controller;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -37,13 +38,15 @@ public class InfoController extends HttpServlet {
 		
 		SignService service = new SignService();
 		List<SignDTO> datas = service.select((String)session.getAttribute("login_user"));
+		System.out.println("infocon datas:" + datas);
+		
 		
 		for(SignDTO sdto: datas) {
 			request.setAttribute("init", sdto);			
 		}
 		WriterService wService = new WriterService();
-		List<WriterDTO> wDatas = wService.select(login_user);
-		
+		List<WriterDTO> wDatas = wService.select_userid(login_user);
+		System.out.println("infocon wdatas:" + wDatas);
 		
 		request.setAttribute("wdatas", wDatas);
 		

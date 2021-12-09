@@ -14,9 +14,28 @@ public class WriterDTO {
 	private String phonenumber;
 	private String photopath;
 	private String writerDate;
+	private int totalRows;
 	
 	
 	
+	
+	
+	public void setTotalRows(String totalRows) {
+		WriterDAO dao = new WriterDAO();
+		
+		List<WriterDTO> datas = dao.select_userid(totalRows);
+		
+		if(datas.size() != 0) {
+			this.totalRows = datas.size();
+		}else {
+			dao.select_userid(totalRows);
+		}
+	}
+
+	public int getTotalRows() {
+		return this.totalRows;
+	}
+
 	public String getUserId() {
 		return userId;
 	}
