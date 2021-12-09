@@ -27,7 +27,6 @@ button:hover {
 	height:500px;
 	margin: 0 100px 0 150px;
 	display: block;
-	border: 1px solid rgb(20, 20, 20);
 }
 
 .contents-table {
@@ -101,6 +100,7 @@ button:hover {
 	border:none;
 	outline:none;
 }
+<<<<<<< HEAD
 .update-button_box{
 	display:flex;
 	justify-content:flex-end;
@@ -110,3 +110,6 @@ button:hover {
 	bottom:60px;
 
 }
+=======
+
+>>>>>>> refs/remotes/origin/정현실

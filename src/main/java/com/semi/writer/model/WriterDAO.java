@@ -32,7 +32,7 @@ public class WriterDAO {
 	}
 	
 	public List<WriterDTO> select(String id){
-		this.query = "SELECT * FROM WRITER WHERE ID = '" +id +"'";
+		this.query = "SELECT * FROM WRITER WHERE ID = '" + id + "'";
 		System.out.println("writerdao select:" + query); //테스트용 println : 나중에 제출할때 지우기
 		
 		List<WriterDTO> datas = new ArrayList<WriterDTO>();
@@ -40,7 +40,7 @@ public class WriterDAO {
 		System.out.println("writerdao res:" +res); //테스트용 println : 나중에 제출할때 지우기
 		
 		try {
-			while(res.next()) {
+		while(res.next()) {
 				WriterDTO wdto = new WriterDTO();
 				wdto.setId(res.getInt("ID"));
 				wdto.setPkid(res.getInt("PKID"));
@@ -113,7 +113,7 @@ public class WriterDAO {
 			for(SignDTO sdata: sdto) {
 				pk = sdata.getPkid();
 			}
-		} 
+		}
 		
 		this.query = "SELECT * FROM(SELECT * FROM WRITER WHERE PKID = '"+userid+"' ORDER BY ID) WHERE ROWNUM <= 6";
 		

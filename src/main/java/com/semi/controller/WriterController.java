@@ -27,12 +27,9 @@ public class WriterController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-	
 		String view = "/WEB-INF/jsp/writer/writer.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
-		
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -49,9 +46,11 @@ public class WriterController extends HttpServlet {
 		//request.setAttribute("datas",datas); 내정보에 글목록 불러오는데 사용합니다.글쓴거 리스트컬렉션으로 받는 셀렉문 로직에 넣어주세요.
 //		enctype="multipart/form-data" -> 이거 쓸 때는 request.getParameter 사용 불가능하며 
 //		library의 cos의 MultipartRequest를 사용해야 함!
+		System.out.println("WriterController, 진입"); //테스트용 println
 		
 		
 		MultipartRequest multi = new MultipartRequest(
+				
 				request, 
 				request.getServletContext().getRealPath("/upload"),//업로드 파일의 저장 위치 지정
 				1024 * 1024 * 10, //업로드 파일의 크기 제한(Byte단위)(10MB)
@@ -69,8 +68,8 @@ public class WriterController extends HttpServlet {
 //		System.out.println(multi.getFilesystemName("photoPath"));//둘 중에 하나 편한거 쓰면 됨
 		
 		WriterDTO dto = new WriterDTO();
-		
-		
+		//int pkid = Integer.parseInt(multi.getParameter("pkid"));
+		//dto.setPkid(pkid);
 		dto.setTitle(title);
 		dto.setContents(contents);
 		dto.setPlace(place);
@@ -78,9 +77,9 @@ public class WriterController extends HttpServlet {
 		dto.setPhotopath(photoPath);
 		dto.setPkid(1); // 임시로
 		WriterService service = new WriterService();
-		String view = "/WEB-INF/jsp/welcome/writer.jsp";
+		String view = "/WEB-INF/jsp/writer/writer.jsp";
+		
 		if(service.insert(dto) ) {
-			
 			response.sendRedirect("/main");
 		} else {
 			System.out.println("저장 실패");

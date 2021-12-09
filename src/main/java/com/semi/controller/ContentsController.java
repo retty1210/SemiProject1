@@ -18,6 +18,9 @@ public class ContentsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	String view = "";
        
+    public ContentsController() {
+        super();
+    }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
@@ -43,6 +46,9 @@ public class ContentsController extends HttpServlet {
 		for(WriterDTO data: datas){
 			request.setAttribute("datas", data);
 		}
+
+		//request.setAttribute("id_Num", id);
+
 		
 		view = "/WEB-INF/jsp/contents/contents.jsp";
 		RequestDispatcher rd1 = request.getRequestDispatcher(view);
@@ -52,10 +58,6 @@ public class ContentsController extends HttpServlet {
 		//String view2 = "/WEB_INF/jsp/welcome/main.jsp";
 		//RequestDispatcher rd2 = request.getRequestDispatcher(view2);
 		//rd2.forward(request, response);
-
-		String view = "/WEB-INF/jsp/contents/contents.jsp";
-		RequestDispatcher rd = request.getRequestDispatcher(view);
-		rd.forward(request, response);
 		
 	}
 

@@ -13,6 +13,7 @@
 <link href="<%=request.getContextPath()%>/static/css/contents/contents.css" rel="stylesheet" type="text/css"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/js/contents.js"></script>
 </head>
 <body>
 	<header class="contents-header">
@@ -72,7 +73,7 @@
 	
 	<div class="contents-main">
 		<div class="contents-imgarea">
-			<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>">
+			<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>" name="img">
 		</div>
 		
 		<div class="contents-inner">
@@ -96,6 +97,7 @@
 			</table>
 		</div>
 	</div>
+	<script>imgSize("img");</script>
 			
 			<%	
 				}
@@ -125,4 +127,5 @@
 <script type="text/javascript" src="static/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="static/js/delete.js"></script>
 </body>
+	
 </html>

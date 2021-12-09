@@ -90,14 +90,23 @@
 			
 	%>	
 		<div class="contenet-1">
+			<table class="content-area">
+				<tr class="content-imgtr">
+					<td class="content-imgtd">
+						<img class="content-img" alt="동물사진" src="/upload/pet00<%=data.getId() %>.jpg" name="img<%=data.getId() %>" height=500 width=500> 
+					</td>
+				<!-- 테스트하느라 src값 수정중! 반드시 테스트 끝난 후 < % = data.getPhotopath() %>로 돌려놓기 -->
+				</tr>
+				<tr class="content-body">
+					<td>
+						<a class="content-link" href="/contents?id=<%=data.getId() %>"><%=data.getTitle() %> <%=data.getContents() %></a>
+					</td>
+				</tr>
+			</table>
 			
-			<img class="content-img" alt="강아지사진" src="<%=data.getPhotopath() %>"> 
 			
-			<div class="content-body">
-				<a class="content-link" href="/contents?id=<%=data.getId() %>"><%=data.getTitle() %> <%=data.getContents() %></a>
-				<!-- 특정 게시글로 들어가게 하는거 어떻게해요..? -->
-			</div>
 		</div>
+		
 	<%
 				}
 			}
