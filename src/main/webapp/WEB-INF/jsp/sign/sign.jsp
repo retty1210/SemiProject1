@@ -44,13 +44,14 @@
                                 placeholder="비밀번호" required>
                         <span id="must-pw" class="hid_span_area">
                             <!-- 필수 입력입니다.-->
-                            <!-- 특수문자 포함 관련 내용-->
+                        </span>
+                        <span id="must-pw_two" class="hid_span_area">
+                        	<!-- 특수기호 포함 -->
                         </span>
                     </div>
                     <div class="sign-up_input">
                         <input type="password" name="password_check" placeholder="비밀번호 확인" required>
                         <span id="must-pw-ck" class="hid_span_area">
-                            <!-- 필수 입력입니다.-->
                             <!-- 비밀번호가 일치하지 않습니다.-->
                         </span>
                     </div>
