@@ -19,9 +19,7 @@
         <form name="sign_form" action="<%=request.getContextPath()%>/sign" method="post">
             <div class="main-area-box">
                 <div class="main-area-box_header">
-
                     <a href="/main" class="header-a"><span class="material-icons">pets</span></a>
-                    <span>회원가입</span>
                     <span class="main-area-box-header-second-span">회원가입</span>
                 </div>
                 <div class="main-area-box_body">
@@ -30,6 +28,9 @@
                         <span id="must-id"  class="hid_span_area">
                             <!--필수 입력입니다.-->
                         </span>
+                        <% 
+                        	// 아이디 중복 에러 지우기
+                        %>
                         <span class="sign-id-check">
                         	<%= 
                             	(String) request.getAttribute("error")

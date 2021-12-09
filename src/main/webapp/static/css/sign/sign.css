@@ -9,8 +9,8 @@ body {
 }
 
 /* 회원가입 헤드*/
-.header-a .material-icons-outlined{
-    font-size: 130px;
+.header-a .material-icons{
+    font-size: 120px;
     display: block;
 }
 

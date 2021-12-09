@@ -108,20 +108,21 @@
 					</div>
 					<div class="button-writer"><!-- hidden으로 해 놓고 작성자 본인에게만 보이게 -->
 						<a href="/update?id=<%=request.getParameter("id") %>"><button type="submit" class="mini-btn">수정</button></a>
-						<button type="button" class="mini-btn">삭제</button>
+						<form action="/delete?id=<%=request.getParameter("id") %>" method="post">	
+						<button type="submit" class="mini-btn" id="delete-btn">삭제</button>
+						</form>
 					</div>
 		<% 
 				}
 		%>
 				</div>	
-		
-
 	<footer>
 		<hr>
 		<p class="footer-txt">팀원 :이종훈 | 곽서희 | 장재완 | 정현실 | 신재민 | 조정현</p>
 		<a href="#"></a>
 		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
 	</footer>
-	
+<script type="text/javascript" src="static/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="static/js/delete.js"></script>
 </body>
 </html>

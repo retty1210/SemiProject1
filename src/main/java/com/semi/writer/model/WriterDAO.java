@@ -30,13 +30,14 @@ public class WriterDAO {
 	
 	return this.rs == 1 ? true : false;
 	}
+	
 	public List<WriterDTO> select(String id){
 		this.query = "SELECT * FROM WRITER WHERE ID = '" +id +"'";
-		System.out.println("writerdao select:" + query);
+		System.out.println("writerdao select:" + query); //테스트용 println : 나중에 제출할때 지우기
 		
 		List<WriterDTO> datas = new ArrayList<WriterDTO>();
 		this.res = oc.select(query);
-		System.out.println("writerdao res:" +res);
+		System.out.println("writerdao res:" +res); //테스트용 println : 나중에 제출할때 지우기
 		
 		try {
 			while(res.next()) {
@@ -61,17 +62,16 @@ public class WriterDAO {
 		this.query = "DELETE FROM WRITER"
 				+ "WHERE ID = '" + dto.getId() + "'";
 		
-		this.rs = oc.insert(query);
+		this.rs = oc.delete(query);
 		
 		return this.rs == 1 ? true : false;
 	}
 
-	
 	public List<WriterDTO> selectAll(){
 		this.query = "SELECT * FROM WRITER";
 		List<WriterDTO> datas = new ArrayList<WriterDTO>();
 		this.res = oc.select(query);
-		System.out.println("writerdao select all res:" + res);
+		System.out.println("writerdao select all res:" + res); //테스트용 println : 제출 전엔 삭제해주세요
 		
 		try {
 			while(res.next()) {
@@ -139,7 +139,6 @@ public class WriterDAO {
 		}
 		return datas;
 	}
-	
 	
 	public void commit() {
 		oc.commit();
