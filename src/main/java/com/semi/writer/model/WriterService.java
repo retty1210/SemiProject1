@@ -15,11 +15,12 @@ public class WriterService {
 		dao.close();
 		return res;
 	}
+	
 	public List<WriterDTO> select(String id){
 		WriterDAO wdao = new WriterDAO();
 	
 		List<WriterDTO> datas = wdao.select(id);
-		System.out.println("writerservice select datas:" + datas);
+		System.out.println("writerservice select datas:" + datas); //테스트용 println
 		
 		if(datas.size() != 0) {
 			wdao.close();
@@ -28,7 +29,6 @@ public class WriterService {
 			wdao.close();
 			return wdao.select(id);
 		}
-		
 	}
 	
 	public boolean delete(WriterDTO dto) {
@@ -47,7 +47,7 @@ public class WriterService {
 		WriterDAO wdao = new WriterDAO();
 	
 		List<WriterDTO> datas = wdao.selectAll();
-		System.out.println("writerservice selectAll datas:" + datas);
+		System.out.println("writerservice selectAll datas:" + datas); //테스트용 println
 		
 		if(datas.size() != 0) {
 			wdao.close();
@@ -85,6 +85,5 @@ public class WriterService {
 			return wdao.select_userid(userid);
 		}
 	}
-
-
+	
 }
