@@ -96,57 +96,23 @@
 						<th>번호</th>
 						<th>제목</th>
 						<th>날짜</th>
-						<th>조회수</th>
 					</tr>
 					<%
 						List<WriterDTO> datas;
+						WriterDTO dto = new WriterDTO();
 						if(request.getAttribute("wdatas") != null){
 							datas = (List<WriterDTO>) request.getAttribute("wdatas");
 							for(WriterDTO data: datas){
 					%>
 					<tr>
 						<td><%=data.getId() %></td>
-						<td><a href="#"><%=data.getTitle() %></a></td>
+						<td><a href="/contents?id=<%=data.getId() %>"><%=data.getTitle() %></a></td>
 						<td><%=data.getWriterDate() %></td>
-						<td>1</td>
 					</tr>
 					<%
 							}
 						}
 					%>
-					<%
-						WriterDTO dto = new WriterDTO();
-						String tempPage = request.getParameter("page");
-						int cPage = 0;
-						int pageLength = 6;
-						int startPage;
-						int endPage;
-						int totalRows = dto.getTotalRows();
-						
-					if(tempPage == null || tempPage.length() == 0){
-						cPage = 1;
-					}
-					try{
-						cPage = Integer.parseInt(tempPage);
-					}catch(NumberFormatException e){
-						cPage = 1;
-					}
-					int currentBlock = cPage % pageLength == 0 ? cPage / pageLength:(cPage/pageLength)+1;
-					startPage = (currentBlock - 1) * pageLength + 1;
-					endPage = startPage + pageLength - 1;
-					int totalPages = totalRows % pageLength == 0? totalRows / pageLength:(totalRows/pageLength) + 1;
-					if(totalPages == 0){
-						totalPages = 1;
-					}
-					if(endPage > totalPages){
-						endPage = totalPages;
-					}
-					int start = (cPage - 1) * pageLength;
-					
-					%>
-					<tr>
-						<th><a href="/info?page=1">1</a></th>
-					</tr>
 				</table>
 			</div>
 		</div>

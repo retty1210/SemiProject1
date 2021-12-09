@@ -38,7 +38,7 @@ public class WriterController extends HttpServlet {
 		HttpSession session = request.getSession();
 		String login_user = (String) session.getAttribute("login_user");	
 		SignService sv = new SignService();
-		List<SignDTO> sdto = sv.select(login_user);
+		int pkid = sv.select_pkid(login_user);
 		
 //		enctype="multipart/form-data" -> 이거 쓸 때는 request.getParameter 사용 불가능하며 
 //		library의 cos의 MultipartRequest를 사용해야 함!
@@ -66,17 +66,18 @@ public class WriterController extends HttpServlet {
 		//int pkid = Integer.parseInt(multi.getParameter("pkid"));
 //		System.out.println(multi.getFile("photoPath").getName());//아래 꺼랑 기능 동일
 //		System.out.println(multi.getFilesystemName("photoPath"));//둘 중에 하나 편한거 쓰면 됨
-		
 		WriterDTO dto = new WriterDTO();
+		WriterService service = new WriterService();
+		
+		System.out.println("writercon getpkid : " +pkid);
 		//int pkid = Integer.parseInt(multi.getParameter("pkid"));
 		//dto.setPkid(pkid);
+		dto.setPkid(pkid); // 임시로			
 		dto.setTitle(title);
 		dto.setContents(contents);
 		dto.setPlace(place);
 		dto.setPhonenumber(phonenumber);
 		dto.setPhotopath(photoPath);
-		dto.setPkid(1); // 임시로
-		WriterService service = new WriterService();
 		String view = "/WEB-INF/jsp/writer/writer.jsp";
 		
 		if(service.insert(dto) ) {

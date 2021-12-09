@@ -16,6 +16,10 @@
 	display: table-cell;
 	text-align: center;
 }
+.info-writer_box{
+	max-height:400px;
+	overflow-y:scroll;
+}
 
 .info-writer_box, 
 .info-input_box{
@@ -60,17 +64,18 @@
 .info-input_box input:focus{
 	outline:none;
 }
-table{
+.info-writer_tb{
 	width:100%;
 	border-collapse:collapse;
 	border:1px solid rgba(0,0,0,0.5);
+	height:300px;
 }
-th,td{
+.info-writer_tb th,td{
 	padding:16px 24px;
 	text-align:center;
 	border-bottom: 1px dashed rgba(0,0,0,0.5);
 }
-table tr td{
+info.writer_tb tr td{
 	max-width:250px;
 	text-overflow:ellipsis;
 	overflow:hidden;

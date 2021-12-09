@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.*;
 
 import com.db.conn.OracleConnect;
+import com.semi.writer.model.WriterDTO;
 
 public class SignDAO {
 	
@@ -57,6 +58,21 @@ public class SignDAO {
 			e.printStackTrace();
 		}
 		return datas;
+	}
+	public int select_pkid(String id){
+		this.query = "SELECT PKID FROM SIGNUP WHERE USERID = '" + id + "'";
+		 
+		ResultSet res = oc.select(query);
+		SignDTO sdto = new SignDTO();
+		
+		try {
+		while(res.next()) {
+				sdto.setPkid(res.getInt("PKID"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return sdto.getPkid();
 	}
 	
 	public void commit() {

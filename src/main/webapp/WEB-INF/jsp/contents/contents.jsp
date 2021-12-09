@@ -75,7 +75,9 @@
 		<div class="contents-imgarea">
 			<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>" name="img">
 		</div>
-		
+		<div class="list-btn_box">
+			<a href="/main"><button class="list-btn">목 록</button></a>
+		</div>
 		<div class="contents-inner">
 			<table class="contents-table">
 				<tr class="table-row">

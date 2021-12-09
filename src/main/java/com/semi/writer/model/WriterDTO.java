@@ -27,8 +27,10 @@ public class WriterDTO {
 		
 		if(datas.size() != 0) {
 			this.totalRows = datas.size();
+			dao.close();
 		}else {
-			dao.select_userid(totalRows);
+			this.totalRows = 0;
+			dao.close();
 		}
 	}
 

@@ -31,26 +31,33 @@ textarea {
 
 button {
 	display: block;
-	width: 850px;
+	width: 400px;
 	height: 52px;
 	background-color: black;
 	color: yellow;
 	margin: auto;
 	font-weight: bold;
 	border: 2px solid rgba(0,0,0,0.5);
-	border-radius: 2px;
+	border-radius: 10px;
 }
 
 button:hover {
 	cursor: pointer;
 }
-
+.writer-box{
+	border:1px solid black;
+	padding:16px;
+	margin-bottom:15px;
+}
 .writer_c {
 	display:block;
 }
-
 .writer_title {
 	display: inline-block;
+}
+.writer_c:nth-child(2) .writer_title{
+	position:relative;
+	bottom:50px;
 }
 
 .writer_text {

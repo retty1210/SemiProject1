@@ -105,7 +105,7 @@ public class WriterDAO {
 	}
 	
 	//내 정보->본인이 쓴 게시글 확인하는 로직에 있는 select 메서드 다 select_userid로 바꿔주세요
-	public List<WriterDTO> select_userid(String userid){
+	public List<WriterDTO> select_maxSix(String userid){
 		SignDAO sdao = new SignDAO();
 		List<SignDTO> sdto = sdao.select(userid);
 		int pk = 0;
@@ -115,7 +115,41 @@ public class WriterDAO {
 			}
 		}
 		
-		this.query = "SELECT * FROM(SELECT * FROM WRITER WHERE PKID = '"+userid+"' ORDER BY ID) WHERE ROWNUM <= 6";
+		this.query = "SELECT * FROM(SELECT * FROM WRITER WHERE PKID = '"+pk+"' ORDER BY ID) WHERE ROWNUM <= 6";
+		
+		this.res = oc.select(query);
+		
+		List<WriterDTO> datas = new ArrayList<WriterDTO>();
+		
+		try {
+			while(this.res.next()) {
+				WriterDTO wdto = new WriterDTO();
+				wdto.setId(res.getInt("ID"));
+				wdto.setPkid(res.getInt("PKID"));
+				wdto.setTitle(res.getString("TITLE"));
+				wdto.setContents(res.getString("CONTENTS"));
+				wdto.setPlace(res.getString("PLACE"));
+				wdto.setPhonenumber(res.getString("PHONENUMBER"));
+				wdto.setPhotopath(res.getString("PHOTOPATH"));
+				wdto.setWriterDate(res.getString("WRITERDATE"));
+				datas.add(wdto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return datas;
+	}
+	public List<WriterDTO> select_userid(String userid){
+		SignService sService = new SignService();
+		List<SignDTO> sdto = sService.select(userid);
+		int pk = 0;
+		if(sdto.size() == 1) {
+			for(SignDTO sdata: sdto) {
+				pk = sdata.getPkid();
+			}
+		}
+		
+		this.query = "SELECT * FROM WRITER WHERE PKID = '"+pk+"' ORDER BY ID";
 		
 		this.res = oc.select(query);
 		

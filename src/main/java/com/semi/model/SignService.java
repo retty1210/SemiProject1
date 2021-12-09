@@ -74,4 +74,13 @@ public class SignService {
 			return false;
 		}
 	}
+	public int select_pkid(String id){
+		SignDAO sDao = new SignDAO();
+		int res = sDao.select_pkid(id);
+		if(res != 0) {
+			return res;
+		}else {
+			return 0;
+		}
+	}
 }
