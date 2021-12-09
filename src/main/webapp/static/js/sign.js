@@ -20,7 +20,7 @@
             $('.divii').css("display","none");
         } else if(!ckpw.test(userPw)) {
             	$('#must-pw').text("8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.");
-            	$('#must-pw').css({"position": "relative", "right": "43px"});
+            	$('#must-pw').css({"position": "relative", "right": "40px"});
             }
    });
 
