@@ -30,10 +30,17 @@ body {
 /* 회원가입 input-box */
 .sign-up_input {
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+	
+}
+
+.overlap-check {
+	display:inline-block;
+	height:35px;
+	border-bottom: 2px solid rgba(0,0,0,0.5);
+    border-radius: 4px;
+    background-color: rgba(80, 79, 79, 0.904);
+    color: yellow;
+    cursor: pointer;
 }
 
 .sign-up_input input{
@@ -51,13 +58,6 @@ body {
     border-bottom : 2px solid yellow;
 }
 
-.sign-up_input button {
-    position: relative;
-    right: -10px;
-    height: 28px;
-    cursor: pointer;
-    border: none;
-}
 
 .sign-up_input button:hover {
     background-color: dimgray;
@@ -97,10 +97,12 @@ body {
 /* 아이디 중복 */
 .sign-id-check {
 	color: red;
-    font-size: 13px;
+    font-size: 12px;
     position : relative;
-    right : 130px;
+    right : 92px;
     display:none;
 }
+
+
 
 
