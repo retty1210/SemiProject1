@@ -46,17 +46,17 @@ public class WriterController extends HttpServlet {
 		//request.setAttribute("datas",datas); 내정보에 글목록 불러오는데 사용합니다.글쓴거 리스트컬렉션으로 받는 셀렉문 로직에 넣어주세요.
 //		enctype="multipart/form-data" -> 이거 쓸 때는 request.getParameter 사용 불가능하며 
 //		library의 cos의 MultipartRequest를 사용해야 함!
-		System.out.println("WriterController, 진입"); //테스트용 println
+//		System.out.println("WriterController, 진입"); //테스트용 println
 		
 		
 		MultipartRequest multi = new MultipartRequest(
-				
 				request, 
 				request.getServletContext().getRealPath("/upload"),//업로드 파일의 저장 위치 지정
 				1024 * 1024 * 10, //업로드 파일의 크기 제한(Byte단위)(10MB)
 				"utf-8", //업로드 파일의 인코딩 형식
 				new DefaultFileRenamePolicy() //중복되는 이름의 파일이 업로드 될 경우 이름을 바꾸는 것(뒤에 숫자 붙임)
 				);
+		
 		String title = multi.getParameter("title");
 		String contents = multi.getParameter("contents");
 		String place = multi.getParameter("place");
@@ -69,10 +69,10 @@ public class WriterController extends HttpServlet {
 		WriterDTO dto = new WriterDTO();
 		WriterService service = new WriterService();
 		
-		System.out.println("writercon getpkid : " +pkid);
+//		System.out.println("writercon getpkid : " +pkid);
 		//int pkid = Integer.parseInt(multi.getParameter("pkid"));
 		//dto.setPkid(pkid);
-		dto.setPkid(pkid); // 임시로			
+		dto.setPkid(pkid); 
 		dto.setTitle(title);
 		dto.setContents(contents);
 		dto.setPlace(place);

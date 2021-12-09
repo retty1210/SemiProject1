@@ -23,9 +23,11 @@
 	   	</a>
 		</div>
 	</header>
+	
 	<nav class="nav-menu">
 		<a href="./main" class="nav-menu_link">분실 동물 게시판</a>
 	</nav>
+	
 	<form action="<%=request.getContextPath()%>/writer" class="writer_class" id="writer_form" method="post" enctype="multipart/form-data">
 		<div class="writer-box">
 			<div class="writer_c">
@@ -59,16 +61,17 @@
 			</div>
 		</div>
 		
-		
 		<div class="writer_c">
 			<button type="submit" class="writer_but_c">등록</button>
 		</div>
 	</form>
+	
 	<footer>
 		<hr>
 		<p class="footer-txt">팀원 :이종훈 | 곽서희 | 장재완 | 정현실 | 신재민 | 조정현</p>
 		<a href="#"></a>
 		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
 	</footer>
+	
 </body>
 </html>

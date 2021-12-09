@@ -27,8 +27,8 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		String id = request.getParameter("userId"); // 이건 임시입니다.
-		String password = request.getParameter("userPw"); // 로그인 화면을 못 봐서 해당 name 알면 붙여넣을게요
+		String id = request.getParameter("userId"); 
+		String password = request.getParameter("userPw"); 
 		String view = "/WEB-INF/jsp/login/login.jsp";
 		
 

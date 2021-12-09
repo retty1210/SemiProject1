@@ -53,7 +53,7 @@ public class SignController extends HttpServlet {
 			}
 		} else {
 			// 유효성 검사에 이상이 있는 경우
-			System.out.println("오오류");
+			System.out.println("오류");
 		}
 	}
 }

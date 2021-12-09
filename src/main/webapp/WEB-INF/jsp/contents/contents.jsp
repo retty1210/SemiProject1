@@ -68,17 +68,19 @@
 				WriterDTO datas;
 				if(request.getAttribute("datas") != null){
 						datas = (WriterDTO) request.getAttribute("datas");
-				
 			%>
 	
 	<div class="contents-main">
+	
 		<div class="contents-imgarea">
 			<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>" name="img">
 		</div>
 		<script>imgSize("img");</script>
+		
 		<div class="list-btn_box">
 			<a href="/main"><button class="list-btn">목 록</button></a>
 		</div>
+		
 		<div class="contents-inner">
 			<table class="contents-table">
 				<tr class="table-row">
@@ -99,10 +101,8 @@
 				</tr>
 			</table>
 		</div>
-		
 	</div>
 	
-			
 			<%	
 				}
 				if(logined) {
@@ -118,9 +118,11 @@
 						<button type="submit" class="mini-btn" id="delete-btn">삭제</button>
 						</form>
 					</div>
+		
 		<% 
 				}
 		%>
+				
 				</div>	
 	<footer>
 		<hr>
@@ -131,5 +133,4 @@
 <script type="text/javascript" src="static/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="static/js/delete.js"></script>
 </body>
-	
 </html>

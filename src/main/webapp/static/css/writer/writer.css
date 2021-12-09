@@ -44,17 +44,21 @@ button {
 button:hover {
 	cursor: pointer;
 }
+
 .writer-box{
 	border:1px solid black;
 	padding:16px;
 	margin-bottom:15px;
 }
+
 .writer_c {
 	display:block;
 }
+
 .writer_title {
 	display: inline-block;
 }
+
 .writer_c:nth-child(2) .writer_title{
 	position:relative;
 	bottom:50px;

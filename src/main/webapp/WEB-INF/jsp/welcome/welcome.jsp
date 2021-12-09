@@ -14,18 +14,18 @@
 </head>
 <body class="main-body">
 	<div class="main-box">
-	<div class="logo-box">
-   	<a class="logo-link" href="/main">
-		<img name ="logo"class="logo" src="/static/icons/pets_black_24dp.svg">
-   	</a>	
-	</div>
-	<div class="text-box">
-   		<a href="/main" class="footer-txt">
-   			<span class="material-icons">
-				arrow_upward
-			</span>요거 클릭!
-		</a>	
-	</div>
+		<div class="logo-box">
+   			<a class="logo-link" href="/main">
+				<img name ="logo"class="logo" src="/static/icons/pets_black_24dp.svg">
+   			</a>	
+		</div>
+		<div class="text-box">
+   			<a href="/main" class="footer-txt">
+   				<span class="material-icons">
+					arrow_upward
+				</span>요거 클릭!
+			</a>	
+		</div>
    	</div>
 	<hr>
 	<footer>

@@ -26,18 +26,21 @@
 	<nav class="nav-menu">
 		<a href="./main" class="nav-menu_link">게시글 수정 페이지</a>
 	</nav>
+	
 			<%
 				WriterDTO datas;
 				if(request.getAttribute("datas") != null){
 					datas = (WriterDTO) request.getAttribute("datas");
-				
 			%>
+			
 	<form action="/update" method="post">
 		<div class="contents-main">
+		
 			<div class="contents-imgarea">
 				<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>" name="img">
 			</div>
 			<script>imgSize("img");</script>
+			
 			<div class="contents-inner">
 				<table class="contents-table">
 					<tr class="table-row">
@@ -67,9 +70,11 @@
 	<%
 				}
 	%>
+	
 		<div class="update-button_box"><!-- hidden으로 해 놓고 작성자 본인에게만 보이게 -->
 			<button type="submit" class="main-btn">수정</button>
 		</div>
+		
 	</form>
 	
 	<footer>
@@ -80,6 +85,4 @@
 	</footer>
 	
 </body>
-
-	
 </html>

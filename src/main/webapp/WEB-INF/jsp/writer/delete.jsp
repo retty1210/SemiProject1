@@ -11,38 +11,47 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
-<<<<<<< HEAD
-=======
+<body>
 
->>>>>>> refs/remotes/origin/정현실
-<body>	
 	<form method="post">
 		<div class="header-logo-box">
 			<a class="header-logo-link" href="/">
 			<img name ="header-logo"class="header-logo" src="/static/icons/pets_black_24dp.svg">
 	   		</a>
 	   	</div>
-	<nav class="success">
-		<%
-			if(request.getAttribute("success") != null) {
-		%>
-		<span class="delete_success">
-		<%= request.getAttribute("success") %>
-		</span>
-		<%
-			}else {
-		%>
+	   	
+		<nav class="success">
+	
+			<%
+				if(request.getAttribute("success") != null) {
+			%>
 		
-		<span class="delete_success">
-		<%=
-			request.getAttribute("fail")
-		%>
-		</span>
-		<% } %>
-	</nav>
+			<span class="delete_success">
+		
+			<%= request.getAttribute("success") %>
+		
+			</span>
+		
+			<%
+				}else {
+			%>
+		
+			<span class="delete_success">
+		
+			<%=
+				request.getAttribute("fail")
+			%>
+		
+			</span>
+		
+			<% } %>
+		
+		</nav>
+		
 		<div class="button_area">
-		<input class="return_main" type="button" value="게시판으로 돌아가기" onclick="location.href='/main'"/>
+			<input class="return_main" type="button" value="게시판으로 돌아가기" onclick="location.href='/main'"/>
 		</div>
+		
 	</form>
 	 <footer>
 		<hr>
@@ -50,10 +59,5 @@
 		<a href="#"></a>
 		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
 	</footer>
-<<<<<<< HEAD
-=======
-
-<body>
->>>>>>> refs/remotes/origin/정현실
 </body>
 </html>

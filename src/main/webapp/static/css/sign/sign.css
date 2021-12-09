@@ -13,13 +13,16 @@ body {
     font-size: 120px;
     display: block;
 }
+
 .main-area-box_header{
     margin-top:35px;	
 }
+
 .main-area-box_header a{
     color: black;
     text-decoration:none;
 }
+
 .main-area-box-header-second-span {
     font-size: 40px;
     color:yellow;
@@ -30,7 +33,6 @@ body {
 /* 회원가입 input-box */
 .sign-up_input {
     margin-top: 20px;
-	
 }
 
 .overlap-check {
@@ -51,19 +53,20 @@ body {
     border-bottom: 2px solid rgba(0,0,0,0.5);
     border-radius: 4px;
     background-color: rgba(80, 79, 79, 0.904);
-    color: yellow;
-    
+    color: yellow; 
 }
+
 .sign-up_input input:hover {
     border-bottom : 2px solid yellow;
 }
-
 
 .sign-up_input button:hover {
     background-color: dimgray;
 }
 
-.sign-up_input input::placeholder {color:rgba(0,0,0,0.5);}
+.sign-up_input input::placeholder {
+	color:rgba(0,0,0,0.5);
+}
 
 .hid_span_area {
     margin-top : 4px;
@@ -73,9 +76,11 @@ body {
     position : relative;
     right : 110px;
 }
+
 .main-area-box_footer{
 	margin-bottom:35px;	
 }
+
 /* 가입 버튼 부분 */
 .main-area-box_footer button{
     width: 318px;
@@ -102,7 +107,3 @@ body {
     right : 92px;
     display:none;
 }
-
-
-
-

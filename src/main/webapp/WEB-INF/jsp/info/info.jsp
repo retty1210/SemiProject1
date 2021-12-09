@@ -17,6 +17,7 @@
 </head>
 <body>
 	<header class="main-header">
+	
 		<nav class="header-link_box">
 			<ul class="header-link_writer_ul">
 				<li class="header-link_writer_li">
@@ -27,13 +28,16 @@
 					</a>		
 				</li>
 			</ul>
+			
 			<ul class="header-link_ul">
 				<li class="header-link_li"><a href="#" class="header-link_a">
 					<span class="material-icons">
 						menu
 					</span>
 				</a>
+				
 				<ul class="header-link_menu">
+				
 					<%
 						HttpSession sessions = request.getSession();
 						SignDTO initData = new SignDTO();
@@ -41,42 +45,52 @@
 						boolean logined = (boolean) request.getAttribute("logined");
 						if(logined){
 					%>
+					
 						<hr>	
 						<li class="header-link_menu_content"><a href="./logout">로그아웃</a></li>
 						<hr>
 						<li class="header-link_menu_content"><a href="./info">내정보</a></li>
+						
 					<% 
 						} else {					
 					%>	
+					
 						<hr>
 						<li class="header-link_menu_content"><a href="./login">로그인</a></li>
 						<hr>
 						<li class="header-link_menu_content"><a href="./sign">회원가입</a></li>
+						
 					<%
 						}
 					%>
+					
 				</ul></li>
 			</ul>
 		</nav>
+		
 		<div class="header-logo-box">
 		<a class="header-logo-link" href="/">
 			<img name ="header-logo"class="header-logo" src="/static/icons/pets_black_24dp.svg">
 	   	</a>
 		</div>
 	</header>
+	
 	<nav class="nav-menu">
 		<a href="#" class="nav-menu_link">My Page</a>
 	</nav>
+	
 	<div class="info-main_box">
 		<div class="info-inner_box">
+		
 			<div class="info-input_box">
 				<h3 class="info-user_h3"><%=sessions.getAttribute("login_user") %> 님의 개인정보 입니다.</h3>
+				
 				<%
 					if(request.getAttribute("init") != null){ 
 						initData = (SignDTO) request.getAttribute("init");
 					}
-
 				%>
+				
 				<div class="info-input_input">
 					<input type="text" name="username" value="<%=initData.getUsername() %>">
 				</div>
@@ -90,6 +104,7 @@
 					<input type="text" name="signdate" value="<%=initData.getSignDate() %>">
 				</div>
 			</div>
+			
 			<div class="info-writer_box">
 				<table class="info-writer_tb">
 					<tr class="info-writer_head">
@@ -97,6 +112,7 @@
 						<th>제목</th>
 						<th>날짜</th>
 					</tr>
+					
 					<%
 						List<WriterDTO> datas;
 						WriterDTO dto = new WriterDTO();
@@ -104,22 +120,23 @@
 							datas = (List<WriterDTO>) request.getAttribute("wdatas");
 							for(WriterDTO data: datas){
 					%>
+					
 					<tr>
 						<td><%=data.getId() %></td>
 						<td><a href="/contents?id=<%=data.getId() %>"><%=data.getTitle() %></a></td>
 						<td><%=data.getWriterDate() %></td>
 					</tr>
+					
 					<%
 							}
 						}
 					%>
+					
 				</table>
 			</div>
 		</div>
 	</div>
-	
 
-	
 	<footer>
 		<hr>
 		<p class="footer-txt">팀원 :이종훈 | 곽서희 | 장재완 | 정현실 | 신재민 | 조정현</p>

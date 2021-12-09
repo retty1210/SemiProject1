@@ -17,6 +17,7 @@ table tr td {
 button:hover {
 	cursor: pointer;
 }
+
 .contents-main {
 	width: 100%;
 	display:flex;
@@ -79,6 +80,7 @@ button:hover {
 	align-self: flex-end;
 	visibility: visible;
 }
+
 .buttonarea{
 	display:flex;
 	justify-content:flex-end;
@@ -98,9 +100,11 @@ button:hover {
 	border-radius: 3px;
 	margin-right: 5px;
 }
+
 .form-update{
 	display:flex;
 }
+
 .input-contxt{
 	text-align: left;
 	padding-right: 20px;
@@ -120,10 +124,12 @@ button:hover {
 	right:140px;
 	bottom:60px;
 }
+
 .list-btn_box{
 	position:relative;
 	left:600px;
 }
+
 .list-btn{
 	width: 70px;
 	height: 30px;

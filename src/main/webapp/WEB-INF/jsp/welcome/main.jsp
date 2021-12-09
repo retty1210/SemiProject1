@@ -19,27 +19,32 @@
 		<nav class="header-link_box">
 			<ul class="header-link_writer_ul">
 				<li class="header-link_writer_li">
+				
 				<%
 					boolean logined = (boolean) request.getAttribute("logined");
 					if(!logined){ 
 				%>
+				
 					<a href="./login" class="header-link_writer">
 						<span class="material-icons">
 							create
 						</span>&nbsp;로그인
 					</a>
+					
 				<%
 					}else{
-						
 				%>
+				
 					<a href="./writer" class="header-link_writer">
 						<span class="material-icons">
 							create
 						</span>&nbsp;글쓰기
 					</a>
+					
 				<%
 					}
-				%>				
+				%>
+								
 				</li>
 			</ul>
 			<ul class="header-link_ul">
@@ -48,47 +53,58 @@
 						menu
 					</span>
 				</a>
+				
 				<ul class="header-link_menu">
+				
 					<%
 						if(!logined){
 					%>
+					
 						<hr>
 						<li class="header-link_menu_content"><a href="./login">로그인</a></li>
 						<hr>
 						<li class="header-link_menu_content"><a href="./sign">회원가입</a></li>
+						
 					<% 
 						} else {					
 					%>	
+					
 						<hr>	
 						<li class="header-link_menu_content"><a href="./logout">로그아웃</a></li>
 						<hr>
 						<li class="header-link_menu_content"><a href="./info">내정보</a></li>
+						
 					<%
 						}
 					%>
+					
 				</ul></li>
 			</ul>
 		</nav>
+		
 		<div class="header-logo-box">
 		<a class="header-logo-link" href="/">
 			<img name ="header-logo"class="header-logo" src="/static/icons/pets_black_24dp.svg">
 	   	</a>
 		</div>
+		
 	</header>
 	<nav class="nav-menu">
 		<a href="/main" class="nav-menu_link">분실 동물 게시판</a>
 	</nav>
+	
 	<%
 		List<WriterDTO> datas;
 		if(request.getAttribute("datas") != null){
 			datas = (List<WriterDTO>) request.getAttribute("datas");
 	%>	
+	
 	<div class="content-box">
+	
 	<%
-			
 			for(WriterDTO data: datas){
-			
 	%>	
+	
 		<div class="contenet-1">
 			<table class="content-area">
 				<tr class="content-imgtr">
@@ -102,18 +118,16 @@
 					</td>
 				</tr>
 			</table>
-			
-			
+
 		</div>
 		
 	<%
 				}
 			}
 	%>
+	
 	</div>
-	
 
-	
 	<footer>
 		<hr>
 		<p class="footer-txt">팀원 :이종훈 | 곽서희 | 장재완 | 정현실 | 신재민 | 조정현</p>

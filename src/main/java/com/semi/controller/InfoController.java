@@ -38,7 +38,7 @@ public class InfoController extends HttpServlet {
 		
 		SignService service = new SignService();
 		List<SignDTO> datas = service.select((String)session.getAttribute("login_user"));
-		System.out.println("infocon datas:" + datas); //테스트용 println
+//		System.out.println("infocon datas:" + datas); //테스트용 println
 		
 		
 		for(SignDTO sdto: datas) {
@@ -46,7 +46,7 @@ public class InfoController extends HttpServlet {
 		}
 		WriterService wService = new WriterService();
 		List<WriterDTO> wDatas = wService.select_userid(login_user);
-		System.out.println("infocon wdatas:" + wDatas); //테스트용 println
+//		System.out.println("infocon wdatas:" + wDatas); //테스트용 println
 		
 		request.setAttribute("wdatas", wDatas);
 		

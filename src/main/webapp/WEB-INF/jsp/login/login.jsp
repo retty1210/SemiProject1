@@ -19,36 +19,45 @@
 					<img name ="hmain-logo"class="main-logo" src="/static/icons/pets_black_24dp.svg">
 		   		</a>
 			</div>
+			
 			<div class="form-login">
 				<input type="text" class="login-input" id="login-id" name="userId" placeholder="아이디">
 				<label for="login-id">아이디</label>
 			</div>
+			
 			<div class="form-login">
 				<input type="password" class="login-input" id="login-pw" name="userPw" placeholder="비밀번호">
 				<label for="login-pw">비밀번호</label>
 			</div>
+			
 			<div class="button_area">
 				<button class="button-main" type="submit">로그인</button>
 			</div>
+			
 			<%
 				if(request.getAttribute("errMsg") != null){
-					
 			%>
+			
 			<div id="errMsg" class="error_area" style="display:block;">
 				<%= (String) request.getAttribute("errMsg") %>
 			</div>
+			
 			<% 
 				}
 			%>
+			
 			<div class="sub_txt">
 				<a class="sub_txt_sign" href="./sign">회원가입</a>
 			</div>
+			
 		</form>
+		
 	<footer>
 		<hr>
 		<p class="footer-txt">팀원 :이종훈 | 곽서희 | 장재완 | 정현실 | 신재민 | 조정현</p>
 		<a href="#"></a>
 		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
 	</footer>
+	
 </body>
 </html>

@@ -3,30 +3,34 @@
 .main-body{
   position: absolute; 
   top: 250px; 
-
 }
+
 .logo-box{
 	display:flex; 
   	justify-content: center;
   	align-items:center;
 }
+
 .logo-link:visited{
 	color: rgba(255, 255, 255, 0.404);
 }
+
 .logo{
 	height: 300px;
 	width: 300px;
 }
+
 .logo:hover{
 	transform:scale(1.5,2);
 	transition: all 4s ease-in-out ;
-	
 }
+
 .footer-txt{
 	text-align: center;
 	font-size: 13px;
 	color:rgba(0,0,0,0.9);
 }
+
 .text-box{
 	text-align: center;
 	margin-bottom:270px;

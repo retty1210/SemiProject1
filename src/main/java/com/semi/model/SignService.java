@@ -41,7 +41,7 @@ public class SignService {
 	public List<SignDTO> select(String userid){
 		SignDAO dao = new SignDAO();
 		List<SignDTO> datas = dao.select(userid);
-		System.out.println("signservice select datas:" + datas);
+//		System.out.println("signservice select datas:" + datas);
 		
 		if(datas.size() == 1) {
 			dao.close();
