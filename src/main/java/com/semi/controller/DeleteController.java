@@ -42,14 +42,14 @@ public class DeleteController extends HttpServlet {
 				if(service.delete(dto)) {
 					// 삭제 완료 후 커밋까지 완료
 					System.out.println("완굿");
-					String view ="/WEB-INF/jsp/delete/delete.jsp";
+					String view ="/WEB-INF/jsp/writer/delete.jsp";
 					RequestDispatcher rd = request.getRequestDispatcher(view);
 					rd.forward(request, response);
 				} else {
 					// 삭제 완료 뒤 커밋에서 문제
 					System.out.println("오오류3");
 					request.setAttribute("error", "해당 게시글 삭제 여부를 확인하세요.");
-					String view ="/WEB-INF/jsp/delete/delete.jsp";
+					String view ="/WEB-INF/jsp/writer/delete.jsp";
 					RequestDispatcher rd = request.getRequestDispatcher(view);
 					rd.forward(request, response);
 				}
@@ -57,7 +57,7 @@ public class DeleteController extends HttpServlet {
 				// 삭제 실패	
 				System.out.println("오류4");
 				request.setAttribute("fail", "게시글 삭제가 실패했습니다.");
-				String view ="/WEB-INF/jsp/delete/delete.jsp";
+				String view ="/WEB-INF/jsp/writer/delete.jsp";
 				RequestDispatcher rd = request.getRequestDispatcher(view);
 				rd.forward(request, response);
 			}

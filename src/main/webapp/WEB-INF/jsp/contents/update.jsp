@@ -24,7 +24,7 @@
 		</div>
 	</header>
 	<nav class="nav-menu">
-		<a href="./main" class="nav-menu_link">수정 중 이다잉!</a>
+		<a href="./main" class="nav-menu_link">게시글 수정 페이지</a>
 	</nav>
 			<%
 				WriterDTO datas;
@@ -37,7 +37,7 @@
 			<div class="contents-imgarea">
 				<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>" name="img">
 			</div>
-			
+			<script>imgSize("img");</script>
 			<div class="contents-inner">
 				<table class="contents-table">
 					<tr class="table-row">
@@ -63,7 +63,7 @@
 				</table>
 			</div>
 		</div>
-		<script>imgSize("img");</script>
+		
 	<%
 				}
 	%>

@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
-<<<<<<< HEAD
+
 <body>	
 	<form method="post">
 		<div class="header-logo-box">
@@ -32,9 +32,7 @@
 		<a href="#"></a>
 		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
 	</footer>
-=======
+
 <body>
-	<h1>삭제 완료</h1>
->>>>>>> refs/remotes/origin/장재완
 </body>
 </html>

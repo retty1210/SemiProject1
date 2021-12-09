@@ -75,7 +75,7 @@
 		<div class="contents-imgarea">
 			<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>" name="img">
 		</div>
-		
+		<script>imgSize("img");</script>
 		<div class="contents-inner">
 			<table class="contents-table">
 				<tr class="table-row">
@@ -96,6 +96,7 @@
 				</tr>
 			</table>
 		</div>
+		
 	</div>
 	
 			
@@ -127,5 +128,5 @@
 <script type="text/javascript" src="static/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="static/js/delete.js"></script>
 </body>
-	<script>imgSize("img");</script>
+	
 </html>
