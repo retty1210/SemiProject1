@@ -3,11 +3,14 @@ function imgSize(which){ // name으로 작동하는 function이기 때문에 nam
 	var height = eval("document."+which+".height");
 	var max_width= 800;   // 이미지의 가로 최대 크기 : css에서 .contents-imgarea에 있는 width값과 똑같이 맞추어야 작동이 잘 됩니다    
 	var max_height = 500; // 이미지의 세로 최대 크기 : 이것도 css의 height값과 맞춰주세요
+	var widthB = false;
+	var heightB = false;
+	//1. 가로가 길고 가로세로 둘 다 클때. 2. 가로가 길고 가로만 클때. 3. 세로가 길고 둘 다 클때. 4. 세로가 길고 세로만 클때 5. 가로가 길고 세로만 클 때.
 	
 	if ( width >= height && width > max_width ) {  // 이미지가 max_width보다 크다면 너비를 max_width으로 맞추고 비율에 맞춰 세로값을 변경
 		height = height/(width / max_width);
-		eval("document."+which+".width = max_width");     
 		eval("document."+which+".height = height");
+		eval("document."+which+".width = max_width");     
 		width = max_width;     
 	}
  
@@ -17,5 +20,12 @@ function imgSize(which){ // name으로 작동하는 function이기 때문에 nam
 		eval("document."+which+".width = width");
 		eval("document."+which+".height = max_height");
 		height = max_height;
+	}
+	
+	if( width >= height && height > max_height ) {
+		height = height/(width / max_width);
+		eval("document."+which+".height = height");
+		eval("document."+which+".width = max_width");     
+		width = max_width;
 	}
 }

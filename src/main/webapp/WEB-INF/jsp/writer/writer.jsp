@@ -30,7 +30,7 @@
 		<div class="writer-box">
 			<div class="writer_c">
 				<label for="title_id" class="writer_title">분실동물 이름</label>
-				<input type="text" id="title_id" name="title" class="writer_text" placeholder="분실동물 이름" required>
+				<input type="text" id="title_id" name="title" class="writer_text" maxlength="16" placeholder="분실동물 이름" required>
 				<p class="mini_txt">동물의 이름을 입력하세요.</p>
 			</div>
 			

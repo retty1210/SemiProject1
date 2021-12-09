@@ -75,6 +75,7 @@
 		<div class="contents-imgarea">
 			<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>" name="img">
 		</div>
+		<script>imgSize("img");</script>
 		<div class="list-btn_box">
 			<a href="/main"><button class="list-btn">목 록</button></a>
 		</div>
@@ -98,8 +99,9 @@
 				</tr>
 			</table>
 		</div>
+		
 	</div>
-	<script>imgSize("img");</script>
+	
 			
 			<%	
 				}

@@ -13,6 +13,7 @@
 <link href="<%=request.getContextPath()%>/static/css/contents/contents.css" rel="stylesheet" type="text/css"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/js/contents.js"></script>
 </head>
 <body>
 	<header class="contents-header">
@@ -23,7 +24,7 @@
 		</div>
 	</header>
 	<nav class="nav-menu">
-		<a href="./main" class="nav-menu_link">수정 중 이다잉!</a>
+		<a href="./main" class="nav-menu_link">게시글 수정 페이지</a>
 	</nav>
 			<%
 				WriterDTO datas;
@@ -34,9 +35,9 @@
 	<form action="/update" method="post">
 		<div class="contents-main">
 			<div class="contents-imgarea">
-				<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>">
+				<img class="contents-img" alt="동물 사진" src="<%=datas.getPhotopath() %>" name="img">
 			</div>
-			
+			<script>imgSize("img");</script>
 			<div class="contents-inner">
 				<table class="contents-table">
 					<tr class="table-row">
@@ -45,7 +46,7 @@
 					</tr>						
 					<tr class="table-row">
 						<td class="table-titletxt">분실동물 이름</td>
-						<td class="table-contxt"><input type="text" name="title" class="input-contxt" value="<%=datas.getTitle() %>"></td>
+						<td class="table-contxt"><input type="text" name="title" class="input-contxt" value="<%=datas.getTitle() %>" maxlength="16"></td>
 					</tr>
 					<tr class="table-row" rowspan="5" align="center">
 						<td class="table-titletxt">분실동물의 특징</td>
@@ -62,14 +63,15 @@
 				</table>
 			</div>
 		</div>
+		
 	<%
 				}
 	%>
-				<div class="update-button_box"><!-- hidden으로 해 놓고 작성자 본인에게만 보이게 -->
-					<button type="submit" class="mini-btn">수정</button>
-				</div>
-			</form>
-
+		<div class="update-button_box"><!-- hidden으로 해 놓고 작성자 본인에게만 보이게 -->
+			<button type="submit" class="main-btn">수정</button>
+		</div>
+	</form>
+	
 	<footer>
 		<hr>
 		<p class="footer-txt">팀원 :이종훈 | 곽서희 | 장재완 | 정현실 | 신재민 | 조정현</p>
@@ -78,4 +80,6 @@
 	</footer>
 	
 </body>
+
+	
 </html>

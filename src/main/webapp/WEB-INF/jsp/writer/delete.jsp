@@ -11,6 +11,10 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/정현실
 <body>	
 	<form method="post">
 		<div class="header-logo-box">
@@ -46,5 +50,10 @@
 		<a href="#"></a>
 		<p class="footer-txt">ⓒ 여기가 동물신고 사이트다!</p>
 	</footer>
+<<<<<<< HEAD
+=======
+
+<body>
+>>>>>>> refs/remotes/origin/정현실
 </body>
 </html>
