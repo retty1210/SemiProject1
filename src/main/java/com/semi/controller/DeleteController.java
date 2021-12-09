@@ -29,20 +29,20 @@ public class DeleteController extends HttpServlet {
 			throws ServletException, IOException {
 			// 게시글 번호
 			String id = request.getParameter("id");
-			int id2 = Integer.parseInt(id);
+			int intID = Integer.parseInt(id);
 		
 			WriterDTO dto = new WriterDTO();
-			dto.setId(id2);
+			dto.setId(intID);
 			
 			WriterDAO dao = new WriterDAO();
 			WriterService service = new WriterService();
 
 			if(dao.delete(dto)) {
 				// 삭제 완료
-				System.out.println("오류1");
+				System.out.println("굿");
 				if(service.delete(dto)) {
 					// 삭제 완료 후 커밋까지 완료
-					System.out.println("오류2");
+					System.out.println("완굿");
 					String view ="/WEB-INF/jsp/delete/delete.jsp";
 					RequestDispatcher rd = request.getRequestDispatcher(view);
 					rd.forward(request, response);

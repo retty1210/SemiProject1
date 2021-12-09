@@ -28,6 +28,9 @@
                         <span id="must-id"  class="hid_span_area">
                             <!--필수 입력입니다.-->
                         </span>
+                        <% 
+                        	// 아이디 중복 에러 지우기
+                        %>
                         <span class="sign-id-check">
                         	<%= 
                             	(String) request.getAttribute("error")
