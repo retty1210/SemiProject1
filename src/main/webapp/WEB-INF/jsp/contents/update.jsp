@@ -46,7 +46,7 @@
 					</tr>						
 					<tr class="table-row">
 						<td class="table-titletxt">분실동물 이름</td>
-						<td class="table-contxt"><input type="text" name="title" class="input-contxt" value="<%=datas.getTitle() %>"></td>
+						<td class="table-contxt"><input type="text" name="title" class="input-contxt" value="<%=datas.getTitle() %>" maxlength="16"></td>
 					</tr>
 					<tr class="table-row" rowspan="5" align="center">
 						<td class="table-titletxt">분실동물의 특징</td>
