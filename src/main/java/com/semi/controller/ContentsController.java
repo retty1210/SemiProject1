@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.semi.model.*;
 import com.semi.writer.model.*;
 
 @WebServlet("/contents")
@@ -41,8 +42,11 @@ public class ContentsController extends HttpServlet {
 		String id = request.getParameter("id");
 		
 		WriterService wService= new WriterService();
-		List<WriterDTO> datas = wService.select(id);
+		SignService sService = new SignService();
 		
+		List<WriterDTO> datas = wService.select(id);
+		int userPkid = sService.select_pkid(login_user);
+		request.setAttribute("pkid", userPkid);
 		for(WriterDTO data: datas){
 			request.setAttribute("datas", data);
 		}

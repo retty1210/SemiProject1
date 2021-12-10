@@ -74,6 +74,21 @@ public class SignDAO {
 		}
 		return sdto.getPkid();
 	}
+	public String select_userid(String id){
+		this.query = "SELECT USERID FROM SIGNUP WHERE USERID = '" + id + "'";
+		 
+		ResultSet res = oc.select(query);
+		SignDTO sdto = new SignDTO();
+		
+		try {
+		while(res.next()) {
+				sdto.setUserid(res.getString("USERID"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return sdto.getUserid();
+	}
 	
 	public void commit() {
 		oc.commit();

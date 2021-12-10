@@ -82,7 +82,7 @@ public class WriterService {
 			return datas;
 		}else {
 			wdao.close();
-			return wdao.select_userid(userid);
+			return datas;
 		}
 	}
 	

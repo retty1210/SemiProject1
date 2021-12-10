@@ -66,8 +66,10 @@
 	</nav>
 			<%
 				WriterDTO datas;
+				int content_pkid = 0;
 				if(request.getAttribute("datas") != null){
 						datas = (WriterDTO) request.getAttribute("datas");
+						content_pkid = datas.getPkid();
 			%>
 	
 	<div class="contents-main">
@@ -105,23 +107,34 @@
 	
 			<%	
 				}
-				if(logined) {
 			%>
-			
 				<div class="buttonarea">
-					<div class="button-admin">
-						<button type="button" class="mini-btn">삭제</button>
-					</div>
-					<div class="button-writer"><!-- hidden으로 해 놓고 작성자 본인에게만 보이게 -->
+			<%	
+				int pkid = 0;
+				System.out.println(content_pkid);
+				if((int)request.getAttribute("pkid") != 0){
+					pkid = (int)request.getAttribute("pkid");
+				}
+				System.out.println(pkid);
+				if(content_pkid == pkid) {
+	
+			%>
+					<div class="button-writer"><!-- hidden으로 놓고 작성자 본인에게만 보이게 -->
 						<a href="/update?id=<%=request.getParameter("id") %>"><button type="submit" class="mini-btn">수정</button></a>
 						<form action="/delete?id=<%=request.getParameter("id") %>" method="post">	
 						<button type="submit" class="mini-btn" id="delete-btn">삭제</button>
 						</form>
 					</div>
-		
-		<% 
+			
+			<%
+				}else if(session.getAttribute("login_user").equals("ADMIN")){
+			%>
+					<div class="button-admin">
+						<button type="button" class="mini-btn">삭제</button>
+					</div>
+			<%
 				}
-		%>
+			%>
 				
 				</div>	
 	<footer>

@@ -35,6 +35,7 @@ public class SignService {
 			}
 		} else {
 			// res의 리턴값이 true가 아닌 false 일 경우 
+			dao.close();
 			return false;
 		}
 	}
@@ -78,9 +79,22 @@ public class SignService {
 		SignDAO sDao = new SignDAO();
 		int res = sDao.select_pkid(id);
 		if(res != 0) {
+			sDao.close();
 			return res;
 		}else {
+			sDao.close();
 			return 0;
+		}
+	}
+	public String select_userid(String id){
+		SignDAO sDao = new SignDAO();
+		String res = sDao.select_userid(id);
+		if(res != null) {
+			sDao.close();
+			return res;
+		}else {
+			sDao.close();
+			return null;
 		}
 	}
 }
