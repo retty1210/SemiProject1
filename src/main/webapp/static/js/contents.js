@@ -1,7 +1,7 @@
 function imgSize(which){ // name으로 작동하는 function이기 때문에 name값이 없으면 작동하지 않습니다
 	var width = eval("document."+which+".width");
 	var height = eval("document."+which+".height");
-	var max_width= 800;   // 이미지의 가로 최대 크기 : css에서 .contents-imgarea에 있는 width값과 똑같이 맞추어야 작동이 잘 됩니다    
+	var max_width= 500;   // 이미지의 가로 최대 크기 : css에서 .contents-imgarea에 있는 width값과 똑같이 맞추어야 작동이 잘 됩니다    
 	var max_height = 500; // 이미지의 세로 최대 크기 : 이것도 css의 height값과 맞춰주세요
 	var widthB = false;
 	var heightB = false;
